@@ -1,0 +1,200 @@
+
+  =================
+   Message Summary
+  =================
+
+Num   Sev        Id                        Message Text                    
+---------------------------------------------------------------------------
+  2   Info  CDFG-250    Processing multi-dimensional arrays.               
+ 79   Info  CDFG-372    Bitwidth mismatch in assignment.                   
+  1   Info  CDFG-373    Sign mismatch in assignment.                       
+  1 Warning CDFG-381    Signal referenced before it is assigned. This may  
+                        cause simulation mismatches between the original   
+                        and synthesized designs.                           
+  4 Warning CDFG-472    Unreachable statements for case item.              
+  5   Info  CDFG-500    Unused module input port.                          
+                        The value of the input port is not used within     
+                        the design.                                        
+  1 Warning CDFG-508    Removing unused register.                          
+                        A flip-flop or latch that was inferred for an      
+                        unused signal or variable was removed. Use         
+                        '::legacy::set_attribute                           
+                        hdl_preserve_unused_registers true /' to preserve  
+                        the flip-flop or latch.                            
+  1   Info  CDFG-771    Replaced logic with a constant value.              
+  1   Info  CDFG2G-616  Latch inferred.                                    
+                        Use 'set_attribute hdl_error_on_latch true' to     
+                        issue an error when a latch is inferred. Use       
+                        'set_attribute hdl_latch_keep_feedback true' to    
+                        infer combinational logic rather than a latch      
+                        when a variable is explicitly assigned to itself.  
+459   Info  CWD-19      An implementation was inferred.                    
+  1   Info  CWD-21      Skipping an invalid binding for a subprogram call. 
+459   Info  CWD-36      Sorted the set of valid implementations for        
+                        synthetic operator.                                
+  4   Info  DFT-100     Added DFT object.                                  
+  1   Info  DFT-151     Added scan chain.                                  
+  1   Info  DPOPT-1     Optimizing datapath logic.                         
+  1   Info  DPOPT-2     Done optimizing datapath logic.                    
+ 13   Info  DPOPT-3     Implementing datapath configurations.              
+ 13   Info  DPOPT-4     Done implementing datapath configurations.         
+  1   Info  DPOPT-6     Pre-processed datapath logic.                      
+  1   Info  ELAB-1      Elaborating Design.                                
+ 11   Info  ELAB-2      Elaborating Subdesign.                             
+  1   Info  ELAB-3      Done Elaborating Design.                           
+  1 Warning ELABUTL-123 Undriven module output port.                       
+                        Use the 'hdl_undriven_output_port_value'           
+                        attribute to control treatment of undriven output  
+                        port during elaboration.                           
+  5   Info  GB-6        A datapath component has been ungrouped.           
+ 15   Info  GLO-12      Replacing a flip-flop with a logic constant 0.     
+                        To prevent this optimization, set the              
+                        'optimize_constant_0_flops' root attribute to      
+                        'false' or 'optimize_constant_0_seq' instance      
+                        attribute to 'false'.                              
+  1   Info  GLO-13      Replacing a flip-flop with a logic constant 1.     
+                        To prevent this optimization, set the              
+                        'optimize_constant_1_flops' root attribute to      
+                        'false' or 'optimize_constant_1_seq' instance      
+                        attribute to 'false'.                              
+  4   Info  GLO-32      Deleting sequential instances not driving any      
+                        primary outputs.                                   
+                        Optimizations such as constant propagation or      
+                        redundancy removal could change the connections    
+                        so an instance does not drive any primary outputs  
+                        anymore. To see the list of deleted sequential,    
+                        set the 'information_level' attribute to 2 or      
+                        above. If message is truncated set message         
+                        attribute 'truncate' to false to see the complete  
+                        list.                                              
+  2   Info  GLO-34      Deleting instances not driving any primary         
+                        outputs.                                           
+                        Optimizations such as constant propagation or      
+                        redundancy removal could change the connections    
+                        so a hierarchical instance does not drive any      
+                        primary outputs anymore. To see the list of        
+                        deleted hierarchical instances, set the            
+                        'information_level' attribute to 2 or above. If    
+                        message is truncated set message attribute         
+                        'truncate' to false to see the complete list. To   
+                        prevent this optimization, set the                 
+                        'delete_unloaded_insts' root/subdesign attribute   
+                        to 'false' or 'preserve' instance attribute to     
+                        'true'.                                            
+  5   Info  GLO-45      Replacing the synchronous part of an always        
+                        feeding back flip-flop with a logic constant.      
+                        To prevent this optimization, set                  
+                        'eliminate_constant_feedback_seqs' root attribute  
+                        to 'false'. The instance attribute                 
+                        'optimize_constant_feedback_seq' controls this     
+                        optimization.                                      
+  1 Warning LBR-101     Unusable clock gating integrated cell.             
+                        To use the cell in clock gating, Set cell          
+                        attribute 'dont_use' false in the library.         
+  1   Info  LBR-109     Set default library domain.                        
+ 19   Info  LBR-162     Both 'pos_unate' and 'neg_unate' timing_sense      
+                        arcs have been processed.                          
+                        Setting the 'timing_sense' to non_unate.           
+  1 Warning LBR-39      Relaxing an attribute value in the library.        
+                        Relaxing one of the library's attribute value      
+                        (e.g. a library-cell's dont_use or dont_touch      
+                        attribute) should be done with caution.            
+  1   Info  LBR-40      An unsupported construct was detected in this      
+                        library.                                           
+                        Check to see if this construct is really needed    
+                        for synthesis. Many liberty constructs are not     
+                        actually required.                                 
+  1   Info  LBR-41      An output library pin lacks a function attribute.  
+                        If the remainder of this library cell's semantic   
+                        checks are successful, it will be considered as a  
+                        timing-model (because one of its outputs does not  
+                        have a valid function.                             
+  1   Info  LBR-412     Created nominal operating condition.               
+                        The nominal operating condition represents either  
+                        the nominal PVT values if specified in the         
+                        library source, or the default PVT values (1.0,    
+                        1.0, 1.0).                                         
+ 20   Info  LBR-436     Could not find an attribute in the library.        
+  1   Info  LBR-518     Missing a function attribute in the output pin     
+                        definition.                                        
+  1   Info  MAP-128     Enabling some advanced optimizations in global     
+                        mapping.                                           
+                        Enabling this attribute can potentially improve    
+                        Qor and increase runtime.                          
+  4 Warning PHYS-15     Wire parameter is missing.                         
+                        Check the parameter in technology section.         
+  2   Info  PHYS-752    Partition Based Synthesis execution skipped.       
+ 16   Info  PHYS-90     Generating design database.                        
+                        The database contains all the files required to    
+                        restore the design in the specified application.   
+  1 Warning POPT-104    The 'lp_insert_clock_gating' attribute should be   
+                        set before elaboration.                            
+                        Setting the 'lp_insert_clock_gating' attribute     
+                        before elaboration will result in an optimal       
+                        clock-gated design.                                
+200 Warning POPT-24     Test pin of clock-gating instance is already       
+                        connected.                                         
+                        Will not re-connect.                               
+ 29 Warning POPT-40     Setting clock-gating integrated cell on a          
+                        non-uniquified subdesign.                          
+                        Use edit_netlist dedicate_subdesign <instance> to  
+                        uniquify the subdesign if you do not want this     
+                        attribute to be set on all instances.              
+  1   Info  POPT-56     Clock-gating instances are decloned.               
+  4   Info  POPT-96     One or more cost groups were automatically         
+                        created for clock gate enable paths.               
+                        This feature can be disabled by setting the        
+                        attribute lp_clock_gating_auto_cost_grouping       
+                        false.                                             
+  3   Info  RTLOPT-30   Accepted resource sharing opportunity.             
+  3  Error  SDC-202     Could not interpret SDC command.                   
+                        The 'read_sdc' command encountered a problem       
+                        while trying to evaluate an SDC command. This SDC  
+                        command will be added to the Tcl variable          
+                        $::dc::sdc_failed_commands.                        
+  1 Warning SDC-209     One or more commands failed when these             
+                        constraints were applied.                          
+                        You can examine the failed commands or save them   
+                        to a file by querying the Tcl variable             
+                        $::dc::sdc_failed_commands.                        
+  1   Info  SYNTH-1     Synthesizing.                                      
+  1   Info  SYNTH-13    Gating clocks.                                     
+  1   Info  SYNTH-2     Done synthesizing.                                 
+  1   Info  SYNTH-4     Mapping.                                           
+  1   Info  SYNTH-5     Done mapping.                                      
+  1   Info  SYNTH-7     Incrementally optimizing.                          
+  1   Info  SYNTH-8     Done incrementally optimizing.                     
+  1 Warning TIM-11      Possible timing problems have been detected in     
+                        this design.                                       
+                        Use 'report timing -lint' for more information.    
+  2  Error  TUI-61      A required object parameter could not be found.    
+                        Check to make sure that the object exists and is   
+                        of the correct type.  The 'what_is' command can    
+                        be used to determine the type of an object.        
+  2   Info  UTUI-207    Connecting constant net to TIELO/TIEHI cells.      
+  1 Warning VLOGPT-37   Ignoring unsynthesizable construct.                
+                        The following constructs will be ignored:
+    -    
+                        initial block
+    - final block
+    - program      
+                        block
+    - property block
+    - sequence block
+   
+                          - covergroup
+    - checker block
+    - gate      
+                        drive strength
+    - system task enable
+    - reg  
+                        declaration with initial value
+    - specify       
+                        block.                                             
+  2 Warning WSDF-104    Default value for an option has changed in this    
+                        release.                                           
+                        Specify the option explicitly.                     
+ 62 Warning WSDF-201    No delay description exists for cell.              
+                        Cell could be a loop breaker or its inputs could   
+                        be driven by constants.                            
+

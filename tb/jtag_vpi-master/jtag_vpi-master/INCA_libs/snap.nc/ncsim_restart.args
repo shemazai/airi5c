@@ -1,0 +1,23 @@
+//
+// File created by:  ncverilog
+// Do not modify this file
+//
++jtag_vpi_enable=1
++access+r
+-MESSAGES
+-XLSTIME
+1530696069
+-XLKEEP
+-XLMODE
+./INCA_libs/irun.lnx8664.08.20.nc
+-RUNMODE
+-CDSLIB
+./INCA_libs/irun.lnx8664.08.20.nc/cds.lib
+-HDLVAR
+./INCA_libs/irun.lnx8664.08.20.nc/hdl.var
+-XLNAME
+ncverilog
+-XLVERSION
+"TOOL:	ncverilog	08.20-s021"
+-XLNAME
+./INCA_libs/irun.lnx8664.08.20.nc/sx5.ims.local_24727

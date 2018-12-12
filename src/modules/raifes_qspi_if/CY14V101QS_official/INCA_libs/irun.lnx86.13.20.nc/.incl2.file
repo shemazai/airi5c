@@ -1,0 +1,10 @@
+config.v
+/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_qspi_if/CY14V101QS_official/config.v
+params.v
+/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_qspi_if/CY14V101QS_official/params.v
+spi_driver.v
+/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_qspi_if/CY14V101QS_official/spi_driver.v
+test_cases.v
+/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_qspi_if/CY14V101QS_official/test_cases.v
+./config.v
+/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_qspi_if/CY14V101QS_official/config.v

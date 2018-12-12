@@ -1,0 +1,74 @@
+
+# 200MHz diff. clock
+NET "CLK200P" LOC = H19;
+NET "CLK200N" LOC = H20;
+
+# active low reset
+NET "nRESET" LOC = E7;
+
+NET "nRESET" IOSTANDARD = LVCMOS25;
+
+NET "TDI" LOC = AD11 ;
+NET "TDO" LOC = AD9 ;
+NET "TMS" LOC = AM12 ;
+NET "TCK" LOC = AD10 ;
+NET "nTRST" LOC = AF10 ;
+NET "debug_led1" LOC = AG8 ;
+NET "debug_led2" LOC = AH8 ;
+NET "debug_led3" LOC = AH9 ;
+NET "debug_led4" LOC = AG10 ;
+NET "debug_led5" LOC = AH10 ;
+NET "debug_led6" LOC = AG11 ;
+NET "debug_led7" LOC = AF11 ;
+NET "debug_led8" LOC = AE11 ;
+
+# HDMI port
+NET "HDMI_CLKP" LOC = K11;
+NET "HDMI_CLKN" LOC = J11;
+NET "HDMI_RESET" LOC = V9;
+NET "HDMI_DE" LOC = V10;
+NET "HDMI_V" LOC = F13;
+NET "HDMI_H" LOC = H8;
+NET "HDMI_D[11]" LOC = F8;
+NET "HDMI_D[10]" LOC = E8;
+NET "HDMI_D[9]" LOC = F9;
+NET "HDMI_D[8]" LOC = E9;
+NET "HDMI_D[7]" LOC = D10;
+NET "HDMI_D[6]" LOC = F10;
+NET "HDMI_D[5]" LOC = D11;
+NET "HDMI_D[4]" LOC = C12;
+NET "HDMI_D[3]" LOC = D12;
+NET "HDMI_D[2]" LOC = B12;
+NET "HDMI_D[1]" LOC = G8;
+NET "HDMI_D[0]" LOC = G10;	 
+NET "SCL" LOC = U8;
+NET "SDA" LOC = V8;
+
+# LCD display
+NET "LCD_RS" LOC = V7;
+NET "LCD_RW" LOC = W6;
+NET "LCD_E" LOC = AA5;
+NET "LCD_DB[7]" LOC = AD7;
+NET "LCD_DB[6]" LOC = AC7;
+NET "LCD_DB[5]" LOC = AC5;
+NET "LCD_DB[4]" LOC = AB6;
+NET "LCD_DB[3]" LOC = AC4;
+NET "LCD_DB[2]" LOC = AB5;
+NET "LCD_DB[1]" LOC = AB7;
+NET "LCD_DB[0]" LOC = Y8;	
+
+NET "TCK" CLOCK_DEDICATED_ROUTE = FALSE;
+
+# PlanAhead Generated IO constraints 
+NET "TDO" DRIVE = 12;
+
+# clk input muss 100MHz können
+TIMESPEC TS_CLK = PERIOD "CLK" 10 ns; #HIGH 50%;
+NET "CLK" TNM_NET = CLK;
+
+#TIMESPEC TS_CLKout = PERIOD "CLKout" 20 ns HIGH 50%;
+#NET "CLKout" TNM_NET = CLKout;
+
+#Created by Constraints Editor (xc6vlx240t-ff1156-1) - 2018/03/15
+TIMESPEC TS_TCK = PERIOD "TCK" 100 ns HIGH 50%;
+NET "TCK" TNM_NET = TCK;

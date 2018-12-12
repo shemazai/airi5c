@@ -1,0 +1,4 @@
+database -open simout -shm 
+probe -create raifes_ce_tb -depth all -all -all -shm -database simout
+run
+exit

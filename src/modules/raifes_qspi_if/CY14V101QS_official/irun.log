@@ -1,0 +1,3170 @@
+irun: 13.20-s031: (c) Copyright 1995-2015 Cadence Design Systems, Inc.
+TOOL:	irun	13.20-s031: Started on Sep 12, 2018 at 13:10:52 CEST
+irun
+	-input simsetup.tcl
+	-access +rw
+	tb_beh.v
+	cy14v101xs_ncvlog.vp
+Recompiling... reason: file './tb_beh.v' is newer than expected.
+	expected: Wed Sep 12 13:08:50 2018
+	actual:   Wed Sep 12 13:10:28 2018
+file: cy14v101xs_ncvlog.vp
+ncvlog: *W,WARIPR: warning within protected source code.
+ncvlog: *W,WARIPR: warning within protected source code.
+ncvlog: *W,WARIPR: warning within protected source code.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 3
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+cy14v101xs i_nvsram (.IO3_PIN(IO3), .SCE_PIN(SCE), .SO_PIN(SO), .WP_PIN(WP), .HSB_PIN(HSB), .SI_PIN(SI), .SCK_PIN(SCK), .VCC(VCC) );
+                  |
+ncelab: *W,CUVWSI (./tb_beh.v,36|18): 1 input port was not connected:
+ncelab: (./cy14v101xs_ncvlog.vp,20): RTC_CLK
+
+cy14v101xs i_nvsram (.IO3_PIN(IO3), .SCE_PIN(SCE), .SO_PIN(SO), .WP_PIN(WP), .HSB_PIN(HSB), .SI_PIN(SI), .SCK_PIN(SCK), .VCC(VCC) );
+                  |
+ncelab: *W,CUVWSB (./tb_beh.v,36|18): 1 inout port was not connected:
+ncelab: (./cy14v101xs_ncvlog.vp,20): INT_PIN
+
+ncelab: *W,CUVWSP: 1 output port was not connected.
+ncelab: *W,CUVWSP: 1 output port was not connected.
+ncelab: *W,CUVWSP: 1 output port was not connected.
+ncelab: *W,CUVWSP: 1 output port was not connected.
+	Top level design units:
+		tb_beh
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+		{*Name Protected*}
+ncelab: *W,CUVMPW: port sizes differ in port connection (64/16).
+ncelab: *W,WARIPR: warning within protected source code.
+ncelab: *W,WARIPR: warning within protected source code.
+	Building instance overlay tables: .................... Done
+	Building instance specific data structures.
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+ncelab: *W,CSINFI: implicit wire has no fanin ({*Name Protected*}).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:               2730    1252
+		UDPs:                   451      48
+		Primitives:            5302      14
+		Registers:             1870    1201
+		Scalar wires:          5645       -
+		Expanded wires:         840      90
+		Vectored wires:         569       -
+		Named events:             6       6
+		Always blocks:          968     328
+		Initial blocks:          64      64
+		Parallel blocks:          7       7
+		Cont. assignments:      677     684
+		Pseudo assignments:     200     152
+		Simulation timescale:   1ns
+	Writing initial simulation snapshot: worklib.tb_beh:v
+Loading snapshot worklib.tb_beh:v .................... Done
+ncsim> source /sw/lx_sw/lxcad/incisiv13.20.031/tools/inca/files/ncsimrc
+ncsim> database -open output -shm 
+Created SHM database output
+ncsim> probe -create tb_beh -depth all -all -all -shm -database output
+Created probe 1
+ncsim> run
+------------------------------------------------------------------------------
+
+clock is 40MHz
+ncsim: *W,SHMOFU: $shm_open - file output.shm already in use (SHM database).
+            File: ./tb_beh.v, line = 58, pos = 9
+           Scope: tb_beh
+            Time: 0 FS + 0
+
+ncsim: *W,SHMNOSO: $shm_probe - SHM file not opened with $shm_open.
+            File: ./tb_beh.v, line = 59, pos = 10
+           Scope: tb_beh
+            Time: 0 FS + 0
+
+SCE: 1 SO: x SI: x HSB: x SCK: 0WP: xIO3: xVCC: 1
+
+INFO >> 15 >> tb_beh.i_nvsram.i_up_mem
+Power On Reset seen.
+ 
+SCE: 1 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+time=                 615, Reset chip trigger
+nvSRAM RECALL
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+time=             1103986, nvSRAM Ready
+SPI WREN OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI WRITE OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI READ OPCODE sent
+SCE: 1 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+Read data - c5
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI WREN OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI WRCR OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI mode - QPIEN OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+QPI WRDI OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+QPI WREN OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+QPI WRITE OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+QPI WRITE OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+QPI READ OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+c4
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+QPI READ OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 0IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+5b
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+QPI WRITE OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+QPI READ OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+3a
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+QPI WRDI OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+QPI WRITE OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+QPI READ OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+c4
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+QPI WREN OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+QPI WRITE OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+QPI READ OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+00
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+01
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+02
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+03
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+04
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+05
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+06
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+07
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+08
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 0IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+09
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+0a
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 0IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+0b
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+0c
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+0d
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+0e
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+0f
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+QPI FAST RDID
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 0VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 0VCC: 1
+06
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+81
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+00
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 0IO3: 0VCC: 1
+01
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 0IO3: 0VCC: 1
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SPI WREN OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: zIO3: zVCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: zVCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: zVCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI WRCR OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI WREN OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI WRITE OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI WRITE OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI WRDI OPCODE sent
+SCE: 1 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI READ OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+Read data - 3a
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI READ OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+Read data - a3
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI WREN OPCODE sent
+SCE: 1 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI STORE OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: 1 HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+nvSRAM STORE
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+time=            25621258, nvSRAM Ready
+SPI WREN OPCODE sent
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI WRITE OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI READ OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+Read data - 30
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI RECALL OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+nvSRAM RECALL
+time=            28197962, nvSRAM Ready
+SPI READ OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+Read data - 3a
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI WREN OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI WRITE OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: 1 HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+nvSRAM STORE
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+time=            34208538, nvSRAM Ready
+SPI WREN OPCODE sent
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SPI WRITE OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: 1 HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+nvSRAM STORE
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+time=            42210506, nvSRAM Ready
+SPI mode - DPIEN OPCODE sent
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+DPI RDID
+SCE: 1 SO: z SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+06
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+81
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+00
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+01
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+DPI Sleep OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+DPI READ OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+zz
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+DPI Exit Sleep OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+DPI READ OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+30
+SCE: 0 SO: 0 SI: 0 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+DPI Hibernate OPCODE sent
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: 1 HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 1 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: z HSB: 1 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+nvSRAM STORE
+DPI READ OPCODE sent
+SCE: 1 SO: z SI: 1 HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+    52624056  #######  Information: chip reset #######
+
+INFO >> 52624056 >> tb_beh.i_nvsram.i_up_mem
+Power On Reset seen.
+ 
+SCE: 0 SO: z SI: 1 HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 1 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 1 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 1 SI: 0 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: 0 SI: 0 HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 0 SO: z SI: z HSB: 0 SCK: 1WP: 1IO3: 1VCC: 1
+zz
+SCE: 0 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+SCE: 1 SO: z SI: z HSB: 0 SCK: 0WP: 1IO3: 1VCC: 1
+Simulation interrupted at 52940718 NS + 2
+ncsim> exi
+TOOL:	irun	13.20-s031: Exiting on Sep 12, 2018 at 13:11:05 CEST  (total: 00:00:13)

@@ -1,0 +1,13 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-access
++rc
+-covoverwrite
++incdir+../CY14V101QS_official/
+-incdir
+../../..
+.././raifes_qspi_if.v
+.././raifes_qspi_if_tb.v
+.././CY14V101QS_official/cy14v101xs_ncvlog.vp

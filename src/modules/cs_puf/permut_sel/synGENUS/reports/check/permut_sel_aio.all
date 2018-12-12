@@ -1,0 +1,125 @@
+
+ 	 Check Design Report
+	 -------------------- 
+
+ Long Module Names
+----------------------
+No subdesign's name is greater than 1.5k in length.
+
+  Unresolved References & Empty Modules
+  ------------------------------------- 
+No unresolved references in design 'permut_sel_aio'
+
+No empty modules in design 'permut_sel_aio'
+
+ Unloaded Pin(s), Port(s)
+ -------------------------
+No unloaded sequential element in 'permut_sel_aio'
+
+No unloaded port in 'permut_sel_aio'
+
+ Unloaded Combinational Pin(s)
+ -------------------------------
+No unloaded combinational element in 'permut_sel_aio'
+
+ Assigns
+ ------- 
+Total number of assign statements in design 'permut_sel_aio' : 0
+
+ Undriven Port(s)/Pin(s)
+ ------------------------
+No undriven combinational pin in 'permut_sel_aio'
+
+No undriven sequential pin in 'permut_sel_aio'
+
+No undriven hierarchical pin in 'permut_sel_aio'
+
+No undriven port in 'permut_sel_aio'
+
+ Multidriven Port(s)/Pin(s)
+--------------------------
+
+No multidriven combinational pin in 'permut_sel_aio'
+
+No multidriven sequential pin in 'permut_sel_aio'
+
+No multidriven hierarchical pin in 'permut_sel_aio'
+
+No multidriven ports in 'permut_sel_aio'
+
+No multidriven unloaded nets in 'permut_sel_aio'
+
+  Constant Pin(s)
+  ----------------
+No constant combinational pin(s) in design 'permut_sel_aio'
+
+No constant sequential pin(s) in design 'permut_sel_aio'
+
+No constant hierarchical pin(s) in design 'permut_sel_aio'
+
+No constant connected ports in design 'permut_sel_aio'
+
+  Preserved instances(s)
+  ----------------
+No preserved combinational instance(s) in design 'permut_sel_aio'
+No preserved sequential instance(s) in design 'permut_sel_aio'
+No preserved hierarchical instance(s) in design 'permut_sel_aio'
+
+  Physical only instances(s)
+  ----------------
+No physical only instance(s) in design 'permut_sel_aio'
+
+  Logical only instance(s) and linked libcells
+    -----------------------------------------
+No logical only instance(s) in design 'permut_sel_aio'
+
+Libcells with no corresponding LEF
+----------------------------------
+No libcell(s) found.
+
+LEF cells with no corresponding libcell
+---------------------------------------
+lib_cell:slow_ss_lib/physical_cells/ANTENNA
+lib_cell:slow_ss_lib/physical_cells/DECAP16
+lib_cell:slow_ss_lib/physical_cells/DECAP4
+lib_cell:slow_ss_lib/physical_cells/DECAP8
+lib_cell:slow_ss_lib/physical_cells/FSTD
+lib_cell:slow_ss_lib/physical_cells/FSTD16
+lib_cell:slow_ss_lib/physical_cells/FSTD2
+lib_cell:slow_ss_lib/physical_cells/FSTD4
+lib_cell:slow_ss_lib/physical_cells/FSTD8
+lib_cell:slow_ss_lib/physical_cells/FSTDN
+lib_cell:slow_ss_lib/physical_cells/FSTDN16
+lib_cell:slow_ss_lib/physical_cells/FSTDN2
+lib_cell:slow_ss_lib/physical_cells/FSTDN4
+lib_cell:slow_ss_lib/physical_cells/FSTDN8
+Total number cell(s) with only physical (LEF) Info : 14
+
+ Summary
+ ------- 
+
+                Name                 Total 
+-------------------------------------------
+Unresolved References                    0 
+Empty Modules                            0 
+Unloaded Port(s)                         0 
+Unloaded Sequential Pin(s)               0 
+Unloaded Combinational Pin(s)            0 
+Assigns                                  0 
+Undriven Port(s)                         0 
+Undriven Leaf Pin(s)                     0 
+Undriven hierarchical pin(s)             0 
+Multidriven Port(s)                      0 
+Multidriven Leaf Pin(s)                  0 
+Multidriven hierarchical Pin(s)          0 
+Multidriven unloaded net(s)              0 
+Constant Port(s)                         0 
+Constant Leaf Pin(s)                     0 
+Constant hierarchical Pin(s)             0 
+Preserved leaf instance(s)               0 
+Preserved hierarchical instance(s)       0 
+Libcells with no LEF cell                0 
+Physical (LEF) cells with no libcell    14 
+Subdesigns with long module name         0 
+Physical only instance(s)                0 
+Logical only instance(s)                 0 

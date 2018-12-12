@@ -1,0 +1,22 @@
+//
+// File created by:  ncverilog
+// Do not modify this file
+//
++access+r
+-MESSAGES
+-XLSTIME
+1530616109
+-XLKEEP
+-XLMODE
+./INCA_libs/irun.lnx86.08.20.nc
+-RUNMODE
+-CDSLIB
+./INCA_libs/irun.lnx86.08.20.nc/cds.lib
+-HDLVAR
+./INCA_libs/irun.lnx86.08.20.nc/hdl.var
+-XLNAME
+ncverilog
+-XLVERSION
+"TOOL:	ncverilog	08.20-s021"
+-XLNAME
+./INCA_libs/irun.lnx86.08.20.nc/sx4_23997

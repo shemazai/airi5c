@@ -1,0 +1,10 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-input
+simsetup.tcl
+-access
++rw
+tb_beh.v
+cy14v101xs_ncvlog.vp

@@ -1,0 +1,55 @@
+[11/08 13:35:42      0s] 
+[11/08 13:35:42      0s] Cadence Innovus(TM) Implementation System.
+[11/08 13:35:42      0s] Copyright 2018 Cadence Design Systems, Inc. All rights reserved worldwide.
+[11/08 13:35:42      0s] 
+[11/08 13:35:42      0s] Version:	v18.11-s100_1, built Mon Sep 17 18:39:52 PDT 2018
+[11/08 13:35:42      0s] Options:	-common_ui -files pr_easy.tcl 
+[11/08 13:35:42      0s] Date:		Thu Nov  8 13:35:41 2018
+[11/08 13:35:42      0s] Host:		sx4 (x86_64 w/Linux 2.6.18-417.el5) (4cores*16cpus*Intel(R) Xeon(R) CPU X5560 @ 2.80GHz 8192KB)
+[11/08 13:35:42      0s] OS:		CentOS release 5.11 (Final)
+[11/08 13:35:42      0s] 
+[11/08 13:35:42      0s] License:
+[11/08 13:35:42      0s] 		invs	Innovus Implementation System	18.1	checkout succeeded
+[11/08 13:35:42      0s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[11/08 13:35:48      5s] 
+[11/08 13:35:48      5s] ***************************************************************************************
+[11/08 13:35:48      5s] ***************************************************************************************
+[11/08 13:35:48      5s] 
+[11/08 13:35:59     15s] @(#)CDS: Innovus v18.11-s100_1 (64bit) 09/17/2018 18:39 (Linux 2.6.18-194.el5)
+[11/08 13:35:59     15s] @(#)CDS: NanoRoute 18.11-s100_1 NR180819-2237/18_11-UB (database version 2.30, 428.7.1) {superthreading v1.46}
+[11/08 13:35:59     15s] @(#)CDS: AAE 18.11-s042 (64bit) 09/17/2018 (Linux 2.6.18-194.el5)
+[11/08 13:35:59     15s] @(#)CDS: CTE 18.11-s039_1 () Aug 15 2018 09:54:48 ( )
+[11/08 13:35:59     15s] @(#)CDS: SYNTECH 18.11-s016_1 () Aug 15 2018 09:49:01 ( )
+[11/08 13:35:59     15s] @(#)CDS: CPE v18.11-s099
+[11/08 13:35:59     15s] @(#)CDS: IQRC/TQRC 18.1.1-s552 (64bit) Sat May 19 16:19:10 PDT 2018 (Linux 2.6.18-194.el5)
+[11/08 13:35:59     15s] @(#)CDS: OA 22.50-p083 Tue Jan  2 17:02:41 2018
+[11/08 13:35:59     15s] @(#)CDS: SGN 10.10-p124 (19-Aug-2014) (64 bit executable)
+[11/08 13:35:59     15s] @(#)CDS: RCDB 11.14
+[11/08 13:35:59     15s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_6510_sx4_stanitzk_nJOrdj.
+
+[11/08 13:35:59     15s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_6510_sx4_stanitzk_nJOrdj.
+[11/08 13:35:59     15s] 
+[11/08 13:35:59     15s] Change the soft stacksize limit to 0.2%RAM (80 mbytes). Set global soft_stack_size_limit to change the value.
+[11/08 13:36:00     16s] Loading fill procedures ...
+[11/08 13:36:01     17s] 
+[11/08 13:36:01     17s] **INFO:  MMMC transition support version v31-84 
+[11/08 13:36:01     17s] 
+[11/08 13:36:03     19s] #@ Processing -files option
+[11/08 13:36:03     19s] **ERROR: (IMPSYT-6696):	Initfile (pr_easy.tcl) does not exist.
+[11/08 13:36:03     19s] @innovus 1> exit
+
+[11/08 13:36:14     19s] --------------------------------------------------------------------------------
+[11/08 13:36:14     19s] Exiting Innovus on Thu Nov  8 13:36:14 2018
+[11/08 13:36:14     19s]   Total CPU time:     0:00:19
+[11/08 13:36:14     19s]   Total real time:    0:00:34
+[11/08 13:36:14     19s]   Peak memory (main): 461.20MB
+[11/08 13:36:14     19s] 
+[11/08 13:36:14     19s] 
+[11/08 13:36:14     19s] *** Memory Usage v#1 (Current mem = 617.918M, initial mem = 268.430M) ***
+[11/08 13:36:14     19s] 
+[11/08 13:36:14     19s] *** Summary of all messages that are not suppressed in this session:
+[11/08 13:36:14     19s] Severity  ID               Count  Summary                                  
+[11/08 13:36:14     19s] ERROR     IMPSYT-6696          1  Initfile (%s) does not exist.            
+[11/08 13:36:14     19s] *** Message Summary: 0 warning(s), 1 error(s)
+[11/08 13:36:14     19s] 
+[11/08 13:36:14     19s] --- Ending "Innovus" (totcpu=0:00:19.5, real=0:00:33.0, mem=617.9M) ---

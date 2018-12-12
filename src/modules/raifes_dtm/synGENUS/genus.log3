@@ -1,0 +1,309 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2017 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 17.22-s017_1, built Sun Apr 01 2018
+Options: 
+Date:    Sat Nov 10 17:46:09 2018
+Host:    sx4 (x86_64 w/Linux 2.6.18-417.el5) (4cores*16cpus*2physical cpus*Intel(R) Xeon(R) CPU X5560 @ 2.80GHz 8192KB) (41174424KB)
+OS:      CentOS release 5.11 (Final)
+
+Checking out license: Genus_Synthesis
+
+Loading tool scripts...
+
+Finished loading tool scripts (51 seconds elapsed).
+
+WARNING: This version of the tool is 223 days old.
+@genus:root: 1> source synthesize_single_run_mmmc.tcl
+Sourcing './synthesize_single_run_mmmc.tcl' (Sat Nov 10 17:47:10 CET 2018)...
+#@ Begin verbose source synthesize_single_run_mmmc.tcl
+@file(synthesize_single_run_mmmc.tcl) 4: set DESIGN_PATH { /Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_dtm/src}
+@file(synthesize_single_run_mmmc.tcl) 6: set DESIGN_FILES { raifes_dtm.v }
+@file(synthesize_single_run_mmmc.tcl) 8: set LIB_PATH /sw/ims_db/lib/L035/l035v0v6dc/.lib/layout/
+@file(synthesize_single_run_mmmc.tcl) 9: set LEF_FILE L035dc.lef
+@file(synthesize_single_run_mmmc.tcl) 11: set RESULT_DIR {results}
+@file(synthesize_single_run_mmmc.tcl) 12: set REPORT_DIR {reports}
+@file(synthesize_single_run_mmmc.tcl) 13: set TOP_CELL_NAME raifes_dtm
+@file(synthesize_single_run_mmmc.tcl) 15: set_db / .information_level 8
+  Setting attribute of root '/': 'information_level' = 8
+@file(synthesize_single_run_mmmc.tcl) 20: read_mmmc ./MMMC.tcl
+Sourcing './MMMC.tcl' (Sat Nov 10 17:47:10 CET 2018)...
+#@ Begin verbose source MMMC.tcl
+@file(MMMC.tcl) 8: create_library_set -name slow_ss_lib \
+    -timing { /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib }
+@file(MMMC.tcl) 12: create_timing_condition -name slow_ss_timing \
+    -opcond c4 \
+	-opcond_library l035_db \
+    -library_sets { slow_ss_lib }
+@file(MMMC.tcl) 16: create_timing_condition -name fast_ff_timing \
+    -opcond c1 \
+    -opcond_library l035_db \
+    -library_sets { slow_ss_lib }
+@file(MMMC.tcl) 20: create_timing_condition -name typical_timing \
+    -opcond c0 \
+	-opcond_library l035_db \
+    -library_sets { slow_ss_lib }
+@file(MMMC.tcl) 25: 	
+@file(MMMC.tcl) 27: create_rc_corner -name rc_corner_slow \
+	-temperature 150.0 \
+    -cap_table /sw/ims_db/lib/L035/l035v0v6dc/.lib/layout//L035dc.cap \
+    -pre_route_res 1.0 \
+    -pre_route_cap 1.0 \
+    -pre_route_clock_res 0.0 \
+    -pre_route_clock_cap 0.0 \
+    -post_route_res {1.0 1.0 1.0} \
+    -post_route_cap {1.0 1.0 1.0} \
+    -post_route_cross_cap {1.0 1.0 1.0} \
+    -post_route_clock_res {1.0 1.0 1.0} \
+    -post_route_clock_cap {1.0 1.0 1.0}
+@file(MMMC.tcl) 39: 	
+@file(MMMC.tcl) 40: create_rc_corner -name rc_corner_typ \
+	-temperature 25.0 \
+    -cap_table /sw/ims_db/lib/L035/l035v0v6dc/.lib/layout//L035dc.cap \
+    -pre_route_res 1.0 \
+    -pre_route_cap 1.0 \
+    -pre_route_clock_res 0.0 \
+    -pre_route_clock_cap 0.0 \
+    -post_route_res {1.0 1.0 1.0} \
+    -post_route_cap {1.0 1.0 1.0} \
+    -post_route_cross_cap {1.0 1.0 1.0} \
+    -post_route_clock_res {1.0 1.0 1.0} \
+    -post_route_clock_cap {1.0 1.0 1.0}
+@file(MMMC.tcl) 52: 	
+@file(MMMC.tcl) 53: create_rc_corner -name rc_corner_fast \
+	-temperature -40 \
+    -cap_table /sw/ims_db/lib/L035/l035v0v6dc/.lib/layout//L035dc.cap \
+    -pre_route_res 1.0 \
+    -pre_route_cap 1.0 \
+    -pre_route_clock_res 0.0 \
+    -pre_route_clock_cap 0.0 \
+    -post_route_res {1.0 1.0 1.0} \
+    -post_route_cap {1.0 1.0 1.0} \
+    -post_route_cross_cap {1.0 1.0 1.0} \
+    -post_route_clock_res {1.0 1.0 1.0} \
+    -post_route_clock_cap {1.0 1.0 1.0}
+@file(MMMC.tcl) 68: create_delay_corner -name slow_ss_delay \
+    -early_timing_condition { slow_ss_timing } \
+    -late_timing_condition { slow_ss_timing } \
+    -early_rc_corner rc_corner_slow \
+    -late_rc_corner rc_corner_slow
+@file(MMMC.tcl) 73: create_delay_corner -name fast_ff_delay \
+    -early_timing_condition { fast_ff_timing } \
+    -late_timing_condition { fast_ff_timing } \
+    -early_rc_corner rc_corner_fast \
+    -late_rc_corner rc_corner_fast
+@file(MMMC.tcl) 78: create_delay_corner -name typical_delay \
+    -early_timing_condition { typical_timing } \
+    -late_timing_condition { typical_timing } \
+    -early_rc_corner rc_corner_typ \
+    -late_rc_corner rc_corner_typ
+@file(MMMC.tcl) 85: create_constraint_mode -name timing_constraints \
+    -sdc_files { ./timing_constraints.tcl }
+            Reading file '/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_dtm/synGENUS/timing_constraints.tcl'
+@file(MMMC.tcl) 89: create_analysis_view -name slow_ss \
+    -constraint_mode timing_constraints \
+    -delay_corner slow_ss_delay
+@file(MMMC.tcl) 92: create_analysis_view -name fast_ff \
+    -constraint_mode timing_constraints \
+    -delay_corner fast_ff_delay
+@file(MMMC.tcl) 95: create_analysis_view -name typical \
+    -constraint_mode timing_constraints \
+    -delay_corner typical_delay
+@file(MMMC.tcl) 100: set_analysis_view -setup { slow_ss } \
+                  -hold  { fast_ff }
+
+Threads Configured:3
+Info    : An unsupported construct was detected in this library. [LBR-40]
+        : Unknown Liberty attribute 'library_features' encountered. Ignoring (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib, Line 131)
+        : Check to see if this construct is really needed for synthesis. Many liberty constructs are not actually required.
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'INV2' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'INVXL' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'INV' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'INV3' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'INV4' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'INV5' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'BF' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'BF2' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'BF3' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'BF4' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'BF5' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'BF8' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'AND2XL' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'AND2' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'AND22' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'AND3XL' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'AND3' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'AND4XL' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'AND4' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Could not find an attribute in the library. [LBR-436]
+        : Attribute 'max_fanout' on 'output/inout' pin 'O' of cell 'AND21OXL' is not defined in the library. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib)
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'O' for the cell 'HOLD'. (File /sw/ims_db/lib/L035/l035v0v6dc/.lib/synthesis//L035dc.lib, Line 49497)
+
+  Message Summary for Library L035dc.lib:
+  ***************************************
+  Could not find an attribute in the library. [LBR-436]: 153
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  An unsupported construct was detected in this library. [LBR-40]: 1
+  ***************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 3.300000, 25.000000) in library 'L035dc.lib'.
+        : The nominal operating condition represents either the nominal PVT values if specified in the library source, or the default PVT values (1.0, 1.0, 1.0).
+Warning : Unusable clock gating integrated cell. [LBR-101]
+        : Clock gating integrated cell name: 'TLATX3'
+        : To use the cell in clock gating, Set cell attribute 'dont_use' false in the library.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'HOLD/O' has no function.
+        : If the remainder of this library cell's semantic checks are successful, it will be considered as a timing-model (because one of its outputs does not have a valid function.
+Info    : Set default library domain. [LBR-109]
+        : The default library domain is 'library_domain:slow_ss_timing'.
+#@ End verbose source MMMC.tcl
+@file(synthesize_single_run_mmmc.tcl) 21: read_physical -lef /sw/ims_db/lib/L035/l035v0v6dc/.lib/layout/L035dc.lef
+
+  According to lef_library, there are total 4 routing layers [ V(2) / H(2) ]
+
+Warning : Missing wire parameter. [PHYS-15]
+        : 'EDGECAPACITANCE' parameter is missing for layer 'MTL1' [line 53 in file /sw/ims_db/lib/L035/l035v0v6dc/.lib/layout/L035dc.lef]
+        : Check the wire parameter in LEF technology files.
+Warning : Missing wire parameter. [PHYS-15]
+        : 'EDGECAPACITANCE' parameter is missing for layer 'MTL2' [line 74 in file /sw/ims_db/lib/L035/l035v0v6dc/.lib/layout/L035dc.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'EDGECAPACITANCE' parameter is missing for layer 'MTL3' [line 95 in file /sw/ims_db/lib/L035/l035v0v6dc/.lib/layout/L035dc.lef]
+Warning : Missing wire parameter. [PHYS-15]
+        : 'EDGECAPACITANCE' parameter is missing for layer 'MTL4' [line 116 in file /sw/ims_db/lib/L035/l035v0v6dc/.lib/layout/L035dc.lef]
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'O' in libcell 'EXNORXL'.
+        : Setting the 'timing_sense' to non_unate.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'O' in libcell 'EXNORXL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'O' in libcell 'EXNOR'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'O' in libcell 'EXNOR'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'O' in libcell 'EXORXL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'O' in libcell 'EXORXL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'O' in libcell 'EXOR'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'O' in libcell 'EXOR'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'SA' and 'O' in libcell 'MUX21XL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'SA' and 'O' in libcell 'MUX21'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'S2' and 'O' in libcell 'MUX41XL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'S1' and 'O' in libcell 'MUX41XL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'S2' and 'O' in libcell 'MUX41'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'S1' and 'O' in libcell 'MUX41'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'HADD'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'HADD'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'FADD'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'FADD'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'FADD'.
+  Library has 104 usable logic and 25 usable sequential lib-cells.
+@file(synthesize_single_run_mmmc.tcl) 23: set_db / .max_cpus_per_server 8
+  Setting attribute of root '/': 'max_cpus_per_server' = 8
+@file(synthesize_single_run_mmmc.tcl) 24: set_db / .use_tiehilo_for_const duplicate
+  Setting attribute of root '/': 'use_tiehilo_for_const' = duplicate
+@file(synthesize_single_run_mmmc.tcl) 25: set_db / .remove_assigns true
+  Setting attribute of root '/': 'remove_assigns' = true
+@file(synthesize_single_run_mmmc.tcl) 26: set_db / .auto_ungroup none
+  Setting attribute of root '/': 'auto_ungroup' = none
+@file(synthesize_single_run_mmmc.tcl) 29: set_db / .syn_generic_effort high
+  Setting attribute of root '/': 'syn_generic_effort' = high
+@file(synthesize_single_run_mmmc.tcl) 30: set_db / .syn_map_effort high
+  Setting attribute of root '/': 'syn_map_effort' = high
+@file(synthesize_single_run_mmmc.tcl) 31: set_db / .syn_opt_effort high
+  Setting attribute of root '/': 'syn_opt_effort' = high
+@file(synthesize_single_run_mmmc.tcl) 34: set_db / .dp_analytical_opt extreme
+  Setting attribute of root '/': 'dp_analytical_opt' = extreme
+@file(synthesize_single_run_mmmc.tcl) 37: set_db / .dp_analytical_opt standard
+  Setting attribute of root '/': 'dp_analytical_opt' = standard
+@file(synthesize_single_run_mmmc.tcl) 39: set_db / .ultra_global_mapping true
+Info    : Enabling some advanced optimizations in global mapping. [MAP-128]
+        : Setting the 'ultra_global_mapping' attribute to 'true'.
+        : Enabling this attribute can potentially improve Qor and increase runtime.
+  Setting attribute of root '/': 'ultra_global_mapping' = true
+@file(synthesize_single_run_mmmc.tcl) 44: set_db / .hdl_language v2001
+  Setting attribute of root '/': 'hdl_language' = v2001
+@file(synthesize_single_run_mmmc.tcl) 45: set_db / .init_hdl_search_path $DESIGN_PATH 
+  Setting attribute of root '/': 'init_hdl_search_path' =  /Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_dtm/src
+@file(synthesize_single_run_mmmc.tcl) 46: read_hdl $DESIGN_FILES
+            Reading Verilog file '/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_dtm/src/raifes_dtm.v'
+            Reading Verilog file '/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_dtm/src/raifes_dmi_constants.vh'
+		`IR_ADCCTRL	:	tdo_from_register = ADCCTRL[0];
+		          |
+Error   : Reference to undefined macro. [VLOGPT-631] [read_hdl]
+        : Macro 'IR_ADCCTRL' in file '/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_dtm/src/raifes_dtm.v' on line 233, column 13.
+        : Error encountered during Verilog parsing.
+			:	tdo_from_register = ADCCTRL[0];
+			|
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : in file '/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_dtm/src/raifes_dtm.v' on line 233, column 4.
+        : Invalid Verilog syntax is parsed, or unsupported Verilog syntax is encountered.
+			:	tdo_from_register = ADCCTRL[0];
+			 	                |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Expecting token ':', found '<identifier>' in file '/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_dtm/src/raifes_dtm.v' on line 233, column 22.
+		`IR_PUFCTRL	:	tdo_from_register = PUFCTRL[0];
+		          |
+Error   : Reference to undefined macro. [VLOGPT-631] [read_hdl]
+        : Macro 'IR_PUFCTRL' in file '/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_dtm/src/raifes_dtm.v' on line 234, column 13.
+			:	tdo_from_register = PUFCTRL[0];
+			|
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : in file '/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_dtm/src/raifes_dtm.v' on line 234, column 4.
+			:	tdo_from_register = PUFCTRL[0];
+			 	                |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Expecting token ':', found '<identifier>' in file '/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_dtm/src/raifes_dtm.v' on line 234, column 22.
+		`IR_ADCDATA	:	tdo_from_register = ADCDATA[0];
+		          |
+Error   : Reference to undefined macro. [VLOGPT-631] [read_hdl]
+        : Macro 'IR_ADCDATA' in file '/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_dtm/src/raifes_dtm.v' on line 235, column 13.
+			:	tdo_from_register = ADCDATA[0];
+			|
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : in file '/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_dtm/src/raifes_dtm.v' on line 235, column 4.
+			:	tdo_from_register = ADCDATA[0];
+			 	                |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Expecting token ':', found '<identifier>' in file '/Abteilungen/ISS/ISS-ALL/unix/cad/RISCV/local/riscv-flavor/trunk/flavor/src/modules/raifes_dtm/src/raifes_dtm.v' on line 235, column 22.
+#@ End verbose source synthesize_single_run_mmmc.tcl
+1
+@genus:root: 2> gedit ../src/raifes_dtm.v
+invalid command name "gedit"
+@genus:root: 3> exit
+Normal exit.

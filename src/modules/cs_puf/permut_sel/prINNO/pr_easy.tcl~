@@ -1,0 +1,152 @@
+set_multi_cpu_usage -local_cpu 8
+#-----------------------------------------------------------------------------------------------
+#----------------------------- INNOVUS final place and route file ------------------------------
+#-----------------------------------------------------------------------------------------------
+set TARGET_SKEW 1.750
+set TARGET_TRANSITION 2.5
+set MAX_LAYER 4
+set REPORT_DIRpr reports
+set RESULT_DIRpr results
+set TOP_CELL_NAME permut_sel_aio
+
+#-----------------------------------------------------------------------------------------------
+#------------------ Source needed files (invs_init, variables and floorplan) -------------------
+#-----------------------------------------------------------------------------------------------
+set_db / .route_design_top_routing_layer $MAX_LAYER
+set_db / .route_design_with_timing_driven 1
+set_db / .extract_rc_engine pre_route
+
+set_db init_ground_nets gndd!
+set_db init_power_nets vddd!
+
+source ../prINNO/INNO/permut_sel.invs_setup.tcl
+set init_design_uniquify {1}
+source floorplan.tcl
+
+set_db / .design_process_node 180
+set_db / .design_flow_effort standard
+
+set_db / .place_global_clock_gate_aware false
+set_db / .place_global_cong_effort medium
+set_db / .place_global_solver_effort medium
+
+set_db / .design_early_clock_flow true
+set_db / .opt_useful_skew true
+set_db / .opt_effort medium
+
+set_db / .ccopt_override_min_skew_target true
+set_db / .cts_buffer_cells {BF BF2 BF3 BF4 BF5 BF8}
+set_db / .cts_inverter_cells {INV INV2 INV3 INV4 INV5}
+#set_db / .cts_target_skew $TARGET_SKEW
+set_db / .cts_target_max_transition_time $TARGET_TRANSITION
+
+set_db / .reorder_scan_clock_aware true
+set_db / .reorder_scan_effort medium
+
+set_db / .route_design_with_timing_driven true
+set_db / .reorder_scan_swap_effort medium
+
+set_db / .write_def_lef_out_version 5.6
+set_db / .write_def_include_lef_vias true
+set_db / .write_def_include_lef_ndr true
+set_db / .generate_special_via_parameterized_via_only true
+set_db / .route_design_detail_post_route_wire_widen widen
+set_db / .route_design_detail_post_route_wire_widen_rule LayerWidth
+set_db / .route_design_detail_min_length_for_widen_wire 0.1 
+set_db / .opt_area_recovery false
+
+#-----------------------------------------------------------------------------------------------
+#--------------------------------- First pre CTS optimization ----------------------------------
+#-----------------------------------------------------------------------------------------------
+delete_buffer_trees
+delete_clock_trees [get_db clocks]
+
+place_opt_design
+place_opt_design -incremental_timing
+opt_design -pre_cts -drv
+
+route_special -connect {block_pin pad_pin pad_ring core_pin floating_stripe} -block_pin_target {nearest_target} \
+ -pad_pin_port_connect {all_port one_geom} -pad_pin_target {nearest_target} -core_pin_target {first_after_row_end} \
+ -floating_stripe_target {block_ring pad_ring ring stripe ring_pin block_pin followpin} -allow_jogging 0 \
+ -crossover_via_layer_range { MTL1(1) MTL4(4) } -allow_layer_change 0 -block_pin use_lef -target_via_layer_range { MTL1(1) MTL4(4) }
+
+reorder_scan -clock_aware -scan_effort medium
+
+#-----------------------------------------------------------------------------------------------
+#--------------------------------------------- CTS  --------------------------------------------
+#-----------------------------------------------------------------------------------------------
+
+set_db / .cts_add_exclusion_drivers false
+#set_db pin:DIGITALTEIL/I_NANDTREE/g200/B .cts_sink_type exclude
+
+create_clock_tree_spec
+add_clock_tree_exclusion_drivers -base_cell BF3
+ccopt_design
+
+
+#-----------------------------------------------------------------------------------------------
+#---------------------------------------- postCTS optim  ---------------------------------------
+#-----------------------------------------------------------------------------------------------
+##update_constraint_mode -name timing_constraints -sdc_files ./timing_constraints_pr.sdc
+opt_design -post_cts -drv
+opt_design -post_cts -hold
+
+#-----------------------------------------------------------------------------------------------
+#------------------------------- route design and post route optim -----------------------------
+#-----------------------------------------------------------------------------------------------
+route_design -global_detail -wire_opt
+
+
+set_db / .extract_rc_engine post_route
+#no licence and no file for high (QRC)
+set_db / .extract_rc_effort_level low
+
+#no licence for siAware
+set_db / .delaycal_enable_si false
+opt_design -post_route -setup -hold -drv
+
+ccopt_post_route -enable_drv_repair true -enable_drv_repair_by_buffering true -enable_routing_eco true -enable_skew_repair true -enable_skew_repair_by_buffering true -enable_timing_update true
+
+add_decap_cell_candidates DECAP4 20 
+add_decap_cell_candidates DECAP8 110
+add_decap_cell_candidates DECAP16 400
+add_decaps -cells DECAP4 DECAP8 DECAP16 -prefix DECAP -effort high -total_cap 100000
+add_fillers -base_cells { FSTD FSTD2 FSTD4 FSTD8 FSTD16 FSTDN FSTDN2 FSTDN4 FSTDN8 FSTDN16 }
+
+report_clock_timing -type skew -nworst 10
+report_clocks > ./${REPORT_DIRpr}/${TOP_CELL_NAME}.clocks
+report_clock_trees > ./${REPORT_DIRpr}/${TOP_CELL_NAME}.clock_trees
+report_area -depth 2 > ./${REPORT_DIRpr}/${TOP_CELL_NAME}.area
+report_clock_gating_check > ./${REPORT_DIRpr}/${TOP_CELL_NAME}.gating
+report_decaps > ./${REPORT_DIRpr}/${TOP_CELL_NAME}.decaps
+
+set_analysis_view -setup { slow_ss } -hold  { slow_ss }
+time_design -post_route -report_dir ./SignOff_slow/
+time_design -post_route -hold -report_dir ./SignOff_slow/
+write_sdf ${RESULT_DIRpr}/${TOP_CELL_NAME}.sdf_slow
+
+set_analysis_view -setup { fast_ff } -hold  { fast_ff }
+time_design -post_route -report_dir ./SignOff_fast/
+time_design -post_route -hold -report_dir ./SignOff_fast/
+write_sdf ${RESULT_DIRpr}/${TOP_CELL_NAME}.sdf_fast
+				  
+set_analysis_view -setup { typical } -hold  { typical }
+time_design -post_route -report_dir ./SignOff_typical/
+time_design -post_route -hold -report_dir ./SignOff_typical/
+write_sdf ${RESULT_DIRpr}/${TOP_CELL_NAME}.sdf_typical
+
+report_messages > ./${REPORT_DIRpr}/${TOP_CELL_NAME}.messages
+
+set_db / .write_def_include_lef_vias true
+set_db / .write_def_include_lef_ndr true
+
+write_netlist ./${RESULT_DIRpr}/${TOP_CELL_NAME}.v
+write_netlist  -include_phys_cells { DECAP4 DECAP8 DECAP16 } ./${RESULT_DIRpr}/${TOP_CELL_NAME}_with_decap.v
+write_netlist -include_phys_inst ./${RESULT_DIRpr}/${TOP_CELL_NAME}_with_filler.v 
+write_def -used_via -routing -scan_chain ./${RESULT_DIRpr}/${TOP_CELL_NAME}.def
+write_db ./SAVED_STATE/
+write_lef_library ./${RESULT_DIRpr}/${TOP_CELL_NAME}.lef
+
+set_metal_fill -layer {1 2 3 4} -border_spacing 30 -decrement 2 -max_density 60 -min_density 40 -max_width 10 -max_length 10
+add_metal_fill -square_shape
+write_def -used_via -routing -scan_chain ./${RESULT_DIRpr}/${TOP_CELL_NAME}_metal_fill.def

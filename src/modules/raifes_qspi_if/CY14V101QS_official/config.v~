@@ -1,0 +1,36 @@
+// +FHDR -----------------------------------------------------------------------
+// Copyright 2016, Cypress Semiconductor Corporation
+// Cypress Confidential Proprietary
+// This code is provided as is without warranty or guarantee of any kind as its accuracy, 
+// completeness, operability, fitness for particular purpose, or any other warranty.
+// -----------------------------------------------------------------------------
+// FILE NAME:  config.v
+// TYPE:       This contains configuration for different packages of CY14V101XS
+// -----------------------------------------------------------------------------
+// Release History
+// Revision 2.0  15/02/2016 - Reduced power-up time and memory initialization
+// Revision 1.0  08/02/2016 - Initial version
+//
+// -----------------------------------------------------------------------------
+// DESCRIPTION:  This is part of behavioral model for 1Mbit Quad SPI nvSRAM with RTC.
+// -----------------------------------------------------------------------------
+
+// Uncomment for RTC part and comment out for non-RTC part
+//`define PKG_16SOIC_RTC 1
+
+// Uncomment for non-RTC part and comment out for RTC part
+`define PKG_16SOIC 1
+
+// Define the spi clock frequency. 
+`define CLOCK_20MHZ
+
+/* Options
+`define CLOCK_1MHZ    // 1  MHz
+`define CLOCK_20MHZ   // 20 MHz
+`define CLOCK_40MHZ   // 40 MHz
+`define CLOCK_108MHZ  // 108 MHz
+*/
+
+// Define this for fast power-up 
+// (1.1ms for CY14V101QS and 1.4ms for CY14V101PS)
+`define FAST_PWRUP

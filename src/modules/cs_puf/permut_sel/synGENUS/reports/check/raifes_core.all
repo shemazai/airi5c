@@ -1,0 +1,283 @@
+
+ 	 Check Design Report
+	 -------------------- 
+
+ Long Module Names
+----------------------
+No subdesign's name is greater than 1.5k in length.
+
+  Unresolved References & Empty Modules
+  ------------------------------------- 
+No unresolved references in design 'raifes_core'
+
+No empty modules in design 'raifes_core'
+
+ Unloaded Pin(s), Port(s)
+ -------------------------
+No unloaded sequential element in 'raifes_core'
+
+design 'raifes_core' has the following unloaded port(s)
+{port:raifes_core/dmem_hresp[0]}
+{port:raifes_core/imem_hresp[0]}
+Total number of unloaded ports in design 'raifes_core' : 2
+
+ Unloaded Combinational Pin(s)
+ -------------------------------
+No unloaded combinational element in 'raifes_core'
+
+ Assigns
+ ------- 
+Total number of assign statements in design 'raifes_core' : 0
+
+ Undriven Port(s)/Pin(s)
+ ------------------------
+No undriven combinational pin in 'raifes_core'
+
+No undriven sequential pin in 'raifes_core'
+
+The following hierarchical pin(s) in design 'raifes_core' are undriven
+hpin:raifes_core/debug_module/dm_illegal_csr_access 	 (fanout : 0)
+hpin:raifes_core/debug_module/dm_hart0_resumeack 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/clk 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/reset 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[31] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[30] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[29] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[28] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[27] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[26] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[25] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[24] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[23] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[22] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[21] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[20] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[19] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[18] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[17] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[16] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[15] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[14] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[13] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[12] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[11] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[10] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[9] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[8] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[7] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[6] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[5] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[4] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[3] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[2] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[1] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hrdata[0] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hready 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/hresp[0] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_size[2] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_size[1] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_size[0] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[31] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[30] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[29] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[28] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[27] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[26] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[25] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[24] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[23] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[22] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[21] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[20] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[19] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[18] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[17] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[16] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[15] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[14] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[13] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[12] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[11] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[10] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[9] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[8] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[7] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[6] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[5] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[4] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[3] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[2] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[1] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_addr[0] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[31] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[30] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[29] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[28] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[27] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[26] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[25] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[24] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[23] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[22] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[21] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[20] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[19] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[18] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[17] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[16] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[15] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[14] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[13] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[12] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[11] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[10] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[9] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[8] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[7] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[6] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[5] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[4] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[3] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[2] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[1] 	 (fanout : 0)
+hpin:raifes_core/dmem_bridge/core_mem_wdata_delayed[0] 	 (fanout : 0)
+hpin:raifes_core/pipeline/imem_badmem_e 	 (fanout : 0)
+hpin:raifes_core/pipeline/dmem_badmem_e 	 (fanout : 0)
+hpin:raifes_core/pipeline/dm_wara[4] 	 (fanout : 0)
+hpin:raifes_core/pipeline/dm_wara[3] 	 (fanout : 0)
+hpin:raifes_core/pipeline/dm_wara[2] 	 (fanout : 0)
+hpin:raifes_core/pipeline/dm_wara[0] 	 (fanout : 0)
+hpin:raifes_core/pipeline/dm_csr_cmd[1] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/add_61_25/A[0] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/add_61_25/B[31] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/add_61_25/B[30] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/add_61_25/B[29] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/add_61_25/B[28] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/add_61_25/B[27] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/add_61_25/B[26] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/add_61_25/B[25] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/add_61_25/B[24] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/add_61_25/B[23] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/add_61_25/B[22] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/add_61_25/B[21] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/add_61_25/B[0] 	 (fanout : 0)
+hpin:raifes_core/pipeline/csr/add_293_47/A[1] 	 (fanout : 0)
+hpin:raifes_core/pipeline/csr/add_293_47/A[0] 	 (fanout : 0)
+hpin:raifes_core/pipeline/csr/add_293_47/B[2] 	 (fanout : 0)
+hpin:raifes_core/pipeline/csr/add_293_47/B[1] 	 (fanout : 0)
+hpin:raifes_core/pipeline/csr/add_293_47/B[0] 	 (fanout : 0)
+hpin:raifes_core/pipeline/csr/inc_add_508_35/CI 	 (fanout : 0)
+hpin:raifes_core/pipeline/csr/inc_add_545_30/CI 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/inst_DX[6] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/inst_DX[5] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/inst_DX[4] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/inst_DX[3] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/inst_DX[2] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/inst_DX[1] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/inst_DX[0] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/handler_PC[1] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/handler_PC[0] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/epc[1] 	 (fanout : 0)
+hpin:raifes_core/pipeline/PCmux/epc[0] 	 (fanout : 0)
+hpin:raifes_core/pipeline/csr/exception_code[2] 	 (fanout : 0)
+hpin:raifes_core/pipeline/csr/dm_csr_cmd[1] 	 (fanout : 0)
+hpin:raifes_core/pipeline/ctrl/imem_badmem_e 	 (fanout : 0)
+hpin:raifes_core/pipeline/ctrl/dmem_badmem_e 	 (fanout : 0)
+hpin:raifes_core/pipeline/imm_gen/inst[6] 	 (fanout : 0)
+hpin:raifes_core/pipeline/imm_gen/inst[5] 	 (fanout : 0)
+hpin:raifes_core/pipeline/imm_gen/inst[4] 	 (fanout : 0)
+hpin:raifes_core/pipeline/imm_gen/inst[3] 	 (fanout : 0)
+hpin:raifes_core/pipeline/imm_gen/inst[2] 	 (fanout : 0)
+hpin:raifes_core/pipeline/imm_gen/inst[1] 	 (fanout : 0)
+hpin:raifes_core/pipeline/imm_gen/inst[0] 	 (fanout : 0)
+Total number of hierarchical undriven pins in design 'raifes_core' : 154
+
+No undriven port in 'raifes_core'
+
+ Multidriven Port(s)/Pin(s)
+--------------------------
+
+No multidriven combinational pin in 'raifes_core'
+
+No multidriven sequential pin in 'raifes_core'
+
+No multidriven hierarchical pin in 'raifes_core'
+
+No multidriven ports in 'raifes_core'
+
+No multidriven unloaded nets in 'raifes_core'
+
+  Constant Pin(s)
+  ----------------
+No constant combinational pin(s) in design 'raifes_core'
+
+No constant sequential pin(s) in design 'raifes_core'
+
+No constant hierarchical pin(s) in design 'raifes_core'
+
+No constant connected ports in design 'raifes_core'
+
+  Preserved instances(s)
+  ----------------
+No preserved combinational instance(s) in design 'raifes_core'
+No preserved sequential instance(s) in design 'raifes_core'
+No preserved hierarchical instance(s) in design 'raifes_core'
+
+  Physical only instances(s)
+  ----------------
+No physical only instance(s) in design 'raifes_core'
+
+  Logical only instance(s) and linked libcells
+    -----------------------------------------
+No logical only instance(s) in design 'raifes_core'
+
+Libcells with no corresponding LEF
+----------------------------------
+No libcell(s) found.
+
+LEF cells with no corresponding libcell
+---------------------------------------
+lib_cell:slow_ss_lib/physical_cells/ANTENNA
+lib_cell:slow_ss_lib/physical_cells/DECAP16
+lib_cell:slow_ss_lib/physical_cells/DECAP4
+lib_cell:slow_ss_lib/physical_cells/DECAP8
+lib_cell:slow_ss_lib/physical_cells/FSTD
+lib_cell:slow_ss_lib/physical_cells/FSTD16
+lib_cell:slow_ss_lib/physical_cells/FSTD2
+lib_cell:slow_ss_lib/physical_cells/FSTD4
+lib_cell:slow_ss_lib/physical_cells/FSTD8
+lib_cell:slow_ss_lib/physical_cells/FSTDN
+lib_cell:slow_ss_lib/physical_cells/FSTDN16
+lib_cell:slow_ss_lib/physical_cells/FSTDN2
+lib_cell:slow_ss_lib/physical_cells/FSTDN4
+lib_cell:slow_ss_lib/physical_cells/FSTDN8
+Total number cell(s) with only physical (LEF) Info : 14
+
+ Summary
+ ------- 
+
+                Name                 Total 
+-------------------------------------------
+Unresolved References                    0 
+Empty Modules                            0 
+Unloaded Port(s)                         2 
+Unloaded Sequential Pin(s)               0 
+Unloaded Combinational Pin(s)            0 
+Assigns                                  0 
+Undriven Port(s)                         0 
+Undriven Leaf Pin(s)                     0 
+Undriven hierarchical pin(s)           154 
+Multidriven Port(s)                      0 
+Multidriven Leaf Pin(s)                  0 
+Multidriven hierarchical Pin(s)          0 
+Multidriven unloaded net(s)              0 
+Constant Port(s)                         0 
+Constant Leaf Pin(s)                     0 
+Constant hierarchical Pin(s)             0 
+Preserved leaf instance(s)               0 
+Preserved hierarchical instance(s)       0 
+Libcells with no LEF cell                0 
+Physical (LEF) cells with no libcell    14 
+Subdesigns with long module name         0 
+Physical only instance(s)                0 
+Logical only instance(s)                 0 

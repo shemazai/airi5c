@@ -1,0 +1,39 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2018 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v18.11-s100_1, built Mon Sep 17 18:39:52 PDT 2018
+Options:	-common_ui -files pr_easy.tcl 
+Date:		Thu Nov  8 13:35:41 2018
+Host:		sx4 (x86_64 w/Linux 2.6.18-417.el5) (4cores*16cpus*Intel(R) Xeon(R) CPU X5560 @ 2.80GHz 8192KB)
+OS:		CentOS release 5.11 (Final)
+
+License:
+		invs	Innovus Implementation System	18.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+***************************************************************************************
+***************************************************************************************
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_6510_sx4_stanitzk_nJOrdj.
+
+Change the soft stacksize limit to 0.2%RAM (80 mbytes). Set global soft_stack_size_limit to change the value.
+Loading fill procedures ...
+
+**INFO:  MMMC transition support version v31-84 
+
+#@ Processing -files option
+**ERROR: (IMPSYT-6696):	Initfile (pr_easy.tcl) does not exist.
+@innovus 1> exit
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Thu Nov  8 13:36:14 2018
+  Total CPU time:     0:00:19
+  Total real time:    0:00:34
+  Peak memory (main): 461.20MB
+
+
+*** Memory Usage v#1 (Current mem = 617.918M, initial mem = 268.430M) ***
+*** Message Summary: 0 warning(s), 1 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:19.5, real=0:00:33.0, mem=617.9M) ---

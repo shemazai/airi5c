@@ -1,1 +1,0 @@
-main.o: /sw/lx_sw/lxcad/ius8.20/tools/inca/src/main.cc

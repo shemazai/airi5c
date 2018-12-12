@@ -1,5 +1,0 @@
-//
-// File created by:  irun
-// Do not modify this file
-
-s1::(10Nov2018:07:21:38):( irun -access +rc -covoverwrite +incdir+../CY14V101QS_official/ -incdir ../../.. .././raifes_qspi_if.v .././raifes_qspi_if_tb.v .././CY14V101QS_official/cy14v101xs_ncvlog.vp )

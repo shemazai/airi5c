@@ -1,8 +1,0 @@
-//
-// File created by:  ncverilog
-// Do not modify this file
-//
--ACCESS
-+r
--LOADVPI
-./jtag_vpi:register_check_for_command,register_send_result_to_server,setup_endofcompile_callbacks,setup_finish_callbacks

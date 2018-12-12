@@ -20,7 +20,7 @@
 `include "rv32_opcodes.vh"
 
 module raifes_alu(
-                  input [`ALU_OP_WIDTH-1:0] op,		// operation to be performed
+				  input [`ALU_OP_WIDTH-1:0] op,		// operation to be performed
                   input [`XPR_LEN-1:0]      in1,	// A input
                   input [`XPR_LEN-1:0]      in2,	// B input
                   output reg [`XPR_LEN-1:0] out		// result

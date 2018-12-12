@@ -5,34 +5,41 @@
 `include "raifes_platform_constants.vh"
 
 module raifes_pipeline(
-                       input 			    clk,			// system clock
-		       input [`N_EXT_INTS-1:0] 	    ext_interrupts, 		// external interrupts
-		       input		  	    debug_haltreq,		// external debug halt request (interrupt)
-                       input 			    reset,			// system reset
-                       input 			    imem_wait,			// Instruction memory is busy if imem_wait == 1
-                       output [`XPR_LEN-1:0] 	    imem_addr,			// Instruction Memory Address
-                       input [`XPR_LEN-1:0] 	    imem_rdata,			// Instruction Memory Data
-                       input 			    imem_badmem_e,		// Instruction Memory error signal
-		       output			    imem_stall,			// stall IF forwarded to memory
-                       input 			    dmem_wait,			// Data Memory is busy if dmem_wait == 1
-                       output 			    dmem_en,			// Data Memory enable (for Read+Write)
-                       output 			    dmem_wen,			// Data Memory Write Enable
-                       output [`MEM_TYPE_WIDTH-1:0] dmem_size,			// Data Memory access width (byte, word, dword)
-                       output [`XPR_LEN-1:0] 	    dmem_addr,			// Data Memory address
-                       output [`XPR_LEN-1:0] 	    dmem_wdata_delayed,		// TODO: not sure..
-                       input [`XPR_LEN-1:0] 	    dmem_rdata,			// Word read from data memory
-                       input 			    dmem_badmem_e,		// Data memory error signal			
-
-		       input [`REG_ADDR_WIDTH-1:0]  dm_wara,			// debug module register access - write/read address
-		       input [`XPR_LEN-1:0]	    dm_wd,			// debug module register access - write data
-		       input 			    dm_wen,			// debug module register access - write enable
-		       output [`XPR_LEN-1:0]	    dm_rd,			// debug module register access - read data
+			// system reset and clock
+			input 			    		reset,			// system reset
+            input 			    		clk,			// system clock
 		       
-		       output			    dm_illegal_csr_access,
-   	               input [`CSR_ADDR_WIDTH-1:0]  dm_csr_addr,		// CSR address
-   		       input [`CSR_CMD_WIDTH-1:0]   dm_csr_cmd,			// CSR command (0 == IDLE)
-		       input [`XPR_LEN-1:0]	    dm_csr_wdata,		// data to be written to CSR		
-                       output [`XPR_LEN-1:0]	    dm_csr_rdata		// data read from CSR 			
+		    // interrupts
+			input		  	    		debug_haltreq,		// external debug halt request (interrupt)
+			input [`N_EXT_INTS-1:0] 	ext_interrupts, 		// external interrupts
+             
+            // imem/dmem bus
+			input 			    		imem_wait,			// Instruction memory is busy if imem_wait == 1
+            output [`XPR_LEN-1:0] 		imem_addr,			// Instruction Memory Address
+            input [`XPR_LEN-1:0] 		imem_rdata,			// Instruction Memory Data
+            input 			    		imem_badmem_e,		// Instruction Memory error signal
+		    output			    		imem_stall,			// stall IF forwarded to memory
+            input 			    		dmem_wait,			// Data Memory is busy if dmem_wait == 1
+            output 			    		dmem_en,			// Data Memory enable (for Read+Write)
+            output 			    		dmem_wen,			// Data Memory Write Enable
+            output [`MEM_TYPE_WIDTH-1:0] dmem_size,			// Data Memory access width (byte, word, dword)
+            output [`XPR_LEN-1:0] 	    dmem_addr,			// Data Memory address
+            output [`XPR_LEN-1:0] 	    dmem_wdata_delayed,		// TODO: not sure..
+            input [`XPR_LEN-1:0] 	    dmem_rdata,			// Word read from data memory
+            input 			    		dmem_badmem_e,		// Data memory error signal			
+
+		    // debug module GPR register access
+			input [`REG_ADDR_WIDTH-1:0] dm_wara,			// debug module register access - write/read address
+		    input [`XPR_LEN-1:0]	    dm_wd,			// debug module register access - write data
+		    input 			    		dm_wen,			// debug module register access - write enable
+		    output [`XPR_LEN-1:0]	    dm_rd,			// debug module register access - read data		       
+			
+			// debug module CSR register access
+			output			    		dm_illegal_csr_access,
+            input [`CSR_ADDR_WIDTH-1:0] dm_csr_addr,		// CSR address
+   		    input [`CSR_CMD_WIDTH-1:0]  dm_csr_cmd,			// CSR command (0 == IDLE)
+		    input [`XPR_LEN-1:0]	    dm_csr_wdata,		// data to be written to CSR		
+            output [`XPR_LEN-1:0]	    dm_csr_rdata		// data read from CSR 			
 							  
 
                        );
@@ -361,8 +368,8 @@ module raifes_pipeline(
                        .exception_code(exception_code_WB),
                        .exception_load_addr(alu_out_WB),
                        .exception_PC(interrupt_taken ? PC_DX : PC_WB),	// after an exception, the WB stage holds the return address in the next cycle. 
-									// but in case of an interrupt, IF/DX are instantly killed and the address will not 
-									// propagate to PC_WB. So better get the PC of the instruction which was interrupted.
+																		// but in case of an interrupt, IF/DX are instantly killed and the address will not 
+																		// propagate to PC_WB. So better get the PC of the instruction which was interrupted.
                        .epc(epc),
                        .dpc(dpc),
                        .eret(eret),

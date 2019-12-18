@@ -308,7 +308,7 @@ RAMB36 myRAM
 	.DIA(dmem_shifted_wdata),		// Data In
 	.DIPA(4'h0),			// Parity In
 	.ADDRA(dmem_haddr[17:2]<<5),	// Addr In (16 Bit!)
-	.WEA(writea),	// byte-wise write enable
+	.WEA(writea),			// byte-wise write enable
 	.ENA(1'b1),
 	.REGCEA(1'b0),				// no registered output
 	.SSRA(1'b0),				// no output reset to default value

@@ -1,0 +1,30 @@
+//Cipher Roundconstants
+`define RC0 64'h0000000000000000
+`define RC1 64'h13198a2e03707344
+`define RC2 64'ha4093822299f31d0
+`define RC3 64'h082efa98ec4e6c89
+`define RC4 64'h452821e638d01377
+`define RC5 64'hbe5466cf34e90c6c
+`define RC6 64'h7ef84f78fd955cb1
+`define RC7 64'h85840851f1ac43aa
+`define RC8 64'hc882d32f25323c54
+`define RC9 64'h64a51195e0e3610d
+`define RC10 64'hd3b5a399ca0c2399
+`define RC11 64'hc0ac29b7c97c50dd
+
+`define IDLE 5'd0
+`define key_white_start 5'd1
+`define RC_key_add_start 5'd2
+`define round_step1 5'd3
+`define round_step2 5'd4
+`define round_step3 5'd5
+`define round_step4 5'd6
+`define round_step5 5'd7
+`define middle 5'd8
+`define round_step6 5'd9
+`define round_step7 5'd10
+`define round_step8 5'd11
+`define round_step9 5'd12
+`define round_step10 5'd13
+`define RC_key_add_end 5'd14
+`define key_white_end 5'd15

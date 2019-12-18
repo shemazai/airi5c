@@ -1,6 +1,6 @@
 `include "raifes_hasti_constants.vh"
 
-module vscale_dp_hasti_sram(
+module raifes_dp_hasti_sram(
                             input                          hclk,
                             input                          hresetn,
                             input [`HASTI_ADDR_WIDTH-1:0]  p0_haddr,
@@ -70,8 +70,10 @@ module vscale_dp_hasti_sram(
 			p0_state <= p0_next_state;
 			p0_addr_r <= p0_haddr;			// read addr every cycle (but maybe don't use it.)
 			p0_size_r <= p0_hsize;
-			if(p0_state == 2'b10)
+			if(p0_state == 2'b10) begin
 				mem[p0_word_addr] <= (mem[p0_word_addr] & ~p0_wmask) | (p0_hwdata & p0_wmask);//  p0_hwdata;	// write on next clock if in WRITE state.
+				//$write("wrote: %h to %h",(p0_hwdata & p0_wmask), p0_word_addr);			
+			end		
 		end
 	end
 
@@ -194,8 +196,15 @@ module vscale_dp_hasti_sram(
    assign p1_hrdata = (p0_hwdata & p1_rmask) | (p1_rdata & ~p1_rmask);
    assign p1_hready = 1'b1;
    assign p1_hresp = `HASTI_RESP_OKAY;
-
    integer i = 0;
+
+initial begin
+	$strobe("clearning RAM...");
+	for(i = 0; i < (nwords-1); i = i + 1) begin
+		mem[i] = 0;
+	end
+	$strobe("done.");
+end
 
 //   initial begin
 //	$strobe("reading mem file ..");	

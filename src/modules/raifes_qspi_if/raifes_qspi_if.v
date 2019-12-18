@@ -54,7 +54,8 @@
 
 module raifes_qspi_if(
 		
-	input	iReset,	input	iClk,     	
+	input	iReset,
+	input	iClkQSPI,	input	iClk,     	
 	input	iEnable,
 
 	// Memory interfaces - Instructions
@@ -125,8 +126,19 @@ wire	[7:0]	opcode; assign opcode = ((spi_cmd_type == `CMD_READ) || (spi_cmd_type
 					(spi_cmd_type == `CMD_WREN) ? `OPCODE_WREN : 8'h0;				
 
 wire	[23:0]	addr; assign addr = spi_addr;
+// fallunterscheidung fuer byte- und halfword-zugriffe hinzugefuegt.
+// Offenbar liegen das MSB an der niedrigsten Adresse little/big-endian problem..
+wire	[23:0]	cor_addr; assign cor_addr = /*(spi_cmd_type == `CMD_WRITE) ? addr-3 : 
+					    (spi_cmd_type == `CMD_WRITEH) ? addr-2 :*/
+					    addr;
 wire	[31:0]	wdata; assign wdata = 	write_operation ? spi_wdata : 31'h0;
 
+
+wire	[31:0]	hrdata_w, hrdata_hw, hrdata_b; 	// half-word and byte representation of the results..
+
+assign	hrdata_w  = {shiftreg[7:0],shiftreg[15:8],shiftreg[23:16],shiftreg[31:24]};
+assign	hrdata_hw = {shiftreg[7:0],shiftreg[15:8],shiftreg[7:0],shiftreg[15:8]};
+assign	hrdata_b  = {shiftreg[7:0],shiftreg[7:0],shiftreg[7:0],shiftreg[7:0]};
 
 always @(posedge iClk) begin
 	if(iReset) begin
@@ -135,9 +147,11 @@ always @(posedge iClk) begin
 		imem_hrdata <= 32'hdeadbeef;
 	end else begin
 		if((spi_state == `QSPI_IDLE) || (spi_state == `QSPI_RESTART)) begin
-			shiftreg <= {opcode,addr,wdata};
+//			shiftreg <= {opcode,addr,wdata};
+			shiftreg <= {opcode,cor_addr,wdata};
 		end else if(spi_state == `QSPI_START) begin 
-			shiftreg <= {opcode,addr,wdata};
+//			shiftreg <= {opcode,addr,wdata};
+			shiftreg <= {opcode,cor_addr,wdata};
 			cyclecnt <= (spi_cmd_type == `CMD_WRITE) ? 40 : 
 				    (spi_cmd_type == `CMD_WRITEH) ? 48 :
 				    (spi_cmd_type == `CMD_WRITEW) ? 64 :
@@ -158,7 +172,12 @@ always @(posedge iClk) begin
 			end
 		end else if(spi_state == `QSPI_END) begin
 			if(~write_operation) begin 
-				imem_hrdata <= {shiftreg[7:0],shiftreg[15:8],shiftreg[23:16],shiftreg[31:24]};
+					
+//				imem_hrdata <= {shiftreg[7:0],shiftreg[15:8],shiftreg[23:16],shiftreg[31:24]};	// ASt, 02.07.19 - added different return values for different access size.
+				imem_hrdata <= (spi_cmd_type == `CMD_READ) ? hrdata_b :
+					       (spi_cmd_type == `CMD_READH) ? hrdata_hw :
+					       (spi_cmd_type == `CMD_READW) ? hrdata_w : 32'hdeadbeef;
+				
 /*				spi_rdata[7:0] <= shiftreg[31:24];
 				spi_rdata[15:8] <= ((spi_cmd_type == `CMD_READH) || (spi_cmd_type == `CMD_READW)) ? shiftreg[23:16] : 8'h0;
 				spi_rdata[31:16] <= ((spi_cmd_type == `CMD_READH) || (spi_cmd_type == `CMD_READW)) ? shiftreg[15:0] : 16'h0;*/
@@ -383,6 +402,12 @@ always @(posedge iClk) begin
 			spi_wdata[23:16] <= imem_hwdata[15:8];
 			spi_wdata[15:8] <= imem_hwdata[23:16];
 			spi_wdata[7:0] <= imem_hwdata[31:24];
+			// ASt, 02.07.19 - switched endianess to little-endian (hopefully).
+/*			spi_wdata[31:24] <= imem_hwdata[31:24];
+			spi_wdata[23:16] <= imem_hwdata[23:16];
+			spi_wdata[15:8] <= imem_hwdata[15:8];
+			spi_wdata[7:0] <= imem_hwdata[7:0];*/
+
 		end
 		fsm_state <= fsm_state_next;
 	end

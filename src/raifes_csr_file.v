@@ -1,176 +1,161 @@
-`include "rv32_opcodes.vh"								// include OPCODE definitions
-`include "raifes_csr_addr_map.vh"						// include address definitions for CSR registers
+`include "rv32_opcodes.vh"						// include OPCODE definitions
+`include "raifes_csr_addr_map.vh"					// include address definitions for CSR registers
 `include "raifes_ctrl_constants.vh"
 `include "raifes_platform_constants.vh"
 `include "raifes_arch_options.vh"
 
 module raifes_csr_file(
-	input 			    		 reset,					// system reset
-	input 			    		 clk,					// system clock
-	
-	// interrupt sources
-	input			    		 debug_haltreq,			// debug module halt request - handled like an interrupt.
-	input [`N_EXT_INTS-1:0] 	 ext_interrupts, 		// external interrupt sources
-    
-	// port for reading/writing CSR registers
-    input [`CSR_ADDR_WIDTH-1:0]  addr,					// CSR register address - ctrl sets this address of the CSR register which is used in r/w operation
-    input [`CSR_CMD_WIDTH-1:0]   cmd,					// CSR register command - command can be IDLE, READ, WRITE or others, see raifes_csr_addr_map.vh
-    input [`XPR_LEN-1:0] 	     wdata,					// CSR write data - data to be written into CSR register
-    output reg [`XPR_LEN-1:0]    rdata,					// CSR read data - data read from CSR register
-    
-	// priviledge level information to the ctrl-FSM
-	output wire [`PRV_WIDTH-1:0] prv,					// current privilege level, see raifes_csr_addr_map.vh, e.g. MACHINE / USER / SUPERVISOR
-    
-	// error reporting to the ctrl-FSM for illegal CSR accesses
-	output 			    		 illegal_access,		// CSR illegal access - signals access to undefined CSR registers or registers not accessible in current priv mode
-	output			    		 illegal_access_debug,  // CSR illegal access (debug) - in debug mode only undefined CSR registers or write attempts to read-only regs are reported
+                       input 			    clk,		// system clock
+		              input			    debug_haltreq,	// external debugger halt request
+		              input [`N_EXT_INTS-1:0] 	    ext_interrupts, 	// external interrupt sources
+                       input 			    reset,		// system reset
+                       input [`CSR_ADDR_WIDTH-1:0]  addr,		// ctrl sets this address of the CSR register which is used in r/w operation
+                       input [`CSR_CMD_WIDTH-1:0]   cmd,		// command can be IDLE, READ, WRITE or others, see raifes_csr_addr_map.vh
+                       input [`XPR_LEN-1:0] 	    wdata,		// data to be written into CSR register
+                       output wire [`PRV_WIDTH-1:0] prv,		// privilege level, see raifes_csr_addr_map.vh, e.g. MACHINE / USER / SUPERVISORill	
+                       output 			    illegal_access,	// signals access to undefined CSR registers or registers not accessible in current priv mode
+		               output			    illegal_access_debug, // in debug mode only undefined CSR registers or write attempts to read-only regs are reported
+                       output reg [`XPR_LEN-1:0]    rdata,		// data read from CSR register
+                       input 			    retire,		// TODO
+                       input 			    exception,		// Exception received (in EXEC/WB, or both? TODO)
+                       input [`MCAUSE_WIDTH-1:0]    exception_code,	// the part of MCAUSE describing the exception
+                       input 			    eret,		// MRET/URET or SRET in EXEC stage. We only implement MRET for M->U returns
+                       input 			    dret,
+		               input			    redirect,		// 06.08.19, ASt - added to determine new dpc value (jmp or no jmp?)		
+                       input [`XPR_LEN-1:0]	    PC_IF,		// 06.08.19, ASt - added to determine new dpc value (from PC_IF if jmp took place)
+                       input [`XPR_LEN-1:0] 	    exception_load_addr,// TODO
+                       input [`XPR_LEN-1:0] 	    exception_PC,	// PC of the instruction causing the exception (TODO: or the instruction after?)
+                       output reg [`XPR_LEN-1:0] 	    handler_PC,		// The handler address set by MTVEC/STVEC/UTVEC and the defined mode. We only support one handler. 
+                       output [`XPR_LEN-1:0] 	    epc,		// PC causing the exception (if exception) or pointer to instruction after (if interrupt)
+                       output [`XPR_LEN-1:0] 	    dpc,		// PC causing the exception (if exception) or pointer to instruction after (if interrupt)
+		               output 			    interrupt_pending,	// at least one interrupt is pending (but may be masked)
+		              output reg 		    interrupt_taken,	// at least unmasked interrupt is pending and will be serviced now.
+		              output			    stepmode,		// ASt, 06.06.19 - added stepmode signal from dcsr to raifes_ctrl.
+		              output               dmode_WB,
+		              input			    imem_wait,
 
+   	                   input [`CSR_ADDR_WIDTH-1:0]  dm_csr_addr,		// CSR address
+   		               input [`CSR_CMD_WIDTH-1:0]   dm_csr_cmd,			// CSR command (0 == IDLE)
+		               input [`XPR_LEN-1:0]	    dm_csr_wdata,		// data to be written to CSR		
+                       output reg [`XPR_LEN-1:0]    dm_csr_rdata		// data read from CSR 		
 
-	// performance counter inputs from ctrl-FSM
-    input 			    		 retire,				// signal from the control FSM, that an instruction was completed ("retired"). 
-														// Some instructions may enter the pipeline but will be discarded e.g. because a jump or interrupt has occured.
-														// The signal is used to count the number of completed instructions (see "instret" counters)
-														
-	// exception signals from the ctrl-FSM
-	input 			    		 exception,				// signal from the control FSM, that an exception has occured.
-														// The address for the exception code is defined by the CSR file, hence 
-														// we need this here.
-														
-    input [`MCAUSE_WIDTH-1:0]    exception_code,		// the part of MCAUSE describing the exception, e.g. misaligned access, illegal instruction, syscall, breakpoint etc.														
-		
-    input 			    		 eret,					// signals a return from an exception instruction was executed
-														// It can be MRET/URET or SRET in EXEC stage. We only implement MRET for M->U returns
-    input 			    		 dret,					// signals a return from debug instruction was executed
-														// this should happen only in the debug ROM code
-	
-    input [`XPR_LEN-1:0] 	     exception_load_addr,	// this input holds the ALU output (=target address) which was calculated during an exception.
-														// If the exception occured due to an error in a memory access, this holds the bad address
-														
-    input [`XPR_LEN-1:0] 	     exception_PC,			// PC of the instruction causing the exception	
-	
-	// exception handling signals to the ctrl-FSM
-    output [`XPR_LEN-1:0] 	     handler_PC,			// exception handler address
-														// The handler address set by MTVEC/STVEC/UTVEC and the defined mode. We only support one handler 
-														// for all modes (in MTVEC) plus one handler for the debug exception (usually 0x00000000).
-		
-    output [`XPR_LEN-1:0] 	     epc,					// PC causing the exception (if exception) or pointer to instruction after (if interrupt)
-    output [`XPR_LEN-1:0] 	     dpc,					// PC causing the exception (if exception) or pointer to instruction after (if interrupt)
-	output 			    		 interrupt_pending,		// signals that at least one interrupt is pending (but may be masked)
-	output reg 		    		 interrupt_taken,		// signals that at least one unmasked interrupt is pending and will be serviced now.
+                       );
 
-	// debug module port for reading/writing CSR registers directly
-	input [`CSR_ADDR_WIDTH-1:0]  dm_csr_addr,			// CSR address
-   	input [`CSR_CMD_WIDTH-1:0]   dm_csr_cmd,			// CSR command (0 == IDLE)
-	input [`XPR_LEN-1:0]	     dm_csr_wdata,			// data to be written to CSR		
-	output reg [`XPR_LEN-1:0]    dm_csr_rdata);			// data read from CSR 
+   // User Counter/Timer
+`ifndef ISA_EXT_E
+   reg [`CSR_COUNTER_WIDTH-1:0]                     cycle_full;		// Cycle counter, counts cycles since reset
+   reg [`CSR_COUNTER_WIDTH-1:0]                     time_full;		// Wall-clock counter, should count cycles of a clock crystal.. TODO
+   reg [`CSR_COUNTER_WIDTH-1:0]                     instret_full;	
+`endif
 
-	// User Counter/Timer
-	// these can be omitted when the "E" ISA extension is defined (which strips some registers from the 
-	// core to save space and power). This is defined in the platform_constants header file.
-	`ifndef ISA_EXT_E
-   reg [`CSR_COUNTER_WIDTH-1:0]	 cycle_full;			// Cycle counter, counts cycles since reset
-   reg [`CSR_COUNTER_WIDTH-1:0]	 time_full;				// Wall-clock counter, should count cycles of a real-time clock / crysal oscillator
-   reg [`CSR_COUNTER_WIDTH-1:0]	 instret_full;			// Instruction retired counter, counts number of completed instructions since reset
-	`endif
-
-   // prv mode / debug mode hold registers
-   reg[1:0]					     mode;					// holds current privilege level. This is the hold register for the "prv" signal. We support User and Machine mode.
-														// TODO: rename this to "prv_r" or something more canonical.
-   reg						     dmode;					// debug mode is handled with this separate bit. 1 - debug mode, 0 - some other prv level
-    
-   // prv mode dependant vectors/masks
-   // each privilege mode can define its own trap vector addresses, interrupt masks, interrupt enables etc. 
-      
-   reg [7:0]                    priv_stack;				// 09.02.18, ASt: changed to reflect the V1.10 spec
-														// the priv_stack holds some interrupt enables etc. When entering a 
-														// different mode, the settings of the current mode are saved to this "mini-stack"
-														// and restored on return.
-														
-   reg [`XPR_LEN-1:0]           mtvec;					// Machine Trap Vector, sets jump target for traps in and into Machine privilege mode.
-														// There could be own Vectors for Usermode (utvec) and Machine mode (mtvec), but with 
-														// our two privilege levels, every user mode trap enters machine mode and every machine mode 
-														// trap stays in machine mode - so we only need a single trap vector.														
-														
-   reg [`XPR_LEN-1:0] 		    mie;					// interrupt enable in machine mode, enables interrups 31-0 if the bit is set.														
-   reg                          mtip;					// machine time interrupt pending (timer interrupt pending in machine mode)
-   reg                          msip;					// machine software interrupt pending (software interrupt pending in machine mode)
-   reg [`XPR_LEN-1:0]           mscratch;				// machine scratch register
-														// usually this holds some info used in handlers in machine mode and is swapped with 
-														// a GPR when entering the handler and restored afterwards
-   reg [`XPR_LEN-1:0]           mepc;					// machine exception program counter - address of the instruction causing an exception (in machine mode)
-														// we only use *one* epc register, so this holds the causing address in all modes
-   reg [`XPR_LEN-1:0]           dpc_r;					// holds the address to resume to when leaving debug mode (the instruction which would normally have occured next.)
+//   reg [5:0]                                        priv_stack;		// The privilege stack storing info on previous priv mode on priv mode changes
+   reg[1:0]					    mode;		// holds current operating mode
+   reg						    dmode;		// debug mode is handled with separate bit
+   reg						    dmode_WB_r;		
+   assign dmode_WB = dmode_WB_r;
+   reg [7:0]                                        priv_stack;		// 09.02.18, ASt: changed to reflect the V1.10 spec
+   reg [`XPR_LEN-1:0]                               mtvec;		// Machine Trap Vector, sets jump target for traps in Machine privilege mode
+   reg [`XPR_LEN-1:0] 				    mie;		// interrupt enable in machine mode.
+   reg                                              mtip;
+   reg                                              msip;
+   reg [`XPR_LEN-1:0]                               mscratch;
+   reg [`XPR_LEN-1:0]                               mepc;
+   reg [`XPR_LEN-1:0]                               dpc_r;		
    assign dpc = dpc_r;
+   reg [`XPR_LEN-1:0]                               dcsr;		// TODO: handle dcsr
+   assign stepmode = dcsr[2] & ~dmode;						// ASt, 06.06.19, bit 2 of dcsr is "step".   
 
-   reg [`XPR_LEN-1:0]           dcsr;					// TODO: unhandled - handle dcsr
-   reg [`XPR_LEN-1:0]           dscratch0;				// TODO: unhandled - handle dscratch
-   reg [`MCAUSE_WIDTH-1:0]      mecode;
-   reg                          mint;
-   reg [`XPR_LEN-1:0]           mbadaddr;				// TODO: outdated, replace with MTVAL from current privilege spec!
+   reg [`XPR_LEN-1:0]                               dscratch0;		// TODO: handle dscratch
+   reg [`MCAUSE_WIDTH-1:0]                          mecode;
+   reg                                              mint;
+   reg [`XPR_LEN-1:0]                               mbadaddr;
 
-   reg [`XPR_LEN-1:0]		    satp;					// supervisor address translation and protection register, TODO: check if this can be removed
-														// we don't support memory address translation (aka virtual memory / paging) or memory protection.
+   reg [`XPR_LEN-1:0]				    satp;
 
-   wire                      	ie;						// global interrupt enable in the current mode.
+   reg 						    redirect_WB;	// 06.08.19, ASt - added to store info if a redirect took place in DX stage when handling WB exceptions. (for dpc update)
+   reg                          redirect_WB_r;	
+   reg                          [`XPR_LEN-1:0] PC_IF_r;
 
-   wire [`XPR_LEN-1:0]          mstatus;				// machine mode status register - holds 
-   wire [`XPR_LEN-1:0]          mip;					// machine mode interrupt pending
-   wire [`XPR_LEN-1:0]          mcause;					// machine mode cause register
+   wire                                             ie;
+
+   wire [`XPR_LEN-1:0]                              mstatus;
+   wire [`XPR_LEN-1:0]                              mip;
+   wire [`XPR_LEN-1:0]                              mcause;
    
 
-   // read/write ports to the CSR file
-   wire                         system_en;				// enable bit in the "cmd" from the ctrl-FSM - controls read/write access to the CSR
-   wire						    debug_en;				// .. same, but for accesses from the debug module
-   
-   wire                         system_wen;				// write enable from ctrl-FSM
-   wire						    debug_wen;				// .. same, but for accesses from the debug module
-   
-   wire                         wen_internal;
-   wire						    wen_internal_debug; 	// handle write requests from debug port separately
-   wire                         illegal_region;
+   wire                                             system_en;
+   wire						    debug_en;
+   wire                                             system_wen;
+   wire						    debug_wen;
+   wire                                             wen_internal;
+   wire						    wen_internal_debug; 			// handle write requests from debug port separately
+   wire                                             illegal_region;
    wire						    illegal_region_debug;
-   reg                          defined;
+   reg                                              defined;
    reg						    defined_debug;
-   reg [`XPR_LEN-1:0]           wdata_internal;
-   wire                         uinterrupt;
-   wire                         minterrupt;
-   wire						    dinterrupt;				// external Debug interrupt. Causing the hart to enter park loop.
-   reg [`MCAUSE_WIDTH-1:0]      interrupt_code;
+   reg [`XPR_LEN-1:0]                               wdata_internal;
+   wire                                             uinterrupt;
+   wire [`XPR_LEN-1:0]                              masked_interrupt;
+   wire                                             minterrupt;
+   wire						    dinterrupt;			// external Debug interrupt. Causing the hart to enter park loop.
+   reg [`MCAUSE_WIDTH-1:0]                          interrupt_code;
 
-   wire                         code_imem;
+
+   wire                                             code_imem;
 
 
    // MISA - set info on supported ISA
-   wire [`XPR_LEN-1:0]			misa;										// MISA stores information on supported ISA and ISA-Extensions
+   wire [`XPR_LEN-1:0]				    misa;			// MISA stores information on supported ISA and ISA-Extensions
    assign misa = ({2'b01,`XPR_LEN-2'b0}) | `MISA_ENC_I | `MISA_ENC_U;		// current implementation supports RV32IU
 
    // MVENDORID - sets JEDEC manufacturer ID for the core
-   wire [`XPR_LEN-1:0]				    mvendorid;							
-   assign mvendorid = `XPR_LEN'b0;						// TODO: define in header file instead of hard coding here.
+   wire [`XPR_LEN-1:0]				    mvendorid;
+   assign mvendorid = `XPR_LEN'b0;
 
    // MARCHID - encodes base microarchitecture
    wire [`XPR_LEN-1:0]				    marchid;
-   assign marchid = {1'b1,`XPR_LEN-1'h1};				// MSB must be 1 for commercial implementations, remaining bits must be differnt from 0. This is '1'
+   assign marchid = {1'b1,`XPR_LEN-1'h1};					// MSB must be 1 for commercial implementations, remaining bits must be differnt from 0. This is '1'
 
    // MIMPID - set Implementation ID
-   wire [`XPR_LEN-1:0]                  mimpid;			// MIMPID stores unique ID for the Implementation
+   wire [`XPR_LEN-1:0]                              mimpid;			// MIMPID stores unique ID for the Implementation
    assign mimpid = 32'h8000;							// set MSB to 1 for first version, following hint in spec, p.19.
 
    // MHARTID - hardware thread ID
-   wire [`XPR_LEN-1:0]                  mhartid;		// MHARTID stores the ID of the individual hardware thread in a multi-core/multi-thread system
-   assign mhartid = 0;									// single core / single thread implementation, so this is 0. Is checked by some of the test
-														// programs supplied with riscv-tools, so better leave it like this.
+   wire [`XPR_LEN-1:0]                              mhartid;			// MHARTID stores the ID of the individual hardware thread in a multi-core/multi-thread system
+   assign mhartid = 0;								// single core / single thread implementation, so this is 0. Is checked by some of the test
+									 	// programs supplied with riscv-tools, so better leave it like this.
+
 
    // trap handler vector calculation
-   assign handler_PC = (dinterrupt || (exception_code == `MCAUSE_BREAKPOINT)) ? `DEBUG_ADDRESS : mtvec; 
-
+   //assign handler_PC = (dinterrupt || (exception_code == `MCAUSE_BREAKPOINT)) ? `DEBUG_ADDRESS : {mtvec[31:2],2'b00};
+ always @*	//ToBo 30.10.19 handler_PC calculation in various cases (interrupt,debug_request, any trap case)
+ begin
+    if(dinterrupt || (exception_code == `MCAUSE_BREAKPOINT)) handler_PC <= `DEBUG_ADDRESS;	 
+    else if (minterrupt) begin
+        case(masked_interrupt)
+            24'h1: handler_PC <= {mtvec[31:2],2'b00}+4;
+            default: handler_PC <= {mtvec[31:2],2'b00}+8;
+        endcase
+    end
+    else handler_PC <= {mtvec[31:2],2'b00};
+ end                   
+                        
+   reg stepdone_r;
+   assign stepdone = stepdone_r;
+  
    // fields of the MSTATUS register
+   // assign prv = priv_stack[2:1];						// TODO: prv = WPRI,SIE - maybe the field ordering was different in previous specs, this is wierd.
    assign prv = mode;
 
+   //assign ie = priv_stack[0];							// interrupt enable in User mode, refers to field "UIE" of MSTATUS.
    assign ie = priv_stack[prv];							// 09.02.18, ASt: now points to MIE, as we don't support User Mode Interrupts and in U-mode, 
 										
 
    // CSR CMD decoding
+/* assign system_en = cmd[2];							// All commands beside IDLE are encoded >= 4
+   assign system_wen = cmd[1] || cmd[0];					// All non-IDLE commands other than 4 (READ) change some data and are hence WRITE-types, set write-enable.
+   assign wen_internal = system_wen;						// the write might also come from some debug controller, so leave this to differentiate.*/
+
    assign system_en = cmd[2];
    assign debug_en = dm_csr_cmd[2];					
    assign system_wen = cmd[1] || cmd[0];
@@ -182,8 +167,8 @@ module raifes_csr_file(
    // standard read-only CSR registers have MSBits == 11, a write attempt is illegal 
    // Bits 9:8 encode the priv level of the register address. 00 = U, 01 = S, 10 = reserved, 11 = M.
    // TODO: DEBUG access to illegal registers is not handled but merely ignored, maybe this is not spec compliant.
-   assign illegal_region = (system_wen && (addr[11:10] == 2'b11))		
-     || (system_en && addr[9:8] > prv);
+   assign illegal_region = ~dmode && ((system_wen && (addr[11:10] == 2'b11))		
+     || (system_en && addr[9:8] > prv));
 
    assign illegal_region_debug = (debug_wen && (dm_csr_addr[11:10] == 2'b11));	// write attempt to read-only registers is still illegal, but we don't care for privileges in debug mode 	
 
@@ -218,18 +203,23 @@ module raifes_csr_file(
 // = Interrupt handling                                                =
 // =====================================================================
 
-
    assign uinterrupt = 1'b0;							// TODO: ?? don't allow user-mode interrupts? makes sense, but check meaning.
-   assign minterrupt = |(mie & mip);						// signal machine interrupt if Interrupt Enalbed and Interrupt Pending
-   assign dinterrupt = (debug_haltreq && !dmode);					// external debugger signals haltreq to redirect hart into park loop (and we are not already in dmode)
+   assign masked_interrupt = ext_interrupts & {20{mip[11]}};         //ToBo 25.10. Added masked interrupt to determine which interrupt fired
+   assign minterrupt = interrupt_pending && ie;						// signal machine interrupt if Interrupt Enalbed and Interrupt Pending
+   //assign minterrupt = |(mie & mip);
+   assign dinterrupt = (debug_haltreq && !dmode) || (stepmode && stepdone_r);	// external debugger signals haltreq to redirect hart into park loop (and we are not already in dmode)
+//   assign dinterrupt = (debug_haltreq && !dmode);				// external debugger signals haltreq to redirect hart into park loop (and we are not already in dmode)
    assign interrupt_pending = |mip || dinterrupt;				// if any interrupt is pending .. 
 
    // signal taken interrupts to control
    always @(*) begin
-      interrupt_code = `ICODE_TIMER;						// TODO: why? 
+      interrupt_code = `MCAUSE_EXT_INT_M;						// TODO: why? 
       case (prv)
+// 06.08.19, ASt- changed: not waiting for ~imem_wait because WB will not be killed correctly on dinterupt. 
         `PRV_U : interrupt_taken = (ie && uinterrupt) || minterrupt || dinterrupt;		// in User-mode, User-Interrupts and Machine-Interrupts are taken, M-Ints always!
+//        `PRV_U : interrupt_taken = ~imem_wait && ((ie && uinterrupt) || minterrupt || dinterrupt);		// in User-mode, User-Interrupts and Machine-Interrupts are taken, M-Ints always!
         `PRV_M : interrupt_taken = (ie && minterrupt) || dinterrupt;		// in Machine mode, only Machine-Interrupts are taken, if enabled
+//        `PRV_M : interrupt_taken = ~imem_wait && ((ie && minterrupt) || dinterrupt);		// in Machine mode, only Machine-Interrupts are taken, if enabled
         default : interrupt_taken = 1'b1;					
       endcase // case (prv)
    end
@@ -244,11 +234,11 @@ module raifes_csr_file(
 			dcsr <= 32'h40000000;	// TODO. stimmt aber sollte nicht hardcoded sein.
 		end else begin 
 			if(dinterrupt) begin 
-				dcsr[2:0] <= mode;
+				dcsr[1:0] <= mode;
 				dcsr[8:6] <= 3'h3;	// cause = debug module halt request
 			end else if (exception) begin
 				if(exception_code == `MCAUSE_BREAKPOINT) begin 
-					dcsr[2:0] <= mode;
+					dcsr[1:0] <= mode;
 					dcsr[8:6] <= 3'h2;	// TODO: this is for "trigger module caused breakpoint exception".
 				end
 			end else if (wen_internal_or_debug && (addr_muxed == `CSR_ADDR_DCSR)) begin 
@@ -258,12 +248,22 @@ module raifes_csr_file(
 	end
 
 
+   always @(posedge clk) begin
+	if(reset) begin
+		dmode_WB_r <= 1'b0;							// 30.07.19, ASt: WB stage is in dmode one cycle after the return inst. We need 
+										//		  to know if we just returned from dmode, because we have to 
+										//		  ignore the first "WB_retire" signal then if we are in single-step-mode
+	end else begin
+		dmode_WB_r <= dmode;
+	end
+   end // always @(posedge clk)
+
    always @(posedge clk) begin						
       if (reset) begin
          //priv_stack <= 6'b000110;
  	mode <= `PRV_M;								// 09.02.18, ASt: always start in M-mode.
  	dmode <= 1'b0;								// 06.03.18, ASt: debug mode is disabled by default.
-         priv_stack <= 8'b00000000;						// 09.02.18, ASt: start with all interrupts disabled.
+         priv_stack <= 8'b00000000;				// 09.02.18, ASt: start with all interrupts disabled.
       end else if (wen_internal_or_debug && (addr_muxed == `CSR_ADDR_MSTATUS)) begin		// if data is written to the MSTATUS register...
          priv_stack <= wdata_internal[7:0];					// 09.02.18, ASt: changed to new priv_stack size
       end else if (interrupt_taken) begin 
@@ -285,12 +285,13 @@ module raifes_csr_file(
 			end
       end else if (eret) begin							// if we return from a trap ..
          priv_stack <= {4'b0000,priv_stack[7:4]};				// .. we restore the saved information and set the stack entry to default value.
-			mode <= `PRV_U;							// the only allowed xRET is MRET, which returns to UMODE
+			mode <= `PRV_M;							// mode <= `PRV_U;	the only allowed xRET is MRET, which returns to UMODE
+			                                        //30.10. ToBo changed to PRV_M. When no Umode is supported, it stays at PRV_M (priv. spec. page21)
 			dmode <= 1'b0;
       end else if (dret) begin
          priv_stack <= {4'b0000,priv_stack[7:4]};				
-			mode <= dcsr[2:0];							
-			dmode <= 1'b0; 
+			mode <= dcsr[1:0];					
+			dmode <= 1'b0;
       end	
    end // always @ (posedge clk)
 
@@ -307,19 +308,19 @@ module raifes_csr_file(
          mtip <= 0;
          msip <= 0;
       end else begin
-			if (wen_internal_or_debug && (addr_muxed == `CSR_ADDR_MIP)) begin
+	if (wen_internal_or_debug && (addr_muxed == `CSR_ADDR_MIP)) begin
             mtip <= wdata_internal[7];
             msip <= wdata_internal[3];
-			end
+	end
       end // else: !if(reset)
    end // always @ (posedge clk)
 	
-   assign mip = {ext_interrupts,mtip,3'b0,msip,3'b0};
+   assign mip = {|ext_interrupts,3'b0,mtip,3'b0,msip,3'b0};  //ToBo 28.10. assigned ext_interrupts with a reductive or  to mip -> euqals meip bit
 
    // implements writes to MIE, TODO: combine with cases below?, We currently only implement a single global interrupt/mask
    always @(posedge clk) begin
       if (reset) begin
-         mie <= 0;
+         mie <= 32'h00000800;  //ToBo TEMPORARY CHANGED. MUST BE ZERO!
       end else if (wen_internal_or_debug && addr_muxed == `CSR_ADDR_MIE) begin
 			mie <= wdata_internal;
       end
@@ -328,27 +329,51 @@ module raifes_csr_file(
    // set MPEC and current mode in exception/interrupt/write situations
    always @(posedge clk) begin
       if (reset) begin
-        mepc <= `XPR_LEN'h0;
+        mepc <= `XPR_LEN'hdeadbeef;
       end else begin
       if (interrupt_taken & ~dinterrupt)
 		begin
-			mepc <= (exception_PC & {{30{1'b1}},2'b0}) + `XPR_LEN'h4;	// on an interrupt, the MEPC points to the instruction following the INT		
+		  if(redirect_WB) mepc <= PC_IF;
+		  else mepc <= (exception_PC & {{30{1'b1}},2'b0}) + `XPR_LEN'h4;	// on an interrupt, the MEPC points to the instruction following the INT		
 		end
-      if (exception)
-        mepc <= exception_PC & {{30{1'b1}},2'b0};			// on an exception, the MEPC points to the causing instruction
+      if (exception & ~dmode & ~dinterrupt) begin
+        if(redirect_WB) mepc <= PC_IF;
+        else mepc <= (exception_PC & {{30{1'b1}},2'b0}) + `XPR_LEN'h4;			// on an exception, the MEPC points to the causing instruction
+      end
       if (wen_internal_or_debug && (addr_muxed == `CSR_ADDR_MEPC))
         mepc <= wdata_internal & {{30{1'b1}},2'b0};
       end
    end
-	
 	// handle changes to DPC in various situations
 	always @(posedge clk) begin
-		if(reset) begin
+			if(reset) begin
+			redirect_WB <= 1'b0;
+			PC_IF_r <= 32'h0;
 			dpc_r <= `XPR_LEN'h0;
 		end else begin
-			if(interrupt_taken & dinterrupt) begin
-				dpc_r <= (exception_PC & {{30{1'b1}},2'b0});
-			end else 
+		    
+			redirect_WB <= redirect;
+			redirect_WB_r <= redirect_WB; //13.8. ToBo redirect delayed two times and PC_IF delayed one time, caused of delayed stepdone/exception flag
+			PC_IF_r <= PC_IF;
+
+			if(exception & ~dmode) begin
+				if(stepmode)  begin// 13.08. ToBo replaced //(exception_code == `MCAUSE_BREAKPOINT)\\ with stepmode 
+											//because mcause isn't set to 3 at the moment of registering dpc.
+											//Exceptions can't happen during stepmode at all because mcause is fixed during stepmode
+					if(redirect_WB) 	
+						dpc_r <= PC_IF;
+					else
+						dpc_r <= exception_PC; //13.8. ToBo removed +4 -> exception_PC already contains increased instr.;
+					// 06.08.19, ASt - in case of a breakpoint (EBREAK), dpc holds the address of the EBREAK instruction.
+				end
+			end
+
+			if(debug_haltreq & ~dmode) begin				
+					if(redirect_WB)
+						dpc_r <= PC_IF;
+					else
+						dpc_r <= (exception_PC & {{30{1'b1}},2'b0});
+				end
 			if (wen_internal_or_debug && (addr_muxed == `CSR_ADDR_DPC)) begin
 				dpc_r <= wdata_internal;
 			end
@@ -395,56 +420,67 @@ module raifes_csr_file(
    always @(*) begin
       case (addr)
 	`ifndef ISA_EXT_E        
-		`CSR_ADDR_CYCLE      : begin rdata = cycle_full[0+:`XPR_LEN]; defined = 1'b1; end		// TODO: check. CYCLEH should be upper 32 bits of CYCLE
-        `CSR_ADDR_CYCLEH     : begin rdata = cycle_full[`XPR_LEN+:`XPR_LEN]; defined = 1'b1; end
-        `CSR_ADDR_INSTRET    : begin rdata = instret_full[0+:`XPR_LEN]; defined = 1'b1; end
-        `CSR_ADDR_INSTRETH   : begin rdata = instret_full[`XPR_LEN+:`XPR_LEN]; defined = 1'b1; end
-        `CSR_ADDR_MCYCLE     : begin rdata = cycle_full[0+:`XPR_LEN]; defined = 1'b1; end		// TODO: check. CYCLEH should be upper 32 bits of CYCLE
-		`CSR_ADDR_MINSTRET   : begin rdata = instret_full[0+:`XPR_LEN]; defined = 1'b1; end
-        `CSR_ADDR_TIME       : begin rdata = time_full[0+:`XPR_LEN]; defined = 1'b1; end
-        `CSR_ADDR_TIMEH      : begin rdata = time_full[`XPR_LEN+:`XPR_LEN]; defined = 1'b1; end
+	`CSR_ADDR_CYCLE     : begin rdata = cycle_full[0+:`XPR_LEN]; defined = 1'b1; end		// TODO: check. CYCLEH should be upper 32 bits of CYCLE
+        `CSR_ADDR_CYCLEH    : begin rdata = cycle_full[`XPR_LEN+:`XPR_LEN]; defined = 1'b1; end
 	`endif
+	`CSR_ADDR_DCSR	    : begin rdata = dcsr; defined = 1'b1; end
+	`CSR_ADDR_DPC	    : begin rdata = dpc_r; defined = 1'b1; end
+	`CSR_ADDR_DSCRATCH0 : begin rdata = dscratch0; defined = 1'b1; end
 	
-		`CSR_ADDR_DCSR	     : begin rdata = dcsr; defined = 1'b1; end
-		`CSR_ADDR_DPC	     : begin rdata = dpc_r; defined = 1'b1; end
-		`CSR_ADDR_DSCRATCH0  : begin rdata = dscratch0; defined = 1'b1; end
+	`ifndef ISA_EXT_E
+        `CSR_ADDR_INSTRET   : begin rdata = instret_full[0+:`XPR_LEN]; defined = 1'b1; end
+        `CSR_ADDR_INSTRETH  : begin rdata = instret_full[`XPR_LEN+:`XPR_LEN]; defined = 1'b1; end
+	`endif
 
-		`CSR_ADDR_MARCHID    : begin rdata = marchid; defined = 1'b1; end
-		`CSR_ADDR_MCAUSE     : begin rdata = mcause; defined = 1'b1; end
+	`CSR_ADDR_MARCHID   : begin rdata = marchid; defined = 1'b1; end
+        `CSR_ADDR_MCAUSE    : begin rdata = mcause; defined = 1'b1; end
 
-		`CSR_ADDR_MEPC       : begin rdata = mepc; defined = 1'b1; end 
-		`CSR_ADDR_MIE        : begin rdata = mie; defined = 1'b1; end
-		`CSR_ADDR_MIP        : begin rdata = mip; defined = 1'b1; end
+	`ifndef ISA_EXT_E
+        `CSR_ADDR_MCYCLE     : begin rdata = cycle_full[0+:`XPR_LEN]; defined = 1'b1; end		// TODO: check. CYCLEH should be upper 32 bits of CYCLE
+	`endif
 
-		`CSR_ADDR_MISA	     : begin rdata = misa; defined = 1'b1; end
-		`CSR_ADDR_MIMPID     : begin rdata = mimpid; defined = 1'b1; end
-		`CSR_ADDR_MHARTID    : begin rdata = mhartid; defined = 1'b1; end
-		`CSR_ADDR_MSCRATCH   : begin rdata = mscratch; defined = 1'b1; end
-		`CSR_ADDR_MSTATUS    : begin rdata = mstatus; defined = 1'b1; end
-		`CSR_ADDR_MTVAL	     : begin rdata = mbadaddr; defined = 1'b1; end // TODO!
-		`CSR_ADDR_MTVEC      : begin rdata = mtvec; defined = 1'b1; end
-		`CSR_ADDR_MVENDORID  : begin rdata = mvendorid; defined = 1'b1; end
-		`CSR_ADDR_PMPCFG0    : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPCFG1    : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPCFG2    : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPCFG3    : begin rdata = `XPR_LEN'h0; defined = 1'b1; end	
-		`CSR_ADDR_PMPADDR0   : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR1   : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR2   : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR3   : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR4   : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR5   : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR6   : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR7   : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR8   : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR9   : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR10  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR11  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR12  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR13  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR14  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_PMPADDR15  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
-		`CSR_ADDR_SATP	    : begin rdata = satp; defined = 1'b1; end
+        `CSR_ADDR_MEPC      : begin rdata = mepc; defined = 1'b1; end 
+        `CSR_ADDR_MIE       : begin rdata = mie; defined = 1'b1; end
+        `CSR_ADDR_MIP       : begin rdata = mip; defined = 1'b1; end
+	
+	`ifndef ISA_EXT_E
+        `CSR_ADDR_MINSTRET   : begin rdata = instret_full[0+:`XPR_LEN]; defined = 1'b1; end
+	`endif
+
+	`CSR_ADDR_MISA	    : begin rdata = misa; defined = 1'b1; end
+        `CSR_ADDR_MIMPID    : begin rdata = mimpid; defined = 1'b1; end
+        `CSR_ADDR_MHARTID   : begin rdata = mhartid; defined = 1'b1; end
+        `CSR_ADDR_MSCRATCH  : begin rdata = mscratch; defined = 1'b1; end
+        `CSR_ADDR_MSTATUS   : begin rdata = mstatus; defined = 1'b1; end
+        `CSR_ADDR_MTVAL	    : begin rdata = mbadaddr; defined = 1'b1; end // TODO!
+        `CSR_ADDR_MTVEC     : begin rdata = mtvec; defined = 1'b1; end
+	`CSR_ADDR_MVENDORID : begin rdata = mvendorid; defined = 1'b1; end
+	`CSR_ADDR_PMPCFG0   : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPCFG1   : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPCFG2   : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPCFG3   : begin rdata = `XPR_LEN'h0; defined = 1'b1; end	
+	`CSR_ADDR_PMPADDR0  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR1  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR2  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR3  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR4  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR5  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR6  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR7  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR8  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR9  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR10  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR11  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR12  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR13  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR14  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_PMPADDR15  : begin rdata = `XPR_LEN'h0; defined = 1'b1; end
+	`CSR_ADDR_SATP	    : begin rdata = satp; defined = 1'b1; end
+
+	`ifndef ISA_EXT_E
+        `CSR_ADDR_TIME      : begin rdata = time_full[0+:`XPR_LEN]; defined = 1'b1; end
+        `CSR_ADDR_TIMEH     : begin rdata = time_full[`XPR_LEN+:`XPR_LEN]; defined = 1'b1; end
+	`endif
         default : begin rdata = 0; defined = 1'b0; end
       endcase // case (addr)
    end // always @ (*)
@@ -520,11 +556,13 @@ module raifes_csr_file(
       endcase // case (addr)
    end // always @ (*)
 
-`ifndef ISA_EXT_E
+
+`ifndef ISA_EXT_E
 	// Handle writes to INSTRET / MINSTRET
 	always @(posedge clk) begin
 		if(reset) begin
 			instret_full <= 0;
+			stepdone_r <= 0;
 		end else begin 
 			if(wen_internal_or_debug) begin
 				if((addr_muxed == `CSR_ADDR_INSTRET) || (addr_muxed == `CSR_ADDR_MINSTRET)) begin
@@ -537,6 +575,9 @@ module raifes_csr_file(
 			else begin 
 				if(retire) begin
 					instret_full <= instret_full + 1;
+					if(stepmode && ~dmode_WB_r) stepdone_r <= 1;	// stepdone_r raises dinterrupt, but it might not be taken because we still wait for imem, so keep it until ..
+				end else begin
+					if(~stepmode || exception) stepdone_r <= 0;	// ASt, 30.07.19
 				end
 			end
 		end
@@ -585,9 +626,9 @@ module raifes_csr_file(
          mtvec <= 'h80000000;
          mscratch <= 0;
       end else begin         
-			if (wen_internal_or_debug) begin							// Write-access to registers
+			if (wen_internal_or_debug && ~illegal_region) begin							// Write-access to registers
             case (addr_muxed)              
-				  `CSR_ADDR_DSCRATCH0 : dscratch0 <= wdata_internal;
+		  `CSR_ADDR_DSCRATCH0 : dscratch0 <= wdata_internal;
               // mcpuid is read-only
               // mimpid is read-only
               // mhartid is read-only
@@ -599,7 +640,7 @@ module raifes_csr_file(
               // mcause handled separately
               // mbadaddr handled separately
               // mip handled separately
-				  `CSR_ADDR_SATP	  : satp <= wdata_internal;
+	  `CSR_ADDR_SATP	  : satp <= wdata_internal;
               default : ;
             endcase // case (addr)
          end // if (wen_internal)

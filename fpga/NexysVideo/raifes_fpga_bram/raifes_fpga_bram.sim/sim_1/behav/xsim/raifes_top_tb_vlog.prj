@@ -1,0 +1,38 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../raifes_fpga_bram.srcs/sources_1/imports/new" --include "../../../../raifes_fpga_bram.srcs/sources_1/imports/src" --include "../../../../raifes_fpga_bram.srcs/sim_1/imports/tb" --include "../../../../raifes_fpga_bram.srcs/sources_1/ip/clk_wiz_0" \
+"../../../../raifes_fpga_bram.srcs/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/new/2XOR.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/new/PRINCE_roundbased_top.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/new/UART_module.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/new/crypto_module.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/katan/ktantan32.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/new/matrix_mul.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_PC_mux.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_alu.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_core.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_csr_file.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_ctrl.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_debug_module.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_debug_rom.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_dtm.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_hasti_bridge.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_imm_gen.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_mul_div.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_pipeline.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_regfile.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_src_a_mux.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_src_b_mux.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_sync_to_hasti_bridge.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_top.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/src/raifes_uart.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/new/sbox.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/new/sbox_inv.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/new/shift_rotate.v" \
+"../../../../raifes_fpga_bram.srcs/sources_1/imports/new/shift_rotate_inv.v" \
+"../../../../raifes_fpga_bram.srcs/sim_1/new/raifes_top_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

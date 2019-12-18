@@ -6,6 +6,7 @@
 
 module raifes_top_asic_qspi(
 		input   clk,
+		input	clkQSPI,	// ASt, added 29.07.19
 		input   reset,
 
 		// scan chain interface for core
@@ -40,14 +41,15 @@ module raifes_top_asic_qspi(
 		output					dmi_error,
 		output					dmi_dm_busy,
 
-		// Debug signals
-		output	[3:0]				dm_state,
-
 		// -- Chip specific -- 
 		// GPIOs
 		output	[7:0]	oGPIO_D,
 		output	[7:0]	oGPIO_EN,
-		input	[7:0]	iGPIO_I
+		input	[7:0]	iGPIO_I,
+
+		// -- Post-Synthesis debug port --
+		output	reg	[7:0]	debug_out
+
 );
 
 	// Gemeinsamer-Memory-Bus (TODO: in zukünftigen Designs trennen und Arbiter vermeiden)
@@ -109,6 +111,7 @@ module raifes_top_asic_qspi(
 
    raifes_qspi_if memory_if(
 				.iReset(reset), 
+				.iClkQSPI(clkQSPI),// ASt, added 26.07.19
 				.iClk(clk),
 				.iEnable(1'b1), // TODO
 
@@ -257,12 +260,27 @@ module raifes_top_asic_qspi(
 			.dmi_wen(dmi_wen),
 			.dmi_wdata(dmi_wdata),
 			.dmi_rdata(dmi_rdata),
-			.dmi_dm_busy(dmi_dm_busy),
-			.dm_state(dm_state)
+			.dmi_dm_busy(dmi_dm_busy)
 		); 
 
 
+reg [31:0] debug_addr;
+reg	   debug_hwrite;
 
+always @(posedge clk) begin
+	debug_addr <= dmem_haddr;
+	debug_hwrite <= dmem_hwrite;
+	if((debug_addr == 32'h80001000) && (debug_hwrite))
+	begin
+		debug_out <= dmem_hwdata[7:0];
+
+	end
+	if((debug_addr == 32'hc0000000) && (debug_hwrite))
+	begin
+		$write("%c",dmem_hwdata[7:0]);
+
+	end
+end
 
 
 

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="charLib_synth_1" LaunchDir="U:/vivado_ws/raifes_fpga_bram/raifes_fpga_bram.runs/charLib_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="init_sequence_rom_synth_1" LaunchDir="U:/vivado_ws/raifes_fpga_bram/raifes_fpga_bram.runs/init_sequence_rom_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="pixel_buffer_synth_1" LaunchDir="U:/vivado_ws/raifes_fpga_bram/raifes_fpga_bram.runs/pixel_buffer_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

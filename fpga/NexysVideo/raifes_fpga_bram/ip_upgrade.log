@@ -1,0 +1,58 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Tue Jul 23 18:28:10 2019
+| Host         : K4538 running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'pixel_buffer'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of pixel_buffer from xilinx.com:ip:blk_mem_gen:8.3 (Rev. 5) to xilinx.com:ip:blk_mem_gen:8.4 (Rev. 2)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Tue Jul 23 18:28:08 2019
+| Host         : K4538 running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'init_sequence_rom'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of init_sequence_rom from xilinx.com:ip:blk_mem_gen:8.3 (Rev. 5) to xilinx.com:ip:blk_mem_gen:8.4 (Rev. 2)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Tue Jul 23 18:28:06 2019
+| Host         : K4538 running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'charLib'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of charLib from xilinx.com:ip:blk_mem_gen:8.3 (Rev. 5) to xilinx.com:ip:blk_mem_gen:8.4 (Rev. 2)
+

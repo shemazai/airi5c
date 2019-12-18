@@ -1,0 +1,1841 @@
+
+*** Running vivado
+    with args -log raifes_fpga_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source raifes_fpga_wrapper.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source raifes_fpga_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/13_Projekte/05_RISCV/fpga/NexysVideo/ipproj1/ipproj1.ip_user_files'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/12_Tools/Vivado/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is d:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.cache/ip 
+Command: synth_design -top raifes_fpga_wrapper -part xc7a200tsbg484-1
+Starting synth_design
+WARNING: [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
+D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+
+INFO: [IP_Flow 19-2162] IP 'clk_wiz_0' is locked:
+* IP definition 'Clocking Wizard (6.0)' for IP 'clk_wiz_0' (customized with software release 2018.3) has a different revision in the IP Catalog. * This IP has board specific outputs. Current project board 'unset' and the board 'digilentinc.com:nexys_video:part0:1.1' used to customize the IP 'clk_wiz_0' do not match.
+INFO: [IP_Flow 19-2162] IP 'blk_mem_gen_0' is locked:
+* IP definition 'Block Memory Generator (8.4)' for IP 'blk_mem_gen_0' (customized with software release 2018.3) has a different revision in the IP Catalog.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9668 
+WARNING: [Synth 8-6901] identifier 'mp_fsm' is used before its declaration [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_malu.v:55]
+WARNING: [Synth 8-6901] identifier 'is_mul' is used before its declaration [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_palu.v:36]
+WARNING: [Synth 8-6901] identifier 'pmul_done' is used before its declaration [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_palu.v:36]
+WARNING: [Synth 8-6901] identifier 'result_cmov' is used before its declaration [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_palu.v:51]
+WARNING: [Synth 8-6901] identifier 'result_bitwise' is used before its declaration [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_palu.v:52]
+WARNING: [Synth 8-6901] identifier 'result_parith' is used before its declaration [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_palu.v:53]
+WARNING: [Synth 8-6901] identifier 'wen_cmov' is used before its declaration [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_palu.v:58]
+WARNING: [Synth 8-6901] identifier 'pbytes_result' is used before its declaration [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_permute.v:39]
+WARNING: [Synth 8-6901] identifier 'malu_rdm_in_rs' is used before its declaration [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_top.v:99]
+WARNING: [Synth 8-6901] identifier 'malu_rdm_in_rs' is used before its declaration [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_top.v:102]
+WARNING: [Synth 8-6901] identifier 'malu_rdm_in_rs' is used before its declaration [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_top.v:105]
+WARNING: [Synth 8-2306] macro STATE_ERROR redefined [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_uart.v:43]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 763.141 ; gain = 184.305
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'raifes_fpga_wrapper' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_fpga_wrapper.v:6]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.runs/synth_1/.Xil/Vivado-13816-Q1926/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.runs/synth_1/.Xil/Vivado-13816-Q1926/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'raifes_top' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_top.v:27]
+INFO: [Synth 8-6157] synthesizing module 'raifes_core' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_core.v:44]
+INFO: [Synth 8-6157] synthesizing module 'raifes_hasti_bridge' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_hasti_bridge.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_hasti_bridge' (2#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_hasti_bridge.v:12]
+INFO: [Synth 8-6157] synthesizing module 'raifes_debug_module' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_debug_module.v:8]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_debug_module.v:250]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_debug_module.v:270]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_debug_module.v:347]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_debug_module.v:456]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_debug_module' (3#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_debug_module.v:8]
+INFO: [Synth 8-6157] synthesizing module 'raifes_debug_rom' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_debug_rom.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_debug_rom' (4#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_debug_rom.v:3]
+INFO: [Synth 8-226] default block is never used [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_core.v:329]
+INFO: [Synth 8-226] default block is never used [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_core.v:341]
+INFO: [Synth 8-6157] synthesizing module 'raifes_mul_div' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_mul_div.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_mul_div.v:166]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_mul_div.v:247]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_mul_div.v:314]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_mul_div' (5#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_mul_div.v:3]
+INFO: [Synth 8-6157] synthesizing module 'integ_raifes_rcpi2cop' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/integ_raifes_rcpi2cop.v:24]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/integ_raifes_rcpi2cop.v:95]
+INFO: [Synth 8-6155] done synthesizing module 'integ_raifes_rcpi2cop' (6#1) [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/integ_raifes_rcpi2cop.v:24]
+WARNING: [Synth 8-7023] instance 'rcpi' of module 'integ_raifes_rcpi2cop' has 22 connections declared, but only 21 given [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_core.v:407]
+INFO: [Synth 8-6157] synthesizing module 'raifes_cop_top' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_top.v:23]
+	Parameter RAIFES_COP_INSN_SUCCESS bound to: 3'b000 
+	Parameter RAIFES_COP_INSN_ABORT bound to: 3'b001 
+	Parameter RAIFES_COP_INSN_BAD_INS bound to: 3'b010 
+	Parameter RAIFES_COP_INSN_BAD_LAD bound to: 3'b100 
+	Parameter RAIFES_COP_INSN_BAD_SAD bound to: 3'b101 
+	Parameter RAIFES_COP_INSN_LD_ERR bound to: 3'b110 
+	Parameter RAIFES_COP_INSN_ST_ERR bound to: 3'b111 
+	Parameter RAIFES_COP_ICLASS_PACKED_ARITH bound to: 4'b0000 
+	Parameter RAIFES_COP_ICLASS_PERMUTE bound to: 4'b0001 
+	Parameter RAIFES_COP_ICLASS_LOADSTORE bound to: 4'b0010 
+	Parameter RAIFES_COP_ICLASS_RANDOM bound to: 4'b0011 
+	Parameter RAIFES_COP_ICLASS_MOVE bound to: 4'b0100 
+	Parameter RAIFES_COP_ICLASS_MP bound to: 4'b0101 
+	Parameter RAIFES_COP_ICLASS_BITWISE bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_CMOV_T bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_CMOV_F bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_GPR2XCR bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_XCR2GPR bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_PERM_BIT bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_PERM_IBIT bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_PERM_BYTE bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_ST_W bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_LD_W bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_ST_H bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_LH_CR bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_ST_B bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_LB_CR bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_LDR_W bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_LDR_H bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_LDR_B bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_STR_W bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_STR_H bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_STR_B bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_BMV bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_BOP bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_INS bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_EXT bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_LD_LIU bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_LD_HIU bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_LUT bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_PADD bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_PSUB bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_PMUL_L bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_PMUL_H bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_PCLMUL_L bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_PCLMUL_H bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_PSLL bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_PSRL bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_PROT bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_PSLL_I bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_PSRL_I bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_PROT_I bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_MEQU bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_MLTE bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_MGTE bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_MADD_3 bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_MADD_2 bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_MSUB_3 bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_MSUB_2 bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_MSLL_I bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_MSLL bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_MSRL_I bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_MSRL bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_MACC_2 bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_MACC_1 bound to: 4'b1100 
+	Parameter RAIFES_COP_SCLASS_MMUL_3 bound to: 4'b1101 
+	Parameter RAIFES_COP_SCLASS_MCLMUL_3 bound to: 4'b1110 
+	Parameter RAIFES_COP_SCLASS_RSEED bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_RSAMP bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_RTEST bound to: 4'b0010 
+	Parameter RAIFES_COP_RNG_TYPE_LFSR32 bound to: 0 - type: integer 
+	Parameter RAIFES_COP_PW_1 bound to: 3'b101 
+	Parameter RAIFES_COP_PW_2 bound to: 3'b100 
+	Parameter RAIFES_COP_PW_4 bound to: 3'b011 
+	Parameter RAIFES_COP_PW_8 bound to: 3'b010 
+	Parameter RAIFES_COP_PW_16 bound to: 3'b001 
+INFO: [Synth 8-6157] synthesizing module 'raifes_cop_idecode' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_idecode.v:4]
+	Parameter RAIFES_COP_INSN_SUCCESS bound to: 3'b000 
+	Parameter RAIFES_COP_INSN_ABORT bound to: 3'b001 
+	Parameter RAIFES_COP_INSN_BAD_INS bound to: 3'b010 
+	Parameter RAIFES_COP_INSN_BAD_LAD bound to: 3'b100 
+	Parameter RAIFES_COP_INSN_BAD_SAD bound to: 3'b101 
+	Parameter RAIFES_COP_INSN_LD_ERR bound to: 3'b110 
+	Parameter RAIFES_COP_INSN_ST_ERR bound to: 3'b111 
+	Parameter RAIFES_COP_ICLASS_PACKED_ARITH bound to: 4'b0000 
+	Parameter RAIFES_COP_ICLASS_PERMUTE bound to: 4'b0001 
+	Parameter RAIFES_COP_ICLASS_LOADSTORE bound to: 4'b0010 
+	Parameter RAIFES_COP_ICLASS_RANDOM bound to: 4'b0011 
+	Parameter RAIFES_COP_ICLASS_MOVE bound to: 4'b0100 
+	Parameter RAIFES_COP_ICLASS_MP bound to: 4'b0101 
+	Parameter RAIFES_COP_ICLASS_BITWISE bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_CMOV_T bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_CMOV_F bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_GPR2XCR bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_XCR2GPR bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_PERM_BIT bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_PERM_IBIT bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_PERM_BYTE bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_ST_W bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_LD_W bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_ST_H bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_LH_CR bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_ST_B bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_LB_CR bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_LDR_W bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_LDR_H bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_LDR_B bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_STR_W bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_STR_H bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_STR_B bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_BMV bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_BOP bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_INS bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_EXT bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_LD_LIU bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_LD_HIU bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_LUT bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_PADD bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_PSUB bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_PMUL_L bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_PMUL_H bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_PCLMUL_L bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_PCLMUL_H bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_PSLL bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_PSRL bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_PROT bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_PSLL_I bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_PSRL_I bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_PROT_I bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_MEQU bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_MLTE bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_MGTE bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_MADD_3 bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_MADD_2 bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_MSUB_3 bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_MSUB_2 bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_MSLL_I bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_MSLL bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_MSRL_I bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_MSRL bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_MACC_2 bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_MACC_1 bound to: 4'b1100 
+	Parameter RAIFES_COP_SCLASS_MMUL_3 bound to: 4'b1101 
+	Parameter RAIFES_COP_SCLASS_MCLMUL_3 bound to: 4'b1110 
+	Parameter RAIFES_COP_SCLASS_RSEED bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_RSAMP bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_RTEST bound to: 4'b0010 
+	Parameter RAIFES_COP_RNG_TYPE_LFSR32 bound to: 0 - type: integer 
+	Parameter RAIFES_COP_PW_1 bound to: 3'b101 
+	Parameter RAIFES_COP_PW_2 bound to: 3'b100 
+	Parameter RAIFES_COP_PW_4 bound to: 3'b011 
+	Parameter RAIFES_COP_PW_8 bound to: 3'b010 
+	Parameter RAIFES_COP_PW_16 bound to: 3'b001 
+	Parameter ISE_MCCR_R bound to: 1 - type: integer 
+	Parameter ISE_MCCR_MP bound to: 1 - type: integer 
+	Parameter ISE_MCCR_SG bound to: 1 - type: integer 
+	Parameter ISE_MCCR_P32 bound to: 1 - type: integer 
+	Parameter ISE_MCCR_P16 bound to: 1 - type: integer 
+	Parameter ISE_MCCR_P8 bound to: 1 - type: integer 
+	Parameter ISE_MCCR_P4 bound to: 1 - type: integer 
+	Parameter ISE_MCCR_P2 bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'raifes_cop_idecode' (7#1) [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_idecode.v:4]
+INFO: [Synth 8-6157] synthesizing module 'raifes_cop_cprs' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_cprs.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_cop_cprs' (8#1) [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_cprs.v:9]
+INFO: [Synth 8-6157] synthesizing module 'raifes_cop_palu' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_palu.v:10]
+	Parameter RAIFES_COP_INSN_SUCCESS bound to: 3'b000 
+	Parameter RAIFES_COP_INSN_ABORT bound to: 3'b001 
+	Parameter RAIFES_COP_INSN_BAD_INS bound to: 3'b010 
+	Parameter RAIFES_COP_INSN_BAD_LAD bound to: 3'b100 
+	Parameter RAIFES_COP_INSN_BAD_SAD bound to: 3'b101 
+	Parameter RAIFES_COP_INSN_LD_ERR bound to: 3'b110 
+	Parameter RAIFES_COP_INSN_ST_ERR bound to: 3'b111 
+	Parameter RAIFES_COP_ICLASS_PACKED_ARITH bound to: 4'b0000 
+	Parameter RAIFES_COP_ICLASS_PERMUTE bound to: 4'b0001 
+	Parameter RAIFES_COP_ICLASS_LOADSTORE bound to: 4'b0010 
+	Parameter RAIFES_COP_ICLASS_RANDOM bound to: 4'b0011 
+	Parameter RAIFES_COP_ICLASS_MOVE bound to: 4'b0100 
+	Parameter RAIFES_COP_ICLASS_MP bound to: 4'b0101 
+	Parameter RAIFES_COP_ICLASS_BITWISE bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_CMOV_T bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_CMOV_F bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_GPR2XCR bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_XCR2GPR bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_PERM_BIT bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_PERM_IBIT bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_PERM_BYTE bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_ST_W bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_LD_W bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_ST_H bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_LH_CR bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_ST_B bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_LB_CR bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_LDR_W bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_LDR_H bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_LDR_B bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_STR_W bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_STR_H bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_STR_B bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_BMV bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_BOP bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_INS bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_EXT bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_LD_LIU bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_LD_HIU bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_LUT bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_PADD bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_PSUB bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_PMUL_L bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_PMUL_H bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_PCLMUL_L bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_PCLMUL_H bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_PSLL bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_PSRL bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_PROT bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_PSLL_I bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_PSRL_I bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_PROT_I bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_MEQU bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_MLTE bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_MGTE bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_MADD_3 bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_MADD_2 bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_MSUB_3 bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_MSUB_2 bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_MSLL_I bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_MSLL bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_MSRL_I bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_MSRL bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_MACC_2 bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_MACC_1 bound to: 4'b1100 
+	Parameter RAIFES_COP_SCLASS_MMUL_3 bound to: 4'b1101 
+	Parameter RAIFES_COP_SCLASS_MCLMUL_3 bound to: 4'b1110 
+	Parameter RAIFES_COP_SCLASS_RSEED bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_RSAMP bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_RTEST bound to: 4'b0010 
+	Parameter RAIFES_COP_RNG_TYPE_LFSR32 bound to: 0 - type: integer 
+	Parameter RAIFES_COP_PW_1 bound to: 3'b101 
+	Parameter RAIFES_COP_PW_2 bound to: 3'b100 
+	Parameter RAIFES_COP_PW_4 bound to: 3'b011 
+	Parameter RAIFES_COP_PW_8 bound to: 3'b010 
+	Parameter RAIFES_COP_PW_16 bound to: 3'b001 
+INFO: [Synth 8-6157] synthesizing module 'p_addsub' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_palu_adder.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'p_addsub' (9#1) [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_palu_adder.v:8]
+INFO: [Synth 8-6157] synthesizing module 'p_shfrot' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_palu_shifter.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'p_shfrot' (10#1) [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_palu_shifter.v:8]
+INFO: [Synth 8-6157] synthesizing module 'p_mul_core' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_palu_multiplier.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'p_mul_core' (11#1) [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_palu_multiplier.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_cop_palu' (12#1) [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_palu.v:10]
+INFO: [Synth 8-6157] synthesizing module 'raifes_cop_mem' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_mem.v:6]
+	Parameter RAIFES_COP_INSN_SUCCESS bound to: 3'b000 
+	Parameter RAIFES_COP_INSN_ABORT bound to: 3'b001 
+	Parameter RAIFES_COP_INSN_BAD_INS bound to: 3'b010 
+	Parameter RAIFES_COP_INSN_BAD_LAD bound to: 3'b100 
+	Parameter RAIFES_COP_INSN_BAD_SAD bound to: 3'b101 
+	Parameter RAIFES_COP_INSN_LD_ERR bound to: 3'b110 
+	Parameter RAIFES_COP_INSN_ST_ERR bound to: 3'b111 
+	Parameter RAIFES_COP_ICLASS_PACKED_ARITH bound to: 4'b0000 
+	Parameter RAIFES_COP_ICLASS_PERMUTE bound to: 4'b0001 
+	Parameter RAIFES_COP_ICLASS_LOADSTORE bound to: 4'b0010 
+	Parameter RAIFES_COP_ICLASS_RANDOM bound to: 4'b0011 
+	Parameter RAIFES_COP_ICLASS_MOVE bound to: 4'b0100 
+	Parameter RAIFES_COP_ICLASS_MP bound to: 4'b0101 
+	Parameter RAIFES_COP_ICLASS_BITWISE bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_CMOV_T bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_CMOV_F bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_GPR2XCR bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_XCR2GPR bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_PERM_BIT bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_PERM_IBIT bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_PERM_BYTE bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_ST_W bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_LD_W bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_ST_H bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_LH_CR bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_ST_B bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_LB_CR bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_LDR_W bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_LDR_H bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_LDR_B bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_STR_W bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_STR_H bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_STR_B bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_BMV bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_BOP bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_INS bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_EXT bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_LD_LIU bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_LD_HIU bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_LUT bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_PADD bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_PSUB bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_PMUL_L bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_PMUL_H bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_PCLMUL_L bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_PCLMUL_H bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_PSLL bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_PSRL bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_PROT bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_PSLL_I bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_PSRL_I bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_PROT_I bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_MEQU bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_MLTE bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_MGTE bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_MADD_3 bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_MADD_2 bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_MSUB_3 bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_MSUB_2 bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_MSLL_I bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_MSLL bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_MSRL_I bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_MSRL bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_MACC_2 bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_MACC_1 bound to: 4'b1100 
+	Parameter RAIFES_COP_SCLASS_MMUL_3 bound to: 4'b1101 
+	Parameter RAIFES_COP_SCLASS_MCLMUL_3 bound to: 4'b1110 
+	Parameter RAIFES_COP_SCLASS_RSEED bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_RSAMP bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_RTEST bound to: 4'b0010 
+	Parameter RAIFES_COP_RNG_TYPE_LFSR32 bound to: 0 - type: integer 
+	Parameter RAIFES_COP_PW_1 bound to: 3'b101 
+	Parameter RAIFES_COP_PW_2 bound to: 3'b100 
+	Parameter RAIFES_COP_PW_4 bound to: 3'b011 
+	Parameter RAIFES_COP_PW_8 bound to: 3'b010 
+	Parameter RAIFES_COP_PW_16 bound to: 3'b001 
+	Parameter FSM_IDLE bound to: 4'b0000 
+	Parameter FSM_SG_B_1 bound to: 4'b0100 
+	Parameter FSM_SG_B_2 bound to: 4'b1000 
+	Parameter FSM_SG_B_3 bound to: 4'b0001 
+	Parameter FSM_SG_H_1 bound to: 4'b0101 
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_cop' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.runs/synth_1/.Xil/Vivado-13816-Q1926/realtime/blk_mem_gen_cop_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_cop' (13#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.runs/synth_1/.Xil/Vivado-13816-Q1926/realtime/blk_mem_gen_cop_stub.v:6]
+WARNING: [Synth 8-689] width (4) of port connection 'wea' does not match port width (2) of module 'blk_mem_gen_cop' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_mem.v:356]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (13) of module 'blk_mem_gen_cop' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_mem.v:357]
+WARNING: [Synth 8-689] width (32) of port connection 'dina' does not match port width (16) of module 'blk_mem_gen_cop' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_mem.v:358]
+WARNING: [Synth 8-689] width (32) of port connection 'douta' does not match port width (16) of module 'blk_mem_gen_cop' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_mem.v:359]
+WARNING: [Synth 8-6014] Unused sequential element p_cen_reg was removed.  [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_mem.v:343]
+WARNING: [Synth 8-3848] Net mem_bus_error in module/entity raifes_cop_mem does not have driver. [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_mem.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_cop_mem' (14#1) [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_mem.v:6]
+INFO: [Synth 8-6157] synthesizing module 'raifes_cop_malu' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_malu.v:6]
+	Parameter RAIFES_COP_INSN_SUCCESS bound to: 3'b000 
+	Parameter RAIFES_COP_INSN_ABORT bound to: 3'b001 
+	Parameter RAIFES_COP_INSN_BAD_INS bound to: 3'b010 
+	Parameter RAIFES_COP_INSN_BAD_LAD bound to: 3'b100 
+	Parameter RAIFES_COP_INSN_BAD_SAD bound to: 3'b101 
+	Parameter RAIFES_COP_INSN_LD_ERR bound to: 3'b110 
+	Parameter RAIFES_COP_INSN_ST_ERR bound to: 3'b111 
+	Parameter RAIFES_COP_ICLASS_PACKED_ARITH bound to: 4'b0000 
+	Parameter RAIFES_COP_ICLASS_PERMUTE bound to: 4'b0001 
+	Parameter RAIFES_COP_ICLASS_LOADSTORE bound to: 4'b0010 
+	Parameter RAIFES_COP_ICLASS_RANDOM bound to: 4'b0011 
+	Parameter RAIFES_COP_ICLASS_MOVE bound to: 4'b0100 
+	Parameter RAIFES_COP_ICLASS_MP bound to: 4'b0101 
+	Parameter RAIFES_COP_ICLASS_BITWISE bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_CMOV_T bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_CMOV_F bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_GPR2XCR bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_XCR2GPR bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_PERM_BIT bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_PERM_IBIT bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_PERM_BYTE bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_ST_W bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_LD_W bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_ST_H bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_LH_CR bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_ST_B bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_LB_CR bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_LDR_W bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_LDR_H bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_LDR_B bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_STR_W bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_STR_H bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_STR_B bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_BMV bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_BOP bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_INS bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_EXT bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_LD_LIU bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_LD_HIU bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_LUT bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_PADD bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_PSUB bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_PMUL_L bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_PMUL_H bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_PCLMUL_L bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_PCLMUL_H bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_PSLL bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_PSRL bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_PROT bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_PSLL_I bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_PSRL_I bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_PROT_I bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_MEQU bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_MLTE bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_MGTE bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_MADD_3 bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_MADD_2 bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_MSUB_3 bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_MSUB_2 bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_MSLL_I bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_MSLL bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_MSRL_I bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_MSRL bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_MACC_2 bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_MACC_1 bound to: 4'b1100 
+	Parameter RAIFES_COP_SCLASS_MMUL_3 bound to: 4'b1101 
+	Parameter RAIFES_COP_SCLASS_MCLMUL_3 bound to: 4'b1110 
+	Parameter RAIFES_COP_SCLASS_RSEED bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_RSAMP bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_RTEST bound to: 4'b0010 
+	Parameter RAIFES_COP_RNG_TYPE_LFSR32 bound to: 0 - type: integer 
+	Parameter RAIFES_COP_PW_1 bound to: 3'b101 
+	Parameter RAIFES_COP_PW_2 bound to: 3'b100 
+	Parameter RAIFES_COP_PW_4 bound to: 3'b011 
+	Parameter RAIFES_COP_PW_8 bound to: 3'b010 
+	Parameter RAIFES_COP_PW_16 bound to: 3'b001 
+INFO: [Synth 8-6155] done synthesizing module 'raifes_cop_malu' (15#1) [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_malu.v:6]
+INFO: [Synth 8-6157] synthesizing module 'raifes_cop_permute' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_permute.v:7]
+	Parameter RAIFES_COP_INSN_SUCCESS bound to: 3'b000 
+	Parameter RAIFES_COP_INSN_ABORT bound to: 3'b001 
+	Parameter RAIFES_COP_INSN_BAD_INS bound to: 3'b010 
+	Parameter RAIFES_COP_INSN_BAD_LAD bound to: 3'b100 
+	Parameter RAIFES_COP_INSN_BAD_SAD bound to: 3'b101 
+	Parameter RAIFES_COP_INSN_LD_ERR bound to: 3'b110 
+	Parameter RAIFES_COP_INSN_ST_ERR bound to: 3'b111 
+	Parameter RAIFES_COP_ICLASS_PACKED_ARITH bound to: 4'b0000 
+	Parameter RAIFES_COP_ICLASS_PERMUTE bound to: 4'b0001 
+	Parameter RAIFES_COP_ICLASS_LOADSTORE bound to: 4'b0010 
+	Parameter RAIFES_COP_ICLASS_RANDOM bound to: 4'b0011 
+	Parameter RAIFES_COP_ICLASS_MOVE bound to: 4'b0100 
+	Parameter RAIFES_COP_ICLASS_MP bound to: 4'b0101 
+	Parameter RAIFES_COP_ICLASS_BITWISE bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_CMOV_T bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_CMOV_F bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_GPR2XCR bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_XCR2GPR bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_PERM_BIT bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_PERM_IBIT bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_PERM_BYTE bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_ST_W bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_LD_W bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_ST_H bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_LH_CR bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_ST_B bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_LB_CR bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_LDR_W bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_LDR_H bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_LDR_B bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_STR_W bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_STR_H bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_STR_B bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_BMV bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_BOP bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_INS bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_EXT bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_LD_LIU bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_LD_HIU bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_LUT bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_PADD bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_PSUB bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_PMUL_L bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_PMUL_H bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_PCLMUL_L bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_PCLMUL_H bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_PSLL bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_PSRL bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_PROT bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_PSLL_I bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_PSRL_I bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_PROT_I bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_MEQU bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_MLTE bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_MGTE bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_MADD_3 bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_MADD_2 bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_MSUB_3 bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_MSUB_2 bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_MSLL_I bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_MSLL bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_MSRL_I bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_MSRL bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_MACC_2 bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_MACC_1 bound to: 4'b1100 
+	Parameter RAIFES_COP_SCLASS_MMUL_3 bound to: 4'b1101 
+	Parameter RAIFES_COP_SCLASS_MCLMUL_3 bound to: 4'b1110 
+	Parameter RAIFES_COP_SCLASS_RSEED bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_RSAMP bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_RTEST bound to: 4'b0010 
+	Parameter RAIFES_COP_RNG_TYPE_LFSR32 bound to: 0 - type: integer 
+	Parameter RAIFES_COP_PW_1 bound to: 3'b101 
+	Parameter RAIFES_COP_PW_2 bound to: 3'b100 
+	Parameter RAIFES_COP_PW_4 bound to: 3'b011 
+	Parameter RAIFES_COP_PW_8 bound to: 3'b010 
+	Parameter RAIFES_COP_PW_16 bound to: 3'b001 
+INFO: [Synth 8-6155] done synthesizing module 'raifes_cop_permute' (16#1) [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_permute.v:7]
+INFO: [Synth 8-6157] synthesizing module 'raifes_cop_rng' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_rng.v:7]
+	Parameter RAIFES_COP_INSN_SUCCESS bound to: 3'b000 
+	Parameter RAIFES_COP_INSN_ABORT bound to: 3'b001 
+	Parameter RAIFES_COP_INSN_BAD_INS bound to: 3'b010 
+	Parameter RAIFES_COP_INSN_BAD_LAD bound to: 3'b100 
+	Parameter RAIFES_COP_INSN_BAD_SAD bound to: 3'b101 
+	Parameter RAIFES_COP_INSN_LD_ERR bound to: 3'b110 
+	Parameter RAIFES_COP_INSN_ST_ERR bound to: 3'b111 
+	Parameter RAIFES_COP_ICLASS_PACKED_ARITH bound to: 4'b0000 
+	Parameter RAIFES_COP_ICLASS_PERMUTE bound to: 4'b0001 
+	Parameter RAIFES_COP_ICLASS_LOADSTORE bound to: 4'b0010 
+	Parameter RAIFES_COP_ICLASS_RANDOM bound to: 4'b0011 
+	Parameter RAIFES_COP_ICLASS_MOVE bound to: 4'b0100 
+	Parameter RAIFES_COP_ICLASS_MP bound to: 4'b0101 
+	Parameter RAIFES_COP_ICLASS_BITWISE bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_CMOV_T bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_CMOV_F bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_GPR2XCR bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_XCR2GPR bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_PERM_BIT bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_PERM_IBIT bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_PERM_BYTE bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_ST_W bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_LD_W bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_ST_H bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_LH_CR bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_ST_B bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_LB_CR bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_LDR_W bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_LDR_H bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_LDR_B bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_STR_W bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_STR_H bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_STR_B bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_BMV bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_BOP bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_INS bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_EXT bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_LD_LIU bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_LD_HIU bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_LUT bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_PADD bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_PSUB bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_PMUL_L bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_PMUL_H bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_PCLMUL_L bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_PCLMUL_H bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_PSLL bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_PSRL bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_PROT bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_PSLL_I bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_PSRL_I bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_PROT_I bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_MEQU bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_MLTE bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_MGTE bound to: 4'b0010 
+	Parameter RAIFES_COP_SCLASS_MADD_3 bound to: 4'b0011 
+	Parameter RAIFES_COP_SCLASS_MADD_2 bound to: 4'b0100 
+	Parameter RAIFES_COP_SCLASS_MSUB_3 bound to: 4'b0101 
+	Parameter RAIFES_COP_SCLASS_MSUB_2 bound to: 4'b0110 
+	Parameter RAIFES_COP_SCLASS_MSLL_I bound to: 4'b0111 
+	Parameter RAIFES_COP_SCLASS_MSLL bound to: 4'b1000 
+	Parameter RAIFES_COP_SCLASS_MSRL_I bound to: 4'b1001 
+	Parameter RAIFES_COP_SCLASS_MSRL bound to: 4'b1010 
+	Parameter RAIFES_COP_SCLASS_MACC_2 bound to: 4'b1011 
+	Parameter RAIFES_COP_SCLASS_MACC_1 bound to: 4'b1100 
+	Parameter RAIFES_COP_SCLASS_MMUL_3 bound to: 4'b1101 
+	Parameter RAIFES_COP_SCLASS_MCLMUL_3 bound to: 4'b1110 
+	Parameter RAIFES_COP_SCLASS_RSEED bound to: 4'b0000 
+	Parameter RAIFES_COP_SCLASS_RSAMP bound to: 4'b0001 
+	Parameter RAIFES_COP_SCLASS_RTEST bound to: 4'b0010 
+	Parameter RAIFES_COP_RNG_TYPE_LFSR32 bound to: 0 - type: integer 
+	Parameter RAIFES_COP_PW_1 bound to: 3'b101 
+	Parameter RAIFES_COP_PW_2 bound to: 3'b100 
+	Parameter RAIFES_COP_PW_4 bound to: 3'b011 
+	Parameter RAIFES_COP_PW_8 bound to: 3'b010 
+	Parameter RAIFES_COP_PW_16 bound to: 3'b001 
+	Parameter RNG_TYPE bound to: 0 - type: integer 
+	Parameter RNG_RESET_VALUE bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'raifes_cop_rng' (17#1) [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_rng.v:7]
+WARNING: [Synth 8-689] width (16) of port connection 'id_subclass' does not match port width (15) of module 'raifes_cop_rng' [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_top.v:376]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_cop_top' (18#1) [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'raifes_pipeline' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_pipeline.v:7]
+INFO: [Synth 8-6157] synthesizing module 'raifes_ctrl' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_ctrl.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_ctrl' (19#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_ctrl.v:6]
+INFO: [Synth 8-6157] synthesizing module 'raifes_PC_mux' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_PC_mux.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_PC_mux' (20#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_PC_mux.v:17]
+INFO: [Synth 8-6157] synthesizing module 'raifes_regfile' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_regfile.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_regfile' (21#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_regfile.v:4]
+INFO: [Synth 8-6157] synthesizing module 'raifes_imm_gen' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_imm_gen.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_imm_gen' (22#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_imm_gen.v:4]
+INFO: [Synth 8-6157] synthesizing module 'raifes_src_a_mux' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_src_a_mux.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_src_a_mux' (23#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_src_a_mux.v:4]
+INFO: [Synth 8-6157] synthesizing module 'raifes_src_b_mux' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_src_b_mux.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_src_b_mux' (24#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_src_b_mux.v:4]
+INFO: [Synth 8-6157] synthesizing module 'raifes_alu' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_alu.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_alu' (25#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_alu.v:22]
+INFO: [Synth 8-226] default block is never used [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_pipeline.v:442]
+INFO: [Synth 8-6157] synthesizing module 'raifes_csr_file' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_csr_file.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_csr_file' (26#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_csr_file.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_pipeline' (27#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_pipeline.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_core' (28#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_core.v:44]
+INFO: [Synth 8-6157] synthesizing module 'raifes_dtm' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_dtm.v:43]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_dtm.v:162]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_dtm' (29#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_dtm.v:43]
+WARNING: [Synth 8-689] width (1) of port connection 'debug_state' does not match port width (4) of module 'raifes_dtm' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_top.v:230]
+INFO: [Synth 8-6157] synthesizing module 'raifes_sync_to_hasti_bridge' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_sync_to_hasti_bridge.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_sync_to_hasti_bridge' (30#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_sync_to_hasti_bridge.v:3]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.runs/synth_1/.Xil/Vivado-13816-Q1926/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (31#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.runs/synth_1/.Xil/Vivado-13816-Q1926/realtime/blk_mem_gen_0_stub.v:6]
+WARNING: [Synth 8-6014] Unused sequential element debug_addr_reg was removed.  [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_top.v:323]
+WARNING: [Synth 8-6014] Unused sequential element debug_hwrite_reg was removed.  [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_top.v:324]
+WARNING: [Synth 8-6014] Unused sequential element debug_out_reg was removed.  [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_top.v:326]
+WARNING: [Synth 8-3848] Net dm_state in module/entity raifes_top does not have driver. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_top.v:36]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_top' (32#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_top.v:27]
+WARNING: [Synth 8-689] width (1) of port connection 'dm_state' does not match port width (4) of module 'raifes_top' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_fpga_wrapper.v:127]
+INFO: [Synth 8-6157] synthesizing module 'UART_module' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/new/UART_module.v:26]
+INFO: [Synth 8-6157] synthesizing module 'raifes_uart' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_uart.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_uart' (33#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_uart.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'UART_module' (34#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/new/UART_module.v:26]
+INFO: [Synth 8-6157] synthesizing module 'raifes_gpio' [D:/13_Projekte/05_RISCV/src/modules/raifes_gpio/src/raifes_gpio.v:8]
+WARNING: [Synth 8-3848] Net hready in module/entity raifes_gpio does not have driver. [D:/13_Projekte/05_RISCV/src/modules/raifes_gpio/src/raifes_gpio.v:28]
+WARNING: [Synth 8-3848] Net hresp in module/entity raifes_gpio does not have driver. [D:/13_Projekte/05_RISCV/src/modules/raifes_gpio/src/raifes_gpio.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_gpio' (35#1) [D:/13_Projekte/05_RISCV/src/modules/raifes_gpio/src/raifes_gpio.v:8]
+WARNING: [Synth 8-689] width (32) of port connection 'gpio_i' does not match port width (8) of module 'raifes_gpio' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_fpga_wrapper.v:186]
+WARNING: [Synth 8-7023] instance 'thegpio' of module 'raifes_gpio' has 16 connections declared, but only 13 given [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_fpga_wrapper.v:181]
+INFO: [Synth 8-6155] done synthesizing module 'raifes_fpga_wrapper' (36#1) [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_fpga_wrapper.v:6]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hready
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hresp[0]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port reset
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwrite
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hsize[2]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hsize[1]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hsize[0]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hburst[2]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hburst[1]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hburst[0]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hmastlock
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hprot[3]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hprot[2]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hprot[1]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hprot[0]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port htrans[1]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port htrans[0]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[31]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[30]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[29]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[28]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[27]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[26]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[25]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[24]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[23]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[22]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[21]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[20]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[19]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[18]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[17]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[16]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[15]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[14]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[13]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[12]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[11]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[10]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[9]
+WARNING: [Synth 8-3331] design raifes_gpio has unconnected port hwdata[8]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_en
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hsize[2]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hsize[1]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hsize[0]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hburst[2]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hburst[1]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hburst[0]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hmastlock
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_htrans[1]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_htrans[0]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[31]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[30]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[29]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[28]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[27]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[26]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[25]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[24]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[23]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[22]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[21]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[20]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[19]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[18]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[17]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[16]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[15]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[14]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[13]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[12]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[11]
+WARNING: [Synth 8-3331] design UART_module has unconnected port per_hwdata[10]
+WARNING: [Synth 8-3331] design raifes_sync_to_hasti_bridge has unconnected port dev_hready
+WARNING: [Synth 8-3331] design raifes_sync_to_hasti_bridge has unconnected port core_hburst[2]
+WARNING: [Synth 8-3331] design raifes_sync_to_hasti_bridge has unconnected port core_hburst[1]
+WARNING: [Synth 8-3331] design raifes_sync_to_hasti_bridge has unconnected port core_hburst[0]
+WARNING: [Synth 8-3331] design raifes_sync_to_hasti_bridge has unconnected port core_hmastlock
+WARNING: [Synth 8-3331] design raifes_sync_to_hasti_bridge has unconnected port core_hprot[3]
+WARNING: [Synth 8-3331] design raifes_sync_to_hasti_bridge has unconnected port core_hprot[2]
+WARNING: [Synth 8-3331] design raifes_sync_to_hasti_bridge has unconnected port core_hprot[1]
+WARNING: [Synth 8-3331] design raifes_sync_to_hasti_bridge has unconnected port core_hprot[0]
+WARNING: [Synth 8-3331] design raifes_dtm has unconnected port dmi_dm_busy
+WARNING: [Synth 8-3331] design raifes_csr_file has unconnected port imem_wait
+WARNING: [Synth 8-3331] design raifes_imm_gen has unconnected port inst[6]
+WARNING: [Synth 8-3331] design raifes_imm_gen has unconnected port inst[5]
+WARNING: [Synth 8-3331] design raifes_imm_gen has unconnected port inst[4]
+WARNING: [Synth 8-3331] design raifes_imm_gen has unconnected port inst[3]
+WARNING: [Synth 8-3331] design raifes_imm_gen has unconnected port inst[2]
+WARNING: [Synth 8-3331] design raifes_imm_gen has unconnected port inst[1]
+WARNING: [Synth 8-3331] design raifes_imm_gen has unconnected port inst[0]
+WARNING: [Synth 8-3331] design raifes_PC_mux has unconnected port inst_DX[6]
+WARNING: [Synth 8-3331] design raifes_PC_mux has unconnected port inst_DX[5]
+WARNING: [Synth 8-3331] design raifes_PC_mux has unconnected port inst_DX[4]
+WARNING: [Synth 8-3331] design raifes_PC_mux has unconnected port inst_DX[3]
+WARNING: [Synth 8-3331] design raifes_PC_mux has unconnected port inst_DX[2]
+WARNING: [Synth 8-3331] design raifes_PC_mux has unconnected port inst_DX[1]
+WARNING: [Synth 8-3331] design raifes_PC_mux has unconnected port inst_DX[0]
+WARNING: [Synth 8-3331] design raifes_pipeline has unconnected port pcpi_wr
+WARNING: [Synth 8-3331] design raifes_cop_rng has unconnected port id_imm[31]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 851.262 ; gain = 272.426
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 874.355 ; gain = 295.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 874.355 ; gain = 295.520
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_wiz0'
+Finished Parsing XDC File [d:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_wiz0'
+Parsing XDC File [d:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'thecore/bram01'
+Finished Parsing XDC File [d:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'thecore/bram01'
+Parsing XDC File [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.runs/synth_1/.Xil/Vivado-13816-Q1926/blk_mem_gen_cop/blk_mem_gen_cop/blk_mem_gen_cop_in_context.xdc] for cell 'thecore/raifes/cop/cop_mem/bram02'
+Finished Parsing XDC File [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.runs/synth_1/.Xil/Vivado-13816-Q1926/blk_mem_gen_cop/blk_mem_gen_cop/blk_mem_gen_cop_in_context.xdc] for cell 'thecore/raifes/cop/cop_mem/bram02'
+Parsing XDC File [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/sbox_inv_in[12]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:7]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/sbox_inv_in[16]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:8]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/sbox_inv_in[18]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:9]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/sbox_inv_in[32]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:10]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/sbox_inv_in[52]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:11]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/sbox_inv_in[13]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:12]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/sbox_inv_in[33]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:13]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/sbox_inv_in[34]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:14]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/sbox_inv_in[53]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:15]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/sbox_inv_in[58]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:16]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/xor_in1[19]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:17]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/xor_out_middle[14]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:18]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/sbox_inv_in[15]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:19]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/sbox_inv_in[17]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:20]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/sbox_inv_in[59]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:21]
+WARNING: [Vivado 12-507] No nets matched 'theCryptoModule/Prince_cipher/xor_in1[31]'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:22]
+WARNING: [Vivado 12-507] No nets matched 'TCK_IBUF'. [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc:28]
+Finished Parsing XDC File [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/raifes_fpga_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/constrs_1/imports/digilent-xdc-master/Nexys-Video-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/raifes_fpga_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/raifes_fpga_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1026.559 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1026.559 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1026.559 ; gain = 447.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tsbg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1026.559 ; gain = 447.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk_raw. (constraint file  d:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_raw. (constraint file  d:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for clk_wiz0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for thecore/bram01. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for thecore/raifes/cop/cop_mem/bram02. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1026.559 ; gain = 447.723
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'anyunavail_reg' into 'anyhavereset_reg' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_debug_module.v:137]
+INFO: [Synth 8-4471] merging register 'authbusy_reg' into 'anyhavereset_reg' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_debug_module.v:154]
+INFO: [Synth 8-802] inferred FSM for state register 'dmi_state_reg' in module 'raifes_debug_module'
+INFO: [Synth 8-802] inferred FSM for state register 'dm_state_reg' in module 'raifes_debug_module'
+INFO: [Synth 8-5544] ROM "errorcode" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "busy" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "dm_hart0_postexecreq" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'integ_raifes_rcpi2cop'
+INFO: [Synth 8-802] inferred FSM for state register 'mem_fsm_reg' in module 'raifes_cop_mem'
+INFO: [Synth 8-5544] ROM "n_mem_fsm" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "n_mem_fsm" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "n_mem_fsm" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_malu.v:217]
+INFO: [Synth 8-5587] ROM size for "uses_rs1" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "uses_rs2" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "jal_unkilled" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "jalr_unkilled" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "imm_type" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "src_a_sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "src_b_sel" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "dmem_en_unkilled" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "dmem_wen_unkilled" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "uses_rs1" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "uses_rs2" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "jal_unkilled" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "jalr_unkilled" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "imm_type" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "src_a_sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "src_b_sel" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "dmem_en_unkilled" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "dmem_wen_unkilled" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "alu_op" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_alu.v:33]
+INFO: [Synth 8-5546] ROM "defined" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "defined_debug" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "defined" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "defined_debug" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'raifes_dtm'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'raifes_uart'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE3 |                              000 |                             0000
+                 iSTATE2 |                              001 |                             0001
+                 iSTATE6 |                              010 |                             0110
+                  iSTATE |                              011 |                             0011
+                 iSTATE1 |                              100 |                             0010
+                 iSTATE0 |                              101 |                             0100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dm_state_reg' using encoding 'sequential' in module 'raifes_debug_module'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                 iSTATE2 |                             0001 |                             0001
+                 iSTATE0 |                             0100 |                             0100
+                  iSTATE |                             0010 |                             0010
+                 iSTATE1 |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'dmi_state_reg' in module 'raifes_debug_module'
+WARNING: [Synth 8-327] inferring latch for variable 'next_mul_state_reg' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_mul_div.v:167]
+WARNING: [Synth 8-327] inferring latch for variable 'next_div_state_reg' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_mul_div.v:249]
+WARNING: [Synth 8-327] inferring latch for variable 'div_sign_reg' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_mul_div.v:257]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                                0 |                         00000000
+                 iSTATE0 |                                1 |                         00000001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'integ_raifes_rcpi2cop'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                FSM_IDLE |                            00001 |                             0000
+                FSM_IDLE |                            00001 |                             0000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'mem_fsm_reg' using encoding 'one-hot' in module 'raifes_cop_mem'
+WARNING: [Synth 8-327] inferring latch for variable 'dmem_addr_r_reg' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_pipeline.v:389]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE7 |                 0000000000000001 |                             0000
+                 iSTATE6 |                 0000000000000010 |                             0001
+                 iSTATE2 |                 0000000000000100 |                             0010
+                 iSTATE0 |                 0000000000001000 |                             0011
+                iSTATE14 |                 0000000000010000 |                             0101
+                 iSTATE9 |                 0000000000100000 |                             0111
+                 iSTATE8 |                 0000000001000000 |                             1001
+                 iSTATE4 |                 0000000010000000 |                             1011
+                 iSTATE1 |                 0000000100000000 |                             1101
+                iSTATE12 |                 0000001000000000 |                             1111
+                  iSTATE |                 0000010000000000 |                             0100
+                iSTATE11 |                 0000100000000000 |                             0110
+                iSTATE10 |                 0001000000000000 |                             1000
+                 iSTATE5 |                 0010000000000000 |                             1010
+                 iSTATE3 |                 0100000000000000 |                             1100
+                iSTATE13 |                 1000000000000000 |                             1110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'raifes_dtm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE2 |                               00 |                               00
+                 iSTATE1 |                               01 |                               01
+                 iSTATE0 |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'raifes_uart'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1026.559 ; gain = 447.723
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 6     
+	   3 Input     64 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 8     
+	   3 Input     32 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 2     
++---XORs : 
+	   2 Input     64 Bit         XORs := 1     
+	  33 Input     64 Bit         XORs := 1     
+	   2 Input     32 Bit         XORs := 6     
+	   2 Input      1 Bit         XORs := 65    
+	   4 Input      1 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 6     
+	               41 Bit    Registers := 1     
+	               32 Bit    Registers := 47    
+	               16 Bit    Registers := 2     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 7     
+	                3 Bit    Registers := 5     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 36    
++---Multipliers : 
+	                32x32  Multipliers := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 15    
+	   8 Input     64 Bit        Muxes := 1     
+	   2 Input     41 Bit        Muxes := 1     
+	   6 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 110   
+	   9 Input     32 Bit        Muxes := 2     
+	  13 Input     32 Bit        Muxes := 1     
+	  82 Input     32 Bit        Muxes := 2     
+	   8 Input     32 Bit        Muxes := 4     
+	   5 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 4     
+	  15 Input     32 Bit        Muxes := 1     
+	  22 Input     32 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 17    
+	  16 Input     16 Bit        Muxes := 1     
+	   6 Input     12 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 5     
+	   2 Input      8 Bit        Muxes := 43    
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	   6 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 4     
+	  46 Input      5 Bit        Muxes := 2     
+	   6 Input      4 Bit        Muxes := 2     
+	   5 Input      4 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 29    
+	  13 Input      4 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 2     
+	   7 Input      4 Bit        Muxes := 1     
+	   9 Input      4 Bit        Muxes := 1     
+	  12 Input      4 Bit        Muxes := 1     
+	  16 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 12    
+	   6 Input      3 Bit        Muxes := 2     
+	  15 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 2     
+	  12 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 11    
+	  12 Input      2 Bit        Muxes := 4     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 555   
+	   6 Input      1 Bit        Muxes := 4     
+	   3 Input      1 Bit        Muxes := 7     
+	   9 Input      1 Bit        Muxes := 7     
+	   8 Input      1 Bit        Muxes := 11    
+	   5 Input      1 Bit        Muxes := 6     
+	   4 Input      1 Bit        Muxes := 9     
+	  12 Input      1 Bit        Muxes := 16    
+	   7 Input      1 Bit        Muxes := 1     
+	  46 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module raifes_debug_module 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 8     
+	                7 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   6 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 7     
+	   9 Input     32 Bit        Muxes := 2     
+	  13 Input     32 Bit        Muxes := 1     
+	   6 Input     12 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	  13 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 4     
+	   6 Input      3 Bit        Muxes := 2     
+	  15 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 20    
+	   6 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 1     
+	   9 Input      1 Bit        Muxes := 7     
+Module raifes_debug_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	  82 Input     32 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+Module raifes_mul_div 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 4     
+	   2 Input     32 Bit       Adders := 5     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     64 Bit         XORs := 1     
+	   2 Input     32 Bit         XORs := 4     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 9     
+	               16 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 3     
+	   8 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 23    
+	   8 Input     32 Bit        Muxes := 3     
+	   5 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   6 Input      4 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 11    
+	   8 Input      1 Bit        Muxes := 5     
+	   5 Input      1 Bit        Muxes := 5     
+	   4 Input      1 Bit        Muxes := 1     
+Module integ_raifes_rcpi2cop 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module raifes_cop_idecode 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 3     
+Module raifes_cop_cprs 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+Module p_addsub 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 64    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module p_shfrot 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module p_mul_core 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 18    
+	   4 Input      1 Bit        Muxes := 8     
+Module raifes_cop_palu 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module raifes_cop_mem 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 43    
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+Module raifes_cop_malu 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     64 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	  33 Input     64 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
++---Multipliers : 
+	                32x32  Multipliers := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 1     
+Module raifes_cop_permute 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      8 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 448   
+Module raifes_cop_rng 
+Detailed RTL Component Info : 
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module raifes_cop_top 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 5     
+Module raifes_ctrl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 5     
+	   7 Input      4 Bit        Muxes := 1     
+	   9 Input      4 Bit        Muxes := 1     
+	  12 Input      4 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 4     
+	  12 Input      3 Bit        Muxes := 1     
+	  12 Input      2 Bit        Muxes := 4     
+	  12 Input      1 Bit        Muxes := 16    
+	   2 Input      1 Bit        Muxes := 14    
+	   8 Input      1 Bit        Muxes := 6     
+	   7 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+Module raifes_PC_mux 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Muxes : 
+	   8 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+Module raifes_regfile 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input      5 Bit        Muxes := 1     
+Module raifes_imm_gen 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module raifes_src_a_mux 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module raifes_src_b_mux 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module raifes_alu 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Muxes : 
+	  15 Input     32 Bit        Muxes := 1     
+Module raifes_csr_file 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 2     
++---Registers : 
+	               64 Bit    Registers := 3     
+	               32 Bit    Registers := 10    
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 10    
+	   2 Input     32 Bit        Muxes := 33    
+	  22 Input     32 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	  46 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 23    
+	   5 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+	  46 Input      1 Bit        Muxes := 2     
+Module raifes_pipeline 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 8     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 8     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module raifes_core 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 1     
+Module raifes_dtm 
+Detailed RTL Component Info : 
++---Registers : 
+	               41 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     41 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	  16 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 16    
+	  16 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 3     
+Module raifes_sync_to_hasti_bridge 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+Module raifes_top 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 6     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module raifes_uart 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module UART_module 
+Detailed RTL Component Info : 
++---Registers : 
+	               10 Bit    Registers := 1     
+Module raifes_gpio 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'mul_opb_r_reg[31:0]' into 'mul_opb_r_reg[31:0]' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_mul_div.v:124]
+INFO: [Synth 8-4471] merging register 'mul_opa_r_reg[31:0]' into 'mul_opa_r_reg[31:0]' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_mul_div.v:123]
+DSP Report: Generating DSP pp0, operation Mode is: A2*B2.
+DSP Report: register mul_opb_r_reg is absorbed into DSP pp0.
+DSP Report: register mul_opa_r_reg is absorbed into DSP pp0.
+DSP Report: operator pp0 is absorbed into DSP pp0.
+DSP Report: Generating DSP pp2, operation Mode is: A2*B2.
+DSP Report: register pp2 is absorbed into DSP pp2.
+DSP Report: register mul_opa_r_reg is absorbed into DSP pp2.
+DSP Report: operator pp2 is absorbed into DSP pp2.
+DSP Report: Generating DSP pp2, operation Mode is: A2*B2.
+DSP Report: register mul_opb_r_reg is absorbed into DSP pp2.
+DSP Report: register pp2 is absorbed into DSP pp2.
+DSP Report: operator pp2 is absorbed into DSP pp2.
+DSP Report: Generating DSP pp2, operation Mode is: A2*B2.
+DSP Report: register pp2 is absorbed into DSP pp2.
+DSP Report: register pp2 is absorbed into DSP pp2.
+DSP Report: operator pp2 is absorbed into DSP pp2.
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [D:/13_Projekte/05_RISCV/src/modules/raifes_cop/raifes_cop_malu.v:227]
+DSP Report: Generating DSP result_mul, operation Mode is: A*B.
+DSP Report: operator result_mul is absorbed into DSP result_mul.
+DSP Report: operator result_mul is absorbed into DSP result_mul.
+DSP Report: Generating DSP result_mul, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator result_mul is absorbed into DSP result_mul.
+DSP Report: operator result_mul is absorbed into DSP result_mul.
+DSP Report: Generating DSP result_mul, operation Mode is: A*B.
+DSP Report: operator result_mul is absorbed into DSP result_mul.
+DSP Report: operator result_mul is absorbed into DSP result_mul.
+DSP Report: Generating DSP result_mul, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator result_mul is absorbed into DSP result_mul.
+DSP Report: operator result_mul is absorbed into DSP result_mul.
+INFO: [Synth 8-5587] ROM size for "uses_rs2" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "uses_rs1" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "dmem_wen_unkilled" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "dmem_en_unkilled" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "jal_unkilled" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "jalr_unkilled" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "imm_type" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "src_a_sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "src_b_sel" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "defined" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "defined_debug" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4471] merging register 'imem_bridge/core_haddr_r_reg[31:0]' into 'raifes/imem_addr_r_reg[31:0]' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_sync_to_hasti_bridge.v:61]
+INFO: [Synth 8-4471] merging register 'dmem_bridge/core_haddr_r_reg[31:0]' into 'raifes/dmem_addr_r_reg[31:0]' [D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.srcs/sources_1/imports/src/raifes_sync_to_hasti_bridge.v:61]
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_module/dmerr_reg[0]' (FDRE) to 'thecore/raifes/debug_module/dmerr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_module/dmerr_reg[1]' (FDRE) to 'thecore/raifes/debug_module/dmerr_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\thecore/raifes/debug_module/dmerr_reg[2] )
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_module/cmderr_reg[0]' (FDRE) to 'thecore/raifes/debug_module/cmderr_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\thecore/raifes/debug_module/cmderr_reg[2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\thecore/raifes/debug_module/authenticated_reg )
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[3]' (FDRE) to 'thecore/raifes/debug_module/anyhavereset_reg'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_module/anyhavereset_reg' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/cop/cop_mem/FSM_onehot_mem_fsm_reg[4]' (FDR) to 'thecore/raifes/cop/cop_mem/FSM_onehot_mem_fsm_reg[3]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/cop/cop_mem/FSM_onehot_mem_fsm_reg[3]' (FDR) to 'thecore/raifes/cop/cop_mem/FSM_onehot_mem_fsm_reg[2]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/cop/cop_mem/FSM_onehot_mem_fsm_reg[2]' (FDR) to 'thecore/raifes/cop/cop_mem/FSM_onehot_mem_fsm_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\thecore/raifes/cop /cop_mem/\FSM_onehot_mem_fsm_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\thecore/raifes/mul_div/next_div_state_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\thecore/raifes/mul_div/next_mul_state_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\thecore/imem_bridge/core_hsize_r_reg[1] )
+INFO: [Synth 8-3886] merging instance 'thecore/imem_bridge/core_hsize_r_reg[0]' (FDR) to 'thecore/dmem_bridge/core_hsize_r_reg[2]'
+INFO: [Synth 8-3886] merging instance 'thecore/imem_bridge/core_hsize_r_reg[2]' (FDR) to 'thecore/dmem_bridge/core_hsize_r_reg[2]'
+INFO: [Synth 8-3886] merging instance 'thecore/imem_bridge/current_phase_reg' (FDR) to 'thecore/dmem_bridge/core_hsize_r_reg[2]'
+INFO: [Synth 8-3886] merging instance 'thecore/dmem_bridge/core_hsize_r_reg[2]' (FDR) to 'thecore/raifes/mul_div/div_state_reg[3]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/mul_div/div_state_reg[3]' (FDR) to 'thecore/raifes/mul_div/mul_state_reg[3]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[10]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[11]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[8]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[9]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[28]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[29]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[26]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[27]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[25]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[20]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[21]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[22]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[24]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/pipeline/csr/mtvec_reg[1]' (FDRE) to 'thecore/raifes/pipeline/csr/mtvec_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\thecore/raifes/pipeline /csr/\mtvec_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\thecore/raifes/pipeline /csr/\mepc_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\thecore/raifes/pipeline /ctrl/\prev_ex_code_WB_reg[2] )
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[16]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[17]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[18]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[19]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[31]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[15]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[23]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[7]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[30]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[12]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[6]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[13]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[14]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3886] merging instance 'thecore/raifes/debug_rom/status_reg[5]' (FDRE) to 'thecore/raifes/debug_rom/status_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\thecore/raifes/debug_rom/status_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\thecore/raifes/pipeline /ctrl/had_ex_DX_reg)
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\theUARTModule/theUART/txData_reg[10] )
+INFO: [Synth 8-3886] merging instance 'theUARTModule/theUART/txData_reg[1]' (FDE) to 'theUARTModule/theUART/txData_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\theUARTModule/theUART/txData_reg[0] )
+WARNING: [Synth 8-3332] Sequential element (thecore/raifes/mul_div/next_mul_state_reg[3]) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (thecore/raifes/mul_div/next_div_state_reg[3]) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_mem_fsm_reg[1]) is unused and will be removed from module raifes_cop_mem.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_mem_fsm_reg[0]) is unused and will be removed from module raifes_cop_mem.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_0) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_1) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_2) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_3) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_4) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_5) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_6) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_7) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_8) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_9) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_10) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_11) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_12) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_13) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_14) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_15) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_16) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_17) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_18) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_19) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_20) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_21) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_22) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_23) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_24) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_25) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_26) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_27) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_28) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_29) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_30) is unused and will be removed from module raifes_fpga_wrapper.
+WARNING: [Synth 8-3332] Sequential element (per_hrdata_regi_31) is unused and will be removed from module raifes_fpga_wrapper.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\thecore/raifes/pipeline /csr/\mepc_reg[1] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:04:40 ; elapsed = 00:04:42 . Memory (MB): peak = 1507.859 ; gain = 929.023
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++----------------------------------+------------+-----------+----------------------+---------------+
+|Module Name                       | RTL Object | Inference | Size (Depth x Width) | Primitives    | 
++----------------------------------+------------+-----------+----------------------+---------------+
+|\thecore/raifes/cop /cop_cprs     | cprs_0_reg | Implied   | 16 x 8               | RAM32M x 6    | 
+|\thecore/raifes/cop /cop_cprs     | cprs_1_reg | Implied   | 16 x 8               | RAM32M x 6    | 
+|\thecore/raifes/cop /cop_cprs     | cprs_2_reg | Implied   | 16 x 8               | RAM32M x 6    | 
+|\thecore/raifes/cop /cop_cprs     | cprs_3_reg | Implied   | 16 x 8               | RAM32M x 6    | 
+|\thecore/raifes/pipeline /regfile | data_reg   | Implied   | 32 x 32              | RAM32M x 24   | 
++----------------------------------+------------+-----------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping  Report (see note below)
++----------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|raifes_mul_div  | A2*B2          | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|raifes_mul_div  | A2*B2          | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|raifes_mul_div  | A2*B2          | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|raifes_mul_div  | A2*B2          | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|raifes_cop_malu | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|raifes_cop_malu | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|raifes_cop_malu | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|raifes_cop_malu | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++----------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clk_wiz0/clk_out1' to pin 'clk_wiz0/bbstub_clk_out1/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:55 ; elapsed = 00:04:57 . Memory (MB): peak = 1507.859 ; gain = 929.023
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:09:40 ; elapsed = 00:09:48 . Memory (MB): peak = 3315.305 ; gain = 2736.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++----------------------------------+------------+-----------+----------------------+---------------+
+|Module Name                       | RTL Object | Inference | Size (Depth x Width) | Primitives    | 
++----------------------------------+------------+-----------+----------------------+---------------+
+|\thecore/raifes/cop /cop_cprs     | cprs_0_reg | Implied   | 16 x 8               | RAM32M x 6    | 
+|\thecore/raifes/cop /cop_cprs     | cprs_1_reg | Implied   | 16 x 8               | RAM32M x 6    | 
+|\thecore/raifes/cop /cop_cprs     | cprs_2_reg | Implied   | 16 x 8               | RAM32M x 6    | 
+|\thecore/raifes/cop /cop_cprs     | cprs_3_reg | Implied   | 16 x 8               | RAM32M x 6    | 
+|\thecore/raifes/pipeline /regfile | data_reg   | Implied   | 32 x 32              | RAM32M x 24   | 
++----------------------------------+------------+-----------+----------------------+---------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:09:50 ; elapsed = 00:09:58 . Memory (MB): peak = 3405.984 ; gain = 2827.148
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:09:53 ; elapsed = 00:10:02 . Memory (MB): peak = 3410.926 ; gain = 2832.090
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:09:53 ; elapsed = 00:10:03 . Memory (MB): peak = 3410.926 ; gain = 2832.090
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:09:55 ; elapsed = 00:10:04 . Memory (MB): peak = 3410.926 ; gain = 2832.090
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:09:55 ; elapsed = 00:10:04 . Memory (MB): peak = 3410.926 ; gain = 2832.090
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:09:55 ; elapsed = 00:10:05 . Memory (MB): peak = 3410.926 ; gain = 2832.090
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:09:55 ; elapsed = 00:10:05 . Memory (MB): peak = 3410.926 ; gain = 2832.090
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++--------------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name         | RTL Name                   | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++--------------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|raifes_fpga_wrapper | thecore/dtm/IDCODE_reg[13] | 15     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|raifes_fpga_wrapper | thecore/dtm/IDCODE_reg[1]  | 11     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|raifes_fpga_wrapper | thecore/dtm/DTM_reg[14]    | 18     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|raifes_fpga_wrapper | thecore/dtm/DTM_reg[7]     | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++--------------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+----------------+----------+
+|      |BlackBox name   |Instances |
++------+----------------+----------+
+|1     |clk_wiz_0       |         1|
+|2     |blk_mem_gen_0   |         1|
+|3     |blk_mem_gen_cop |         1|
++------+----------------+----------+
+
+Report Cell Usage: 
++------+----------------+------+
+|      |Cell            |Count |
++------+----------------+------+
+|1     |blk_mem_gen_0   |     1|
+|2     |blk_mem_gen_cop |     1|
+|3     |clk_wiz_0       |     1|
+|4     |BUFG            |     2|
+|5     |CARRY4          |   220|
+|6     |DSP48E1         |     4|
+|7     |DSP48E1_1       |     4|
+|8     |LUT1            |   235|
+|9     |LUT2            |   655|
+|10    |LUT3            |   878|
+|11    |LUT4            |   850|
+|12    |LUT5            |  1430|
+|13    |LUT6            |  3510|
+|14    |MUXF7           |    51|
+|15    |RAM32M          |    48|
+|16    |SRL16E          |     4|
+|17    |FDCE            |     9|
+|18    |FDPE            |    24|
+|19    |FDRE            |  1738|
+|20    |FDSE            |    88|
+|21    |LD              |    39|
+|22    |IBUF            |     9|
+|23    |OBUF            |    10|
++------+----------------+------+
+
+Report Instance Areas: 
++------+-----------------------+----------------------------+------+
+|      |Instance               |Module                      |Cells |
++------+-----------------------+----------------------------+------+
+|1     |top                    |                            |  9889|
+|2     |  theUARTModule        |UART_module                 |    83|
+|3     |    theUART            |raifes_uart                 |    73|
+|4     |  thecore              |raifes_top                  |  9775|
+|5     |    dmem_bridge        |raifes_sync_to_hasti_bridge |     6|
+|6     |    dtm                |raifes_dtm                  |   239|
+|7     |    raifes             |raifes_core                 |  9462|
+|8     |      cop              |raifes_cop_top              |  1757|
+|9     |        cop_cprs       |raifes_cop_cprs             |  1246|
+|10    |        cop_malu       |raifes_cop_malu             |   243|
+|11    |        cop_mem        |raifes_cop_mem              |    20|
+|12    |        cop_palu       |raifes_cop_palu             |   215|
+|13    |          i_p_addsub   |p_addsub                    |    45|
+|14    |          i_p_mul_core |p_mul_core                  |   166|
+|15    |        cop_rng        |raifes_cop_rng              |    33|
+|16    |      debug_module     |raifes_debug_module         |  1099|
+|17    |      debug_rom        |raifes_debug_rom            |   134|
+|18    |      mul_div          |raifes_mul_div              |  1215|
+|19    |      pipeline         |raifes_pipeline             |  5179|
+|20    |        csr            |raifes_csr_file             |  1077|
+|21    |        ctrl           |raifes_ctrl                 |  1265|
+|22    |        imm_gen        |raifes_imm_gen              |     7|
+|23    |        regfile        |raifes_regfile              |   100|
+|24    |        src_b_mux      |raifes_src_b_mux            |    32|
+|25    |      rcpi             |integ_raifes_rcpi2cop       |    33|
+|26    |  thegpio              |raifes_gpio                 |     8|
++------+-----------------------+----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:09:56 ; elapsed = 00:10:05 . Memory (MB): peak = 3410.926 ; gain = 2832.090
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 331 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:09:41 ; elapsed = 00:09:59 . Memory (MB): peak = 3410.926 ; gain = 2679.887
+Synthesis Optimization Complete : Time (s): cpu = 00:09:56 ; elapsed = 00:10:05 . Memory (MB): peak = 3410.926 ; gain = 2832.090
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 366 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 3426.602 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 87 instances were transformed.
+  LD => LDCE: 39 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 48 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+221 Infos, 191 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:10:16 ; elapsed = 00:10:27 . Memory (MB): peak = 3426.602 ; gain = 3124.578
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 3426.602 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/13_Projekte/05_RISCV/fpga/NexysVideo/raifes_fpga_bram/raifes_fpga_bram.runs/synth_1/raifes_fpga_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file raifes_fpga_wrapper_utilization_synth.rpt -pb raifes_fpga_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 22 15:24:16 2019...

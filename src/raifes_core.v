@@ -4,16 +4,22 @@
 // RISC-V core including debug module, debug ROM and AHB-lite typ memory interface
 //
 // History: 
+// 22.08.19 - moved debug rom to its own module
+//	    - removed legacy hacks and twirks
+//	    - added more comments
+//	    - fixed error in debug ROM code (wrong register stored to hw stack now fixed)
 // 10.12.18 - beautified and updated comments (ASt)
 //
 // Notes:
-// The core uses seperated instruction and data memory busses with an AHB-Lite 
+// The core uses seperate instruction and data memory busses with an AHB-Lite 
 // compatible interface (only basic AHB-Lite transfers are supported). Sometimes, 
 // the two busses are combined into a single bus using an arbiter on the upper 
 // hierachy level, because in order to load programs into the core via the debug 
 // module, the core has to be able to write into instruction memory - which can 
 // not be done using the "imem" bus.
 //
+
+`include "raifes_arch_options.vh"
 
 // definitions for the AHB-Lite type memory interface (called HASTI here for historic reasons)
 `include "raifes_hasti_constants.vh"
@@ -47,13 +53,13 @@ module raifes_core(
 		  // AHB-Lite style system busses
 
                    // instruction memory bus	  
-                   output [`HASTI_ADDR_WIDTH-1:0]  imem_haddr,			// memory address
-                   output 			   imem_hwrite,			// unused, as imem bus is read-only
+                   output [`HASTI_ADDR_WIDTH-1:0]  imem_haddr,			// I-Memory address
+                   output 			   imem_hwrite,			// currently unused, as imem bus is read-only
                    output [`HASTI_SIZE_WIDTH-1:0]  imem_hsize,			// width of memory access (1, 2 or 4 for byte, halfword and word access respectively)
                    output [`HASTI_BURST_WIDTH-1:0] imem_hburst,			// burst mode (TODO: not implemented yet)
                    output 			   imem_hmastlock,		// "master lock" (TODO: not implemented yet)
                    output [`HASTI_PROT_WIDTH-1:0]  imem_hprot,			// TODO: add description
-                   output [`HASTI_TRANS_WIDTH-1:0] imem_htrans,			// TODO: add description
+                   output [`HASTI_TRANS_WIDTH-1:0] imem_htrans,			// transaction mode.!= 0 if transaction is active. TODO: add details
                    output [`HASTI_BUS_WIDTH-1:0]   imem_hwdata,			// unused, as imem bus is read-only
                    input [`HASTI_BUS_WIDTH-1:0]    imem_hrdata,			// read data from instruction memory
                    input 			   imem_hready,			// busy/ready signaling (1 - ready, 0 - busy)
@@ -76,7 +82,7 @@ module raifes_core(
 		 // Debug Module Interface (DMI) bus. 
 		 // 
 		 // This connects the Debug Module (DM) included in this core
-		 // with an external Debug Transport Module (DTM), which 
+		 // to an external Debug Transport Module (DTM), which 
 		 // in our case is a JTAG-TAP.
 		 // 
 		 // The DTM uses the DMI to access registers in the DM,
@@ -86,48 +92,36 @@ module raifes_core(
 		 // one could use an RS232 transceiver for debugging, the interface 
 		 // to the debug module would still be the same DMI.
 
-		 // DM register address
-		 input [`DMI_ADDR_WIDTH-1:0]	   dmi_addr,
-		 // DM (read/write) enable
-		 input			   	   dmi_en,
-		 // Data read from DM to the DTM
-		 output [`DMI_WIDTH-1:0]	   dmi_rdata,
-		 // Data from the DTM to the DM
-		 input [`DMI_WIDTH-1:0]	   	   dmi_wdata,
-	 	 // DM write enable (always together with dmi_en)
-		 input			   	   dmi_wen,
-		 // DM error signaling, should be 1'b0 if no error occured
-		 output			   	   dmi_error,
+		 input [`DMI_ADDR_WIDTH-1:0]	   dmi_addr,			 // DM register address
+		 input			   	   dmi_en,			 // DM (read/write) enable
+		 output [`DMI_WIDTH-1:0]	   dmi_rdata,		 	 // Data read from DM to the DTM
+		 input [`DMI_WIDTH-1:0]	   	   dmi_wdata,		 	 // Data from the DTM to the DM
+		 input			   	   dmi_wen,		 	 // DM write enable (always together with dmi_en)
+		 output			   	   dmi_error,			 // DM error signaling, should be 1'b0 if no error occured
 		 // DM busy signaling, if the DM needs more time, it can set 
 		 // this flag. Usually, the DM is clocked much faster (system clock)
 		 // than the DTM (external JTAG clock), so this is never required.
-		 output			   	   dmi_dm_busy,
-
-		 // Debug Signals for core debugging. These are connected to some 
-		 // internal signals of the core for debugging in simulation or on an 
-		 // FPGA pin. Often this are the 4 bits of the current FSM state of 
-		 // the debug module. CAUTION: IMPLEMENTATION / MEANING MIGHT CHANGE FREQUENTLY
-		 output		[3:0]	dm_state
+		 output			   	   dmi_dm_busy
                 );
 
    wire 					   ndmreset;		// non-debug-module reset, resets everything besides the DM.
    assign 					   ndmreset = reset;	// TODO: for now, this is equal to the system reset.
  
-   // System bus signals translated from the AHB-Lite signals
-   wire                                            imem_wait_mem;
-   wire [`HASTI_ADDR_WIDTH-1:0]                    imem_addr;
+   // System bus signals (to core) translated from the AHB-Lite signals
+   wire                                            imem_wait_mem;	// stall pipeline, memory is not yet ready
+   wire [`HASTI_ADDR_WIDTH-1:0]                    imem_addr;		// imem address
    wire [`HASTI_BUS_WIDTH-1:0]                     imem_rdata;	
-   wire                                            imem_badmem_e;
+   wire                                            imem_badmem_e;	// TODO: unused. Signals access fault
    wire						   imem_stall;
 
    wire                                            dmem_wait_mem;
    wire                                            dmem_en;
    wire                                            dmem_wen;
    
-   // dmem_wen can target some register in the debug module or a 
-   // regular memory address. The external write enable is only 
+   // writes to dmem can target some address in the debug space or a 
+   // regular d-memory address. The external write enable is only 
    // assigned when the target address within the "normal" memory 
-   // space (see raifes_platform_constants.vh)
+   // space (see raifes_platform_constants.vh for memory mapping)
    wire						   dmem_wen_extern;	
    wire [`HASTI_SIZE_WIDTH-1:0]                    dmem_size;
    wire [`HASTI_ADDR_WIDTH-1:0]                    dmem_addr;
@@ -137,6 +131,12 @@ module raifes_core(
 
    wire                                            dmem_badmem_e;
 	
+
+   // register file access from debug module
+   // the debug module can read/write registers in the 
+   // general purpose register (GPR) file and in the 
+   // control and status register (CSR) file directly using
+   // a separate port.
 
    wire [`DMI_WIDTH-1:0]			dm_regfile_rd;
    wire [`DMI_WIDTH-1:0]			dm_regfile_wd;
@@ -148,19 +148,37 @@ module raifes_core(
    wire [`XPR_LEN-1:0]				dm_csr_rdata;
    wire [`XPR_LEN-1:0]				dm_csr_wdata;
 
-   wire						dm_hart0_haltreq;
-   wire						dm_hart0_resumereq;
+   // run control for individual harts
+   // the debug module controls individual cores/harts 
+   // using a set of request / status indiction lines.
+   // within the debug module, there are mechanisms to 
+   // select the group of targeted cores. On this hierarchy level, 
+   // a set of control lines needs to be provided for each hart.
+   //
+   // the current implementation is single-core, so only one set 
+   // of control lines is provided.
+
+   wire						dm_hart0_haltreq;	// requests the hart to halt and enter debug loop
+   wire						dm_hart0_resumereq;	// requests the hart to resume opertion at last PC
+   wire						dm_hart0_resumeack;	// acknowledges the hart has resumed.
 	
-   wire [`XPR_LEN-1:0]				dm_hart0_progbuf0;
-   wire [`XPR_LEN-1:0]				dm_hart0_progbuf1;
+   wire [`XPR_LEN-1:0]				dm_hart0_progbuf0;	// two-instruction-program-buffer that can be filled
+   wire [`XPR_LEN-1:0]				dm_hart0_progbuf1;	// by the debugger with arbitrary commands. 
+									// thereby the main pipeline is used to execute functions
+									// like memory access in debug mode.
+
+   wire						dm_hart0_postexecreq;	// requests the hart to execute the programm buffer.
 	
-   wire						dm_hart0_halted;	
+   wire						dm_hart0_halted;	// signals the hart has sucessfully entered debug loop
 
 
    reg [`XPR_LEN-1:0]				imem_rdata_muxed;
    reg [`XPR_LEN-1:0]				dmem_rdata_muxed;
 	
-	wire	[3:0]	dm_debug;
+// ============================================================================================================================
+
+// bus translation between pipeline-internal signals 
+// and AHB-Lite compatible naming / encoding.
 
    raifes_hasti_bridge imem_bridge(
  				  .clk(clk),
@@ -242,115 +260,63 @@ module raifes_core(
 					.dm_csr_cmd(dm_csr_cmd),
 					.dm_csr_rdata(dm_csr_rdata),
 					.dm_csr_wdata(dm_csr_wdata),
-					.dm_state_out(dm_debug)					
-
+					.dm_state_out()					
 				);
-				
-					
 
-// ===========================================
-// = Memory mapped debug registers           =
-// ===========================================
+// ============================================================================================================================
 
-// to allow access to debug information in debug mode using regular instructions, 
-// a single debug_status register is memory mapped into dmem space.
+// =============================================================
+// = Memory mapped debug registers, Debug-ROM + Program Buffer =
+// =============================================================
 
-reg	[`HASTI_ADDR_WIDTH-1:0]                 dmem_addr_r;					// addr hold register
-
-reg	[1:0]					hart0_status_r;					// currently only single bit (Bit 0)
-reg						hart0_postexecreq_r;
-wire	[`XPR_LEN-1:0]				hart0_status;
-
-assign dm_hart0_halted = hart0_status_r[0];
-assign dm_hart0_resumeack = dm_hart0_resumereq;	// TODO: simple. doesn't really reflect if the hart has resumed, so better use --> //hart0_status_r[1];
-
-
-
-assign hart0_status = {29'h0,hart0_postexecreq_r,dm_hart0_halted,dm_hart0_resumereq};
-
-reg	[`XPR_LEN-1:0]				hart0_stack;
-
-reg	dmem_wen_r;
-//reg	dmem_en_r;
+reg	[`HASTI_ADDR_WIDTH-1:0]                 dmem_addr_r;	// addr hold register
+reg						dmem_wen_r;	// write enable hold register
 
 always @(posedge clk) begin
 	if(ndmreset) begin
 		dmem_addr_r <= 0;
 		dmem_wen_r <= 0;
-//		dmem_en_r <= 0;
 	end else begin
-		dmem_addr_r <= dmem_addr;								// sample addr
+		dmem_addr_r <= dmem_addr;			// sample addr
 		dmem_wen_r <= dmem_wen;
-//		dmem_en_r <= dmem_en;
 	end
 end
 
 assign	dmem_wen_extern = (dmem_wen & dmem_addr[`HASTI_ADDR_WIDTH-1]);
-
-always @(posedge clk) // or posedge ndmreset
-begin
-	if(ndmreset) begin 
-		hart0_status_r <= 1'b00;
-		hart0_stack <= `XPR_LEN'h0;
-		hart0_postexecreq_r <= 1'b0;
-	end else begin
-		if(dm_hart0_postexecreq) begin
-			hart0_postexecreq_r <= 1'b1;
-		end else begin
-			if(dmem_wen_r && (dmem_addr_r == `ADDR_HART0_POSTEXEC)) hart0_postexecreq_r <= 1'b0;
-		end
-
-		if(dmem_wen_r) begin
-			case(dmem_addr_r)
-				`ADDR_HART0_STATUS : hart0_status_r <= {dmem_wdata_delayed[0],dmem_wdata_delayed[1]};	// TODO: twisted, WHY? this has some meaning!
-				`ADDR_HART0_STACK  : hart0_stack <= dmem_wdata_delayed;
-			endcase
-		end		
-	end
-end
 
 
 // ===========================================
 // = Debug-ROM + Debug Program Buffer        =
 // ===========================================
 
-wire	[`XPR_LEN-1:0]	dm_debugrom [16:0];	// debug ROM has 256 lines 
-assign	dm_debugrom[0] = `XPR_LEN'h14802023;	// 0001 0100 1000 0000 0010 0000 0010 0011, 14802023, sw s0, 0x140(x0) -- push s0 to debug mem space 0x140
-assign	dm_debugrom[1] = `XPR_LEN'h14402E03;	// 0001 0100 0100 0000 0010 1110 0000 0011, 14402E03, lw s28, 0x144(x0) -- read hart0_status from @0x144
+reg [`HASTI_ADDR_WIDTH-1:0]                    imem_addr_r;					// addr hold register
 
-assign	dm_debugrom[2] = `XPR_LEN'h001E7E13;	// 0000 0000 0001 1110 0111 1110 0001 0011, 001E7E13, andi s28, 0x01 -- determine if resume is requested
-assign	dm_debugrom[3] = `XPR_LEN'h01C01E63;	// 0000 0001 1100 0000 0001 1110 0110 0011, 0101E63, bne s28, x0, d28(pc)
-assign	dm_debugrom[4] = `XPR_LEN'h14402E03;	// lw s28, 0x144(x0) -- read hart0_status again.
-assign	dm_debugrom[5] = `XPR_LEN'h002E6E13;	// 0000 0000 0010 1110 0110 1110 0001 0011, 002E6E13, ori s28, 0x02 -- set halted_flag
-assign	dm_debugrom[6] = `XPR_LEN'h15C02223;	// 0001 0101 1100 0000 0010 0010 0010 0011, 15C02223, sw s28, 0x144(x0) -- and store status
-assign	dm_debugrom[7] = `XPR_LEN'h004E7E13;	// 0000 0000 0100 1110 0111 1110 0001 0011, 004E7E13, andi s28, 0x04 -- check for exec
+wire	[`XPR_LEN-1:0]	imem_rdata_debug; 
+wire	[`XPR_LEN-1:0]	dmem_rdata_debug;
 
-assign	dm_debugrom[8] = `XPR_LEN'h01C01A63;    // 0000 0001 1100 0000 0001 1010 0110 0011, 01C01A63, bne s28, x0, 20(pc)
-assign	dm_debugrom[9] = `XPR_LEN'hFE1FF06F;	// 1111 1110 0001 1111 1111 0000 0110 1111, FE1FF06F, j x0, -20 -- jump back to rw s0, 36(x0) ...
-assign  dm_debugrom[10] = `XPR_LEN'h14402403;	// 0001 0100 0000 0000 0010 0100 0000 0011, 14402403, lw s0, 0x140(x0) -- pop s0 from "stack"
-assign	dm_debugrom[11] = `XPR_LEN'h14002223;	// 0001 0100 0000 0000 0010 0010 0010 0011, 14002223, sw x0, 0x144(x0) -- clear all status flags
-assign	dm_debugrom[12] = `XPR_LEN'h7b200073;	// DRET
-assign	dm_debugrom[13] = `XPR_LEN'h14002423;	// 0001 0100 0000 0000 0010 0100 0010 0011, 14002423, sw x0, 0x148(x0) -- clear postexec request 
-
-assign	dm_debugrom[14] = dm_hart0_progbuf0;	// first progbuf line, the debugger writes this to execute arbitrary commands
-assign	dm_debugrom[15] = dm_hart0_progbuf1;	// second progbuf line, the debugger writes this to execute arbitrary commands
-
-assign  dm_debugrom[16] = `XPR_LEN'h00100073;  // 0000 0000 0001 0000 0000 0000 0111 0011, 00100073, EBREAK	implicit ebreak at end of progbuf.
-
-// Stack = 0x...40		Address used to access the one-line stack, which holds interrupt enable information for different priviledge levels
-// Status = 0x...44	        Address used to signal status of the hard (running, halted)
-// Poesexec = 0x...48		Address used to clear the posexecreq flag
-
-
+raifes_debug_rom debug_rom(
+	.reset(ndmreset),
+	.clk(clk),
+	.postexec_req(dm_hart0_postexecreq),
+	.resume_req(dm_hart0_resumereq),
+	.halted(dm_hart0_halted),
+	.resume_ack(dm_hart0_resumeack),
+	.rom_addra(imem_addr_r),
+	.rom_rdataa(imem_rdata_debug),
+	.progbuf0(dm_hart0_progbuf0),
+	.progbuf1(dm_hart0_progbuf1),
+	.rom_addrb(dmem_addr_r),
+	.rom_writeb(dmem_wen_r),
+	.rom_rdatab(dmem_rdata_debug),
+	.rom_wdatab(dmem_wdata_delayed)
+);
 
 // Memory Access to Debug ROM
 // ==========================
 
 // AHB-Lite provide the data in the clock cycle after the address has been 
 // sampled. To mimic this behaviour, the multiplexer samples the address and 
-// provides output data based on the address present in the hold register.
-
-reg [`HASTI_ADDR_WIDTH-1:0]                    imem_addr_r;					// addr hold register
+// muxes output from debug rom or real memory based on the address stored in the hold register.
 
 always @(posedge clk) begin
 	if(ndmreset) begin 
@@ -360,37 +326,173 @@ always @(posedge clk) begin
 	end
 end
 
-// Instruction address decoder for debug ROM
-wire	[`XPR_LEN-1:0]	imem_rdata_debug; assign imem_rdata_debug = dm_debugrom[imem_addr_r[9:0] >> 2];
-
 // Instruction MUX between debug ROM and regular memory
 always @* begin
 	case(imem_addr_r[`HASTI_ADDR_WIDTH-1])
-	`ADDR_DEBUG_ROM 	: imem_rdata_muxed = imem_rdata_debug;
-	`ADDR_IMEM		: imem_rdata_muxed = imem_rdata;
-	default 		: imem_rdata_muxed = `XPR_LEN'h0;
+		`ADDR_DEBUG_ROM 	: imem_rdata_muxed = imem_rdata_debug;
+		`ADDR_IMEM		: imem_rdata_muxed = imem_rdata;
+		default 		: imem_rdata_muxed = `XPR_LEN'hdeadbeef;
 	endcase
 end
 
 wire imem_wait_muxed; assign	imem_wait_muxed =  (imem_addr_r[`HASTI_ADDR_WIDTH-1] == `ADDR_DEBUG_ROM) ? 1'b0 : imem_wait_mem;
 
-// Data Address decoder for debug ROM
-wire [`XPR_LEN-1:0]	dmem_rdata_debug; assign dmem_rdata_debug = dm_debugrom[dmem_addr_r[9:0] >> 2];
 
 // Data MUX between debug ROM and regular memory (and special places within debug rom)
 always @* begin
 	case(dmem_addr_r[`HASTI_ADDR_WIDTH-1])
-		`ADDR_DEBUG_ROM 	 : begin 
-						dmem_rdata = (dmem_addr_r == `ADDR_HART0_STATUS) ? hart0_status :	// either status..
-							     (dmem_addr_r == `ADDR_HART0_STACK) ? hart0_stack : 	// .. or stack ..
-							     dmem_rdata_debug;						// .. or some other debug addr.
-					   end
+		`ADDR_DEBUG_ROM 	 : dmem_rdata = dmem_rdata_debug;
 		`ADDR_IMEM		 : dmem_rdata = dmem_rdata_hasti;
 		default			 : dmem_rdata = `XPR_LEN'hbabebabe;
 	endcase
 end
 
 wire dmem_wait_muxed; assign	dmem_wait_muxed =  (dmem_addr_r[`HASTI_ADDR_WIDTH-1] == `ADDR_DEBUG_ROM) ? 1'b0 : dmem_wait_mem;
+
+
+// ===================================================
+// = Coprocessors				     =
+// ===================================================
+
+wire				pcpi_valid;
+wire	[`XPR_LEN-1:0]		pcpi_insn;
+wire	[`XPR_LEN-1:0]		pcpi_rs1;
+wire	[`XPR_LEN-1:0]		pcpi_rs2;
+wire				pcpi_wr;			// unused - assumes to always write a result. 
+wire	[`XPR_LEN-1:0] 		pcpi_rd;
+wire        			pcpi_wait;			// unused
+wire         			pcpi_ready;
+
+
+// =====================================
+// = M-Extension (Hardware MUL/DIV/REM =
+// =====================================
+
+`ifdef ISA_EXT_M
+wire				pcpi_wr_mul_div;
+wire	[`XPR_LEN-1:0]		pcpi_rd_mul_div;
+wire				pcpi_wait_mul_div;
+wire				pcpi_ready_mul_div;
+
+raifes_mul_div	mul_div(
+			.reset(ndmreset),
+			.clk(clk),
+		
+			.pcpi_valid(pcpi_valid),
+			.pcpi_insn(pcpi_insn),
+			.pcpi_rs1(pcpi_rs1),
+			.pcpi_rs2(pcpi_rs2),
+			.pcpi_wr(pcpi_wr_mul_div),
+			.pcpi_rd(pcpi_rd_mul_div),
+			.pcpi_wait(pcpi_wait_mul_div),
+			.pcpi_ready(pcpi_ready_mul_div)
+);
+`endif
+
+// =====================================
+// = XCRYPTO-Extension 		       =
+// =====================================
+
+`ifdef ISA_EXT_XCRYPTO  
+
+wire                pcpi_wr_cop;
+wire [31:0]         pcpi_rd_cop;
+wire                pcpi_wait_cop;
+wire                pcpi_ready_cop;
+
+wire                                       cop_insn_ack;
+wire                                       cpu_insn_req;
+wire [31:0]                                cpu_rs1;
+wire [31:0]                                cpu_rs2;
+wire                                       cop_wen;
+wire [4:0]                                 cop_waddr;
+wire [31:0]                                cop_wdata;
+wire [2:0]                                 cop_result;
+wire                                       cop_insn_rsp;
+wire                                       cpu_insn_ack;
+wire [31:0]                                cpu_insn_enc;
+
+
+integ_raifes_rcpi2cop rcpi(
+           .clk             (clk),
+           .reset           (reset),
+         // Raifes Co-Processor Interface (RCPI)
+           .rcpi_valid     (pcpi_valid),
+           .rcpi_insn      (pcpi_insn),
+           .rcpi_rs1       (pcpi_rs1),
+           .rcpi_rs2       (pcpi_rs2),
+           .rcpi_wr        (pcpi_wr_cop),
+           .rcpi_rd        (pcpi_rd_cop),
+           .rcpi_wait      (pcpi_wait_cop),
+           .rcpi_ready     (pcpi_ready_cop),               
+                // XCrypto Co-Processor Interface
+           .cpu_insn_req   (cpu_insn_req), // Instruction request
+           .cop_insn_ack   (cop_insn_ack), // Instruction request acknowledge
+           .cpu_insn_enc   (cpu_insn_enc), // Encoded instruction data
+           .cpu_rs1        (cpu_rs1), // RS1 source data
+           .cpu_rs2        (cpu_rs2), // RS2 source data
+
+           .cop_wen        (cop_wen), // COP write enable
+           .cop_waddr      (cop_waddr), // COP destination register address
+           .cop_wdata      (cop_wdata), // COP write data
+           .cop_result     (cop_result), // COP execution result
+           .cop_insn_rsp   (cop_insn_rsp), // COP instruction finished
+           .cpu_insn_ack   (cpu_insn_ack)    // Instruction finish acknowledge
+
+            );
+ 
+raifes_cop_top  cop(
+.g_clk        (clk        ) , // Global clock
+.g_resetn     (reset      ) , // Synchronous active low reset.
+//.g_clk_req    (g_clk_req  ) , 
+.cpu_insn_req (cpu_insn_req ) , // Instruction request
+.cop_insn_ack (cop_insn_ack ) , // Instruction request acknowledge
+.cpu_insn_enc (cpu_insn_enc ) , // Encoded instruction data
+.cpu_rs1      (cpu_rs1      ) , // RS1 source data
+.cpu_rs2      (cpu_rs2      ) , // RS2 source data
+.cop_wen      (cop_wen      ) , // COP write enable
+.cop_waddr    (cop_waddr    ) , // COP destination register address
+.cop_wdata    (cop_wdata    ) ,// COP write data
+.cop_result   (cop_result   ) , // COP execution result
+.cop_insn_rsp (cop_insn_rsp ) , // COP instruction finished
+.cpu_insn_ack (cpu_insn_ack ) // Instruction finish acknowledge
+);   
+`endif 
+
+// Multiplex the various coprocessor results here
+
+assign	pcpi_wr = 
+`ifdef ISA_EXT_M
+pcpi_ready_mul_div ? pcpi_wr_mul_div : 
+`endif
+`ifdef ISA_EXT_XCRYPTO
+pcpi_wr_cop ? pcpi_wr_cop : 
+`endif 1'b0;
+
+assign	pcpi_rd = 
+`ifdef ISA_EXT_M 
+pcpi_ready_mul_div ? pcpi_rd_mul_div : 
+`endif
+`ifdef ISA_EXT_XCRYPTO
+pcpi_ready_cop ? pcpi_rd_cop : 
+`endif 32'hdeadbeef;
+
+assign	pcpi_wait = 1'b0
+`ifdef ISA_EXT_M 
+| pcpi_wait_mul_div 
+`endif
+`ifdef ISA_EXT_XCRYPTO
+| pcpi_wait_cop
+`endif;
+
+assign	pcpi_ready =  1'b0
+`ifdef ISA_EXT_M
+| pcpi_ready_mul_div 
+`endif
+`ifdef ISA_EXT_XCRYPTO
+| pcpi_ready_cop
+`endif;
+
 
 // ===================================================
 // = Core Pipeline				     =
@@ -447,14 +549,24 @@ wire dmem_wait_muxed; assign	dmem_wait_muxed =  (dmem_addr_r[`HASTI_ADDR_WIDTH-1
 		.dm_csr_addr(dm_csr_addr),				// register address
 		.dm_csr_rdata(dm_csr_rdata),				// data CSR -> DM
 		.dm_csr_wdata(dm_csr_wdata),				// data DM -> CSR
-		.dm_illegal_csr_access(dm_illegal_csr_access)		// signal illegal address to DM
+
+		.dm_illegal_csr_access(dm_illegal_csr_access),		// signal illegal address to DM
 									// This is actually used by debuggers to differentiate 
 									// e.g. between 32/64 Bit implementations
 
+		// PCPI coprocessor interface
+
+		.pcpi_valid(pcpi_valid),
+		.pcpi_insn(pcpi_insn),
+		.pcpi_rs1(pcpi_rs1),
+		.pcpi_rs2(pcpi_rs2),
+		.pcpi_wr(pcpi_wr),			// unused - assumes to always write a result. 
+		.pcpi_rd(pcpi_rd),
+		.pcpi_wait(pcpi_wait),			// unused
+		.pcpi_ready(pcpi_ready)
+
 );
 
-
-assign dm_state = 4'h0;
 
 endmodule // raifes_core
 

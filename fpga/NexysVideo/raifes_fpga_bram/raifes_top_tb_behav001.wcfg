@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="raifes_top_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="raifes_top_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="11897500000fs"></ZoomStartTime>
+      <ZoomEndTime time="15512500001fs"></ZoomEndTime>
+      <Cursor1Time time="12500000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="165"></NameColumnWidth>
+      <ValueColumnWidth column_width="87"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="77" />
+   <wvobject fp_name="/raifes_top_tb/testcase" type="array">
+      <obj_property name="ElementShortName">testcase[31:0]</obj_property>
+      <obj_property name="ObjectShortName">testcase[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/theword" type="array">
+      <obj_property name="ElementShortName">theword[31:0]</obj_property>
+      <obj_property name="ObjectShortName">theword[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/dm_state" type="array">
+      <obj_property name="ElementShortName">dm_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">dm_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/LED" type="array">
+      <obj_property name="ElementShortName">LED[7:0]</obj_property>
+      <obj_property name="ObjectShortName">LED[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/SW" type="array">
+      <obj_property name="ElementShortName">SW[7:0]</obj_property>
+      <obj_property name="ObjectShortName">SW[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/dm_hart0_resumereq" type="logic">
+      <obj_property name="ElementShortName">dm_hart0_resumereq</obj_property>
+      <obj_property name="ObjectShortName">dm_hart0_resumereq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/dm_hart0_haltreq" type="logic">
+      <obj_property name="ElementShortName">dm_hart0_haltreq</obj_property>
+      <obj_property name="ObjectShortName">dm_hart0_haltreq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/PRINCE_cipher_out" type="array">
+      <obj_property name="ElementShortName">PRINCE_cipher_out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">PRINCE_cipher_out[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/thePRINCEcipher/cipher_out" type="array">
+      <obj_property name="ElementShortName">cipher_out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">cipher_out[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/per_out" type="array">
+      <obj_property name="ElementShortName">per_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">per_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/hrdata_muxed" type="array">
+      <obj_property name="ElementShortName">hrdata_muxed[31:0]</obj_property>
+      <obj_property name="ObjectShortName">hrdata_muxed[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/per_en" type="logic">
+      <obj_property name="ElementShortName">per_en</obj_property>
+      <obj_property name="ObjectShortName">per_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/bram01/wea" type="array">
+      <obj_property name="ElementShortName">wea[3:0]</obj_property>
+      <obj_property name="ObjectShortName">wea[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/bram01/addra" type="array">
+      <obj_property name="ElementShortName">addra[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/bram01/dina" type="array">
+      <obj_property name="ElementShortName">dina[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/bram01/douta" type="array">
+      <obj_property name="ElementShortName">douta[31:0]</obj_property>
+      <obj_property name="ObjectShortName">douta[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/bram01/web" type="array">
+      <obj_property name="ElementShortName">web[3:0]</obj_property>
+      <obj_property name="ObjectShortName">web[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/bram01/addrb" type="array">
+      <obj_property name="ElementShortName">addrb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addrb[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/bram01/dinb" type="array">
+      <obj_property name="ElementShortName">dinb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dinb[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/bram01/doutb" type="array">
+      <obj_property name="ElementShortName">doutb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">doutb[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/debug_module/dm_hart0_haltreq" type="logic">
+      <obj_property name="ElementShortName">dm_hart0_haltreq</obj_property>
+      <obj_property name="ObjectShortName">dm_hart0_haltreq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/debug_module/dm_hart0_resumereq" type="logic">
+      <obj_property name="ElementShortName">dm_hart0_resumereq</obj_property>
+      <obj_property name="ObjectShortName">dm_hart0_resumereq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/debug_module/dm_hart0_halted" type="logic">
+      <obj_property name="ElementShortName">dm_hart0_halted</obj_property>
+      <obj_property name="ObjectShortName">dm_hart0_halted</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/debug_module/dm_hart0_resumeack" type="logic">
+      <obj_property name="ElementShortName">dm_hart0_resumeack</obj_property>
+      <obj_property name="ObjectShortName">dm_hart0_resumeack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/per_hrdata" type="array">
+      <obj_property name="ElementShortName">per_hrdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">per_hrdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/PCmux/PC_IF" type="array">
+      <obj_property name="ElementShortName">PC_IF[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_IF[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/PCmux/PC_DX" type="array">
+      <obj_property name="ElementShortName">PC_DX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_DX[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/PC_WB" type="array">
+      <obj_property name="ElementShortName">PC_WB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_WB[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/PCmux/PC_PIF" type="array">
+      <obj_property name="ElementShortName">PC_PIF[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_PIF[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/PCmux/dpc" type="array">
+      <obj_property name="ElementShortName">dpc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dpc[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/regfile/data" type="array">
+      <obj_property name="ElementShortName">data[31:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">data[31:0][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/inst_DX" type="array">
+      <obj_property name="ElementShortName">inst_DX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_DX[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/csr/dcsr" type="array">
+      <obj_property name="ElementShortName">dcsr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dcsr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/tck" type="logic">
+      <obj_property name="ElementShortName">tck</obj_property>
+      <obj_property name="ObjectShortName">tck</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/tdi" type="logic">
+      <obj_property name="ElementShortName">tdi</obj_property>
+      <obj_property name="ObjectShortName">tdi</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/tdo" type="logic">
+      <obj_property name="ElementShortName">tdo</obj_property>
+      <obj_property name="ObjectShortName">tdo</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/csr/interrupt_pending" type="logic">
+      <obj_property name="ElementShortName">interrupt_pending</obj_property>
+      <obj_property name="ObjectShortName">interrupt_pending</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/csr/interrupt_taken" type="logic">
+      <obj_property name="ElementShortName">interrupt_taken</obj_property>
+      <obj_property name="ObjectShortName">interrupt_taken</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/csr/dinterrupt" type="logic">
+      <obj_property name="ElementShortName">dinterrupt</obj_property>
+      <obj_property name="ObjectShortName">dinterrupt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/kill_WB" type="logic">
+      <obj_property name="ElementShortName">kill_WB</obj_property>
+      <obj_property name="ObjectShortName">kill_WB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/kill_IF" type="logic">
+      <obj_property name="ElementShortName">kill_IF</obj_property>
+      <obj_property name="ObjectShortName">kill_IF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/stall_IF" type="logic">
+      <obj_property name="ElementShortName">stall_IF</obj_property>
+      <obj_property name="ObjectShortName">stall_IF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/ctrl/stall_DX" type="logic">
+      <obj_property name="ElementShortName">stall_DX</obj_property>
+      <obj_property name="ObjectShortName">stall_DX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/stall_WB" type="logic">
+      <obj_property name="ElementShortName">stall_WB</obj_property>
+      <obj_property name="ObjectShortName">stall_WB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/ctrl/ex_WB" type="logic">
+      <obj_property name="ElementShortName">ex_WB</obj_property>
+      <obj_property name="ObjectShortName">ex_WB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/ctrl/store_in_WB" type="logic">
+      <obj_property name="ElementShortName">store_in_WB</obj_property>
+      <obj_property name="ObjectShortName">store_in_WB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/ctrl/ex_WB" type="logic">
+      <obj_property name="ElementShortName">ex_WB</obj_property>
+      <obj_property name="ObjectShortName">ex_WB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/ctrl/load_use" type="logic">
+      <obj_property name="ElementShortName">load_use</obj_property>
+      <obj_property name="ObjectShortName">load_use</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/uart_tx" type="logic">
+      <obj_property name="ElementShortName">uart_tx</obj_property>
+      <obj_property name="ObjectShortName">uart_tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/UART_reg" type="array">
+      <obj_property name="ElementShortName">UART_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">UART_reg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/ctrl/ex_DX" type="logic">
+      <obj_property name="ElementShortName">ex_DX</obj_property>
+      <obj_property name="ObjectShortName">ex_DX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/ctrl/dmem_en_WB" type="logic">
+      <obj_property name="ElementShortName">dmem_en_WB</obj_property>
+      <obj_property name="ObjectShortName">dmem_en_WB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/ctrl/active_wfi_WB" type="logic">
+      <obj_property name="ElementShortName">active_wfi_WB</obj_property>
+      <obj_property name="ObjectShortName">active_wfi_WB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/uart_send_strobe" type="logic">
+      <obj_property name="ElementShortName">uart_send_strobe</obj_property>
+      <obj_property name="ObjectShortName">uart_send_strobe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/ctrl/dmem_wait" type="logic">
+      <obj_property name="ElementShortName">dmem_wait</obj_property>
+      <obj_property name="ObjectShortName">dmem_wait</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/uart_reset" type="logic">
+      <obj_property name="ElementShortName">uart_reset</obj_property>
+      <obj_property name="ObjectShortName">uart_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/uart_ready" type="logic">
+      <obj_property name="ElementShortName">uart_ready</obj_property>
+      <obj_property name="ObjectShortName">uart_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/csr/redirect_WB" type="logic">
+      <obj_property name="ElementShortName">redirect_WB</obj_property>
+      <obj_property name="ObjectShortName">redirect_WB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/ctrl/redirect" type="logic">
+      <obj_property name="ElementShortName">redirect</obj_property>
+      <obj_property name="ObjectShortName">redirect</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/csr/dmode" type="logic">
+      <obj_property name="ElementShortName">dmode</obj_property>
+      <obj_property name="ObjectShortName">dmode</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/csr/debug_haltreq" type="logic">
+      <obj_property name="ElementShortName">debug_haltreq</obj_property>
+      <obj_property name="ObjectShortName">debug_haltreq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/csr/retire" type="logic">
+      <obj_property name="ElementShortName">retire</obj_property>
+      <obj_property name="ObjectShortName">retire</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/csr/exception" type="logic">
+      <obj_property name="ElementShortName">exception</obj_property>
+      <obj_property name="ObjectShortName">exception</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/csr/stepmode" type="logic">
+      <obj_property name="ElementShortName">stepmode</obj_property>
+      <obj_property name="ObjectShortName">stepmode</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/csr/exception_PC" type="array">
+      <obj_property name="ElementShortName">exception_PC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">exception_PC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/csr/exception_code" type="array">
+      <obj_property name="ElementShortName">exception_code[3:0]</obj_property>
+      <obj_property name="ObjectShortName">exception_code[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/dmem_wdata_delayed" type="array">
+      <obj_property name="ElementShortName">dmem_wdata_delayed[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dmem_wdata_delayed[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/dmem_en" type="logic">
+      <obj_property name="ElementShortName">dmem_en</obj_property>
+      <obj_property name="ObjectShortName">dmem_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/cpu/raifes/pipeline/dmem_wen" type="logic">
+      <obj_property name="ElementShortName">dmem_wen</obj_property>
+      <obj_property name="ObjectShortName">dmem_wen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/theUART/sdata" type="array">
+      <obj_property name="ElementShortName">sdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/theUART/send_strobe" type="logic">
+      <obj_property name="ElementShortName">send_strobe</obj_property>
+      <obj_property name="ObjectShortName">send_strobe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/theUART/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/theUART/UART_TX" type="logic">
+      <obj_property name="ElementShortName">UART_TX</obj_property>
+      <obj_property name="ObjectShortName">UART_TX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/raifes_top_tb/theUART/state" type="array">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -7,128 +7,108 @@
 module raifes_top_asic(
 		input   clk,
 		input   reset,
-		
-		input	tck,
-		input	tms,
-		input	tdi,
-		output	tdo,
-		
-		// System bus port for periphery
-		output					per_en,			// enable periphery in general
-		output	[`HASTI_ADDR_WIDTH-1:0]		per_haddr,
-		output					per_hwrite,
-		output	[`HASTI_SIZE_WIDTH-1:0]		per_hsize,
-		output	[`HASTI_BURST_WIDTH-1:0]	per_hburst,
-		output					per_hmastlock,
-		output	[`HASTI_TRANS_WIDTH-1:0]	per_htrans,
-		output	[`HASTI_BUS_WIDTH-1:0]		per_hwdata,		
-		input	[`HASTI_BUS_WIDTH-1:0]		per_hrdata,
-		input					per_hready,
-		input	[`HASTI_RESP_WIDTH-1:0]		per_hresp
 
-		// Debug signals
-		output	[3:0]				dm_state,
-		output	[3:0]				debug_state
+		// scan chain interface for core
+
+		input	sdi,
+		output	sdo,
+		input	sen,	
+
+		// connections to dual-port sram
+
+            output [`HASTI_ADDR_WIDTH-1:0]  imem_haddr,
+            output                          imem_hwrite,
+            output [`HASTI_SIZE_WIDTH-1:0]  imem_hsize,
+            output [`HASTI_BURST_WIDTH-1:0] imem_hburst,
+            output                          imem_hmastlock,
+            output [`HASTI_PROT_WIDTH-1:0]  imem_hprot,
+            output [`HASTI_TRANS_WIDTH-1:0] imem_htrans,
+            output [`HASTI_BUS_WIDTH-1:0]   imem_hwdata,
+            input [`HASTI_BUS_WIDTH-1:0]  imem_hrdata,
+            input                         imem_hready,
+            input                         imem_hresp,
+            output [`HASTI_ADDR_WIDTH-1:0]  dmem_haddr,
+            output                          dmem_hwrite,
+            output [`HASTI_SIZE_WIDTH-1:0]  dmem_hsize,
+            output [`HASTI_BURST_WIDTH-1:0] dmem_hburst,
+            output                          dmem_hmastlock,
+            output [`HASTI_PROT_WIDTH-1:0]  dmem_hprot,
+            output [`HASTI_TRANS_WIDTH-1:0] dmem_htrans,
+            output [`HASTI_BUS_WIDTH-1:0]   dmem_hwdata,
+            input [`HASTI_BUS_WIDTH-1:0]  dmem_hrdata,
+            input                         dmem_hready,
+            input                         dmem_hresp,
+	
+		// Connection to Debug Transfer Module (JTAG-TAP)
+		input		[`DMI_ADDR_WIDTH-1:0]	dmi_addr,
+		input		[`DMI_WIDTH-1:0]	dmi_wdata,
+		output		[`DMI_WIDTH-1:0]	dmi_rdata,
+		input					dmi_en,
+		input					dmi_wen,
+		output					dmi_error,
+		output					dmi_dm_busy,
+
+		// -- Chip specific -- 
+		// GPIOs
+		output	[7:0]	oGPIO_D,
+		output	[7:0]	oGPIO_EN,
+		input	[7:0]	iGPIO_I,
+
+		// -- Post-Synthesis debug port --
+		output	reg	[7:0]	debug_out
+
 );
 
-
-	// Bei Bedarf hier das invertierte Reset-Signal
-   /*wire                                            resetn;
-   assign resetn = ~reset;*/
-
-	// Instruktions-Bus
-	// ================
-	//
-	// Aktuell führen Daten- und Instruktions-Bus zum gleichen 
-	// (internen) BlockRAM.
-
-   wire [`HASTI_ADDR_WIDTH-1:0]                    imem_haddr;
-   wire                                            imem_hwrite;
-   wire [`HASTI_SIZE_WIDTH-1:0]                    imem_hsize;
-   wire [`HASTI_BURST_WIDTH-1:0]                   imem_hburst;
-   wire                                            imem_hmastlock;
-   wire [`HASTI_PROT_WIDTH-1:0]                    imem_hprot;
-   wire [`HASTI_TRANS_WIDTH-1:0]                   imem_htrans;
-   wire [`HASTI_BUS_WIDTH-1:0]                     imem_hwdata;
-   wire [`HASTI_BUS_WIDTH-1:0]                     imem_hrdata;
-   wire                                            imem_hready;
-   wire [`HASTI_RESP_WIDTH-1:0]                    imem_hresp;
-
-   wire [`HASTI_ADDR_WIDTH-1:0]                    imem_haddr_core;
-   wire                                            imem_hwrite_core;
-   wire [`HASTI_SIZE_WIDTH-1:0]                    imem_hsize_core;
-   wire [`HASTI_BURST_WIDTH-1:0]                   imem_hburst_core;
-   wire                                            imem_hmastlock_core;
-   wire [`HASTI_PROT_WIDTH-1:0]                    imem_hprot_core;
-   wire [`HASTI_TRANS_WIDTH-1:0]                   imem_htrans_core;
-   wire [`HASTI_BUS_WIDTH-1:0]                     imem_hwdata_core;
-   wire [`HASTI_BUS_WIDTH-1:0]                     imem_hrdata_core;
-   wire                                            imem_hready_core;
-   wire [`HASTI_RESP_WIDTH-1:0]                    imem_hresp_core;
-
-
    
-	// Daten-Bus und Peripherie-Bus-Multiplexer
-	// ========================================
-	//
-	// Aktuell führen Daten- und Instruktions-Bus zum gleichen 
-	// (internen) BlockRAM.
+// Daten-Bus- und Peripherie-Bus-Multiplexer
+// ========================================
+//
 	
-	wire [`HASTI_ADDR_WIDTH-1:0]               dmem_haddr;
-   wire                                            dmem_hwrite;
-   wire [`HASTI_SIZE_WIDTH-1:0]                    dmem_hsize;
-   wire [`HASTI_BURST_WIDTH-1:0]                   dmem_hburst;
-   wire                                            dmem_hmastlock;
-   wire [`HASTI_PROT_WIDTH-1:0]                    dmem_hprot;
-   wire [`HASTI_TRANS_WIDTH-1:0]                   dmem_htrans;
-   wire [`HASTI_BUS_WIDTH-1:0]                     dmem_hwdata;
-   wire [`HASTI_BUS_WIDTH-1:0]                     dmem_hrdata;
-   wire                                            dmem_hready;
-   wire [`HASTI_RESP_WIDTH-1:0]                    dmem_hresp;
 
-   wire [`HASTI_ADDR_WIDTH-1:0]               dmem_haddr_core;
-   wire                                            dmem_hwrite_core;
-   wire [`HASTI_SIZE_WIDTH-1:0]                    dmem_hsize_core;
-   wire [`HASTI_BURST_WIDTH-1:0]                   dmem_hburst_core;
-   wire                                            dmem_hmastlock_core;
-   wire [`HASTI_PROT_WIDTH-1:0]                    dmem_hprot_core;
-   wire [`HASTI_TRANS_WIDTH-1:0]                   dmem_htrans_core;
-   wire [`HASTI_BUS_WIDTH-1:0]                     dmem_hwdata_core;
-   wire [`HASTI_BUS_WIDTH-1:0]                     dmem_hrdata_core;
-   wire                                            dmem_hready_core;
-   wire [`HASTI_RESP_WIDTH-1:0]                    dmem_hresp_core;
-	
-	
-	// die Signale vom Core zum DBUS werden einfach zu den 
-	// Peripherie-Geräten durchgeschleift..
-	assign	per_haddr = dmem_haddr;
-	assign	per_hwrite = dmem_hwrite;
-	assign	per_hsize = dmem_hsize;
-	assign	per_hburst = dmem_hburst;
-	assign	per_hmastlock = dmem_hmastlock;
-	//assign	per_hprot = dmem_hprot; TODO: unused, include in top I/O ?
-	assign	per_htrans = dmem_htrans;
-	assign	per_hwdata = dmem_hwdata;
+   wire	[`HASTI_BUS_WIDTH-1:0]			   per_hrdata;
+   wire	[`HASTI_RESP_WIDTH-1:0]			   per_hresp;
+   wire						   per_hready;
 
-	// .. beim Rückweg hängt entweder das Blockram am DBUS, 
-	// oder eines der Peripheriegeräte, abhängig von der Adresse.
-	
-	wire	[`HASTI_BUS_WIDTH-1:0]	blockram_hrdata;
-	wire	[`HASTI_BUS_WIDTH-1:0]	periphery_hrdata;
-	
-	wire	blockram_hready;
-	wire	periphery_hready;
+   reg [`HASTI_ADDR_WIDTH-1:0]               	   dmem_haddr_r;
+   always @(posedge clk) begin
+	if(reset) begin
+		dmem_haddr_r <= `HASTI_ADDR_WIDTH'hdeadbeef;
+	end else begin
+		dmem_haddr_r <= dmem_haddr;
+	end
+   end
 
-	wire	[`HASTI_RESP_WIDTH-1:0]	blockram_hresp;
-	wire	[`HASTI_RESP_WIDTH-1:0]	periphery_hresp;
-	
-	
-	wire	[`HASTI_BUS_WIDTH-1:0]	hrdata_muxed;
-	wire	hready_muxed;
-	wire	[`HASTI_RESP_WIDTH-1:0]	hresp_muxed;
-	
-	// Adress-Dekoder
-	assign	per_en		 = (dmem_haddr[31:24] == 8'h81) ? 1'b1 : 1'b0;	// set periphery enable and let periphery handle the rest of decoding.
+   wire [`HASTI_BUS_WIDTH-1:0]			   muxed_hrdata;
+   assign muxed_hrdata = |(dmem_haddr_r & `PER_MASK) ? per_hrdata : dmem_hrdata;
+
+   wire	[`HASTI_RESP_WIDTH-1:0]			   muxed_hresp;
+   assign muxed_hresp = |(dmem_haddr_r & `PER_MASK) ? per_hresp : dmem_hresp;
+
+   wire						   muxed_hready;
+   assign muxed_hready = |(dmem_haddr_r & `PER_MASK) ? per_hready : dmem_hready;
+
+
+	raifes_gpio gpio(
+		.reset(reset),
+		.clk(clk),
+
+		.gpio_d(oGPIO_D),
+		.gpio_en(oGPIO_EN),
+		.gpio_i(iGPIO_I),
+
+		.haddr(dmem_haddr),
+		.hwrite(dmem_hwrite),
+		.hsize(dmem_hsize),
+		.hburst(dmem_hburst),
+		.hmastlock(dmem_hmastlock),
+		.hprot(dmem_hprot),
+		.htrans(dmem_htrans),
+		.hwdata(dmem_hwdata),
+		.hrdata(per_hrdata),
+		.hready(per_hready),
+		.hresp(per_hresp)
+	);
+
 	
 	// DMI Bus
 	// =======
@@ -138,69 +118,68 @@ module raifes_top_asic(
 	// Fall ein JTAG-TAP, mit dem Debug Modul (DM)
 	//
 	
-   wire [`DMI_ADDR_WIDTH-1:0] dmi_addr;
-   wire [`DMI_WIDTH-1:0]	dmi_wdata;
-   wire	[`DMI_WIDTH-1:0]	dmi_rdata;
-   wire	dmi_en;
-   wire	dmi_error;
-   wire	dmi_wen;
-   wire	dmi_dm_busy;
-
 	raifes_core raifes(
-			.reset(reset),
-		        .clk(clk),
-			.ext_interrupts(`N_EXT_INTS'h0),
-						
-			.imem_haddr(imem_haddr_core),
-			.imem_hwrite(imem_hwrite_core),
-			.imem_hsize(imem_hsize_core),
-			.imem_hburst(imem_hburst_core),
-			.imem_hmastlock(imem_hmastlock_core),
-			.imem_hprot(imem_hprot_core),
-			.imem_htrans(imem_htrans_core),
-			.imem_hwdata(imem_hwdata_core),
-			.imem_hrdata(imem_hrdata_core),
-			.imem_hready(1'b1), // imem_hready),
-			.imem_hresp(1'b0), // imem_hresp),
-						 
-			.dmem_haddr(dmem_haddr_core),
-			.dmem_hwrite(dmem_hwrite_core),
-			.dmem_hsize(dmem_hsize_core),
-			.dmem_hburst(dmem_hburst_core),
-			.dmem_hmastlock(dmem_hmastlock_core),
-			.dmem_hprot(dmem_hprot_core),
-			.dmem_htrans(dmem_htrans_core),
-			.dmem_hwdata(dmem_hwdata_core),
-			.dmem_hrdata(dmem_hrdata_core), // hrdata_muxed), // dmem_hrdata
-			.dmem_hready(dmem_hready_core), 
-			.dmem_hresp(1'b0), // dmem_hresp), TODO
-			
-			.dmi_addr(dmi_addr),
-			.dmi_en(dmi_en),
-			.dmi_error(dmi_error),
-			.dmi_wen(dmi_wen),
-			.dmi_wdata(dmi_wdata),
-			.dmi_rdata(dmi_rdata),
-			.dmi_dm_busy(dmi_dm_busy),
-			.dm_state(dm_state)
-						 ); 
+		.reset(reset),
+		.clk(clk),
 
-
-
-raifes_dtm	dtm(
-		.tck(tck),
-		.tms(tms),
-		.tdi(tdi),
-		.tdo(tdo),		
+		.ext_interrupts(`N_EXT_INTS'h0),
+					
+		.imem_haddr(imem_haddr),
+		.imem_hwrite(imem_hwrite),
+		.imem_hsize(imem_hsize),
+		.imem_hburst(imem_hburst),
+		.imem_hmastlock(imem_hmastlock),
+		.imem_hprot(imem_hprot),
+		.imem_htrans(imem_htrans),
+		.imem_hwdata(imem_hwdata),
+		.imem_hrdata(imem_hrdata),
+		.imem_hready(imem_hready),
+		.imem_hresp(imem_hresp),
+					 
+		.dmem_haddr(dmem_haddr),
+		.dmem_hwrite(dmem_hwrite),
+		.dmem_hsize(dmem_hsize),
+		.dmem_hburst(dmem_hburst),
+		.dmem_hmastlock(dmem_hmastlock),
+		.dmem_hprot(dmem_hprot),
+		.dmem_htrans(dmem_htrans),
+		.dmem_hwdata(dmem_hwdata),
+		.dmem_hrdata(muxed_hrdata),
+		.dmem_hready(muxed_hready), 
+		.dmem_hresp(muxed_hresp),
+		
 		.dmi_addr(dmi_addr),
 		.dmi_en(dmi_en),
 		.dmi_error(dmi_error),
 		.dmi_wen(dmi_wen),
 		.dmi_wdata(dmi_wdata),
 		.dmi_rdata(dmi_rdata),
-		.dmi_dm_busy(dmi_dm_busy),
-		.debug_state(debug_state)
-		);
+		.dmi_dm_busy(dmi_dm_busy)
+	); 
+
+
+reg [31:0] debug_addr;
+reg	   debug_hwrite;
+
+always @(posedge clk) begin
+	debug_addr <= dmem_haddr;
+	debug_hwrite <= dmem_hwrite;
+	if((debug_addr == 32'h80001000) && (debug_hwrite))
+	begin
+		debug_out <= dmem_hwdata[7:0];
+
+	end
+	if((debug_addr == 32'hc0000000) && (debug_hwrite))
+	begin
+		$write("%c",dmem_hwdata[7:0]);
+
+	end
+end
+
+
+
 
 
 endmodule // raifes_sim_top
+
+

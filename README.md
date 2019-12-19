@@ -1,14 +1,26 @@
-# raifes
-RISC-V softcore / asic implementation based on vscale
+# AIRI5C
+RISC-V softcore
 
-This implementation of the RISC-V ISA is based on the 
-outdated "vscale" implementation.
+This implementation of the RISC-V ISA was inspired by 
+vscale/ri5cy and others and is meant to be part of a 
+low-power ASIC design.
 
-The vscale code was updated to the current ISA spec 
-and debug module and JTAG-TAP support have been added. 
+The core is a three-stage (IF,DE/EX,WB) implementation, 
+including external debug support, support for the 
+RCPI coprocessor interface and a JTAG transport module.
 
-The implementation is work in progress. It has been 
-tested on Genesys Virtex 5 board, on a Zynq board and 
-first silicon is expected Feb 2019.
+The repository includes a Vivado project for the 
+NexysVideo FPGA-Board.
+
+It has been testet with the following setup:
+Eclipse MCU <-> OpenOCD <-> Olimex ARM-USB-TINY-H JTAG-adapter <-> Nexys Video FPGA-Board.
+
+A hardware multiplier is included, implemented as a 
+coprocessor on the RCPI interface.
+
+A simple GPIO and UART (TX only) peripheral is included in 
+the FPGA design.
+
+
 
 
